@@ -1,0 +1,10 @@
+autopep8
+pep8
+pycodestyle
+pytz
+sqlparse
+pillow
+django
+python-decouple
+django-debug-toolbar
+psycopg2-binary
