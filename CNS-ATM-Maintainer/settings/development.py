@@ -5,17 +5,11 @@ DEBUG = True
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 SECRET_KEY = '-05sgp9!deq=q1nltm@^^2cc+v29i(tyybv3v2t77qi66czazj'
 
-
 INSTALLED_APPS += [
     'debug_toolbar',    
 ]
 
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(BASE_DIR, 'db.sqlite3')
-    }
-}
+
 
 #Debug ToolBar Settings
 DEBUG_TOOLBAR_PANELS = [
