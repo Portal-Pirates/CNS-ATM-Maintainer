@@ -6317,3 +6317,5 @@ autostatic/debug_toolbar/js/toolbar.timer.js
 .venv/Lib/site-packages/pkg_resources/_vendor/packaging/__pycache__/specifiers.cpython-37.pyc
 .venv/Lib/site-packages/pkg_resources/_vendor/packaging/__pycache__/version.cpython-37.pyc
 .venv/Lib/site-packages/pkg_resources/extern/__pycache__/__init__.cpython-37.pyc
+.venv/Lib/site-packages/pip/_internal/commands/__pycache__/freeze.cpython-37.pyc
+.venv/Lib/site-packages/pip/_internal/operations/__pycache__/freeze.cpython-37.pyc
