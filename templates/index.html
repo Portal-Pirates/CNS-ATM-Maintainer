@@ -9,13 +9,18 @@
       <img src="{% static '1.ico' %}" class="logo-type-mobile responsive-img" alt="AAI Logo">
 
 
-    <h1 class="font-weight-bold" style=" font-family: 'Playfair Display', serif;">Airport Authority Of India</h1> 
+    <h1 class="font-weight-bold" style=" font-family: 'Playfair Display', serif; @media only screen and (max-width: 700px) {
+      #index-banner h1 {
+          /*flex-direction: column;*/
+          font-size: 3.5 rem;
+      }
+    };">Airport Authority Of India</h1> 
        
 
       <div class="header-section">
        <a class="gs-button-link" href="forms/search.html" class="center-margin" >
           <button class="gs-button gs-button-orange animate__animated animate__tada">
-            <span class="iconify" data-icon="fa-solid:search" data-inline="false"></span>&nbsp;&nbsp;search reports
+            <span class="fa fa-search" data-icon="fa-solid:search" data-inline="false"></span>&nbsp;&nbsp;search reports
           </button>
         </a>
      </div>
@@ -31,26 +36,26 @@
   <div class="container">
   <div class="row">
   <div class="extra-div col-lg-4 col-md-4 col-12">
-            <a href="#"><i class="fa-4x fa fa-desktop" aria-hidden="true"></i></a>
+            <a href="#"><i class="fa-4x fa fa-qrcode" aria-hidden="true"></i></a>
 
-            <h2>DIGITALIZATION</h2>
-            <P> click here for performing the process of digitilization.</P>
+            <h2>Qr Generation</h2>
+            <P> click here Qr-Code Generation</P>
 
      </div>
 
       <div class="extra-div col-lg-4 col-md-4 col-12">
-            <a href="forms/QRscan.html"><i class="fa-4x fa  fa-qrcode" aria-hidden="true"></i></a>
-
+            <a href="forms/QRscan.html"><i class="fa-4x fa  fa-camera" aria-hidden="true"></i></a>
+         
             <h2>SCAN QR CODE</h2>
             <P> click here for scanning.</P>
 
      </div>
       <div class="extra-div col-lg-4 col-md-4 col-12">
-            <a href="forms/newEntry.html"><i class=" far fa-plus-square fa-4x"></i></a>
-
-            <h2>NEW ENTRIES</h2>
-            <P> click here to add new files and data.</P>
-
+            <a href="/NewEntry"><i class=" far fa-plus-square fa-4x"></i></a>
+            <a href="/NewEntry">
+            <h2 style="color: #212529;">NEW ENTRIES</h2>
+            <P>&nbsp;click here for New Entry</P>
+          </a>
      </div>
    </div>
  </div>  

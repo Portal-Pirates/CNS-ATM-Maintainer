@@ -2,10 +2,14 @@
 <!DOCTYPE html>
 <html lang="en">
     {% include 'head.html' %}
+    {% block NewEntry_head %}
+    {% endblock NewEntry_head %}
 <body>
     {% include 'nav.html' %}
     {% block home %}
     {% endblock home %}
+    {% block newEntry %}
+    {% endblock newEntry %}
     {% include 'footer.html' %}
     {% include 'scripts.html' %}
 </body>
