@@ -12,4 +12,6 @@ if __name__ == '__main__':
             "available on your PYTHONPATH environment variable? Did you "
             "forget to activate a virtual environment?"
         ) from exc
-    execute_from_command_line(sys.argv)
+    execute_from_command_line(sys.argv) 
+#Files daal de iss folder me saari jo else navigate krde meko ??konsi files jo taking about modules files
+#isme fisrt name lasst name phill krdeurasio yeh sahi hai??haan
