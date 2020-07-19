@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block home %}
+    <div style="background-color:rgb(0, 0, 0);" class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <center>
+                <img class ="xl" src="{%url 'scan'%}"></img>
+                <p class="lead">If you found your video get stucked then please click on report type you want</p>
+                <p class="lead">
+                  <a class="btn btn-primary btn-lg" href="{%url 'daily'%}" role="button">Daily report</a>
+                  <a class="btn btn-primary btn-lg" href="{%url 'weekly'%}" role="button">Weekly Report</a>
+                  <a class="btn btn-primary btn-lg" href="{%url 'monthly'%}" role="button">Monthly Report</a>
+                  <a class="btn btn-primary btn-lg" href="{%url 'quaterly'%}" role="button">Quaterly Report</a>
+                  <a class="btn btn-primary btn-lg" href="{%url 'sixmonth'%}" role="button">Six Months Report</a>
+                  <a class="btn btn-primary btn-lg" href="{%url 'yearly'%}" role="button">Yearly Report</a>
+
+                </p>
+            </center>
+        </div>
+      </div>
+
+{%endblock home%}
