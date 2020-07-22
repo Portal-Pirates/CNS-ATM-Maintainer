@@ -1,0 +1,482 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block home %}
+<div>
+    {%if models%}
+<div style = "background-color: black; color: whitesmoke;" class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <div style = "background-color: black;">
+        {% if messages %}
+        <p>
+            {%for message in messages%}
+            <p class="lead">{{message}}</p>
+            {%endfor%}
+        </p>
+        {%endif%}
+    </div>
+        <h5> Equipment Name: &emsp; <span>{{models.eq_name}}</span></h5>
+        <ul>
+            <li>
+               <h6> Station: &emsp; <span>{{models.station}}</span> </h6>
+            </li>
+            <li>
+                <p>Last Updated on: &emsp; <span>{{models.last_updated}}</span></p>
+                <p>Modal Number: &emsp; <span>{{models.modal_number}}</span></p>
+                <p>Station Name: &emsp; <span>{{models.station_name}}</span></p>
+                <p>Equipment Category: &emsp; <span>{{model2}}</span></p>
+            </li>
+             {%if model2 == 'NDB'%}
+             <div>
+              <table class="table table-dark">
+                  <thead>
+                    <tr>
+                      <th scope="col">ACTIVITY/COMPONENT</th>
+                      <th scope="col">VALUE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">CARRY OUT POWER MEASURE</th>
+                      <td>{{models.Carry_out_pow_measur}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">DEPTH MODULATION:</th>
+                      <td>{{models.depth_modulation }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">IDENT CODE:</th>
+                      <td>{{models.ident_code}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">CHECK ANTENNA</th>
+                      <td>{{models.check_antenna }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">CHECK ACU</th>
+                      <td>{{models.check_ACU }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+             
+                {%elif model2 == 'DVTR'%}
+                <div>
+                  <table class="table table-dark">
+                      <thead>
+                        <tr>
+                          <th scope="col">ACTIVITY/COMPONENT</th>
+                          <th scope="col">VALUE</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">CLEANING PC DUST:</th>
+                          <td>{{models.cleaning_PC_dust}}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">CHECK CONNECTOR:</th>
+                          <td>{{models.Check_connectors }}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">CHECK BATTERY BACKUP:</th>
+                          <td>{{models.check_battery_backup}}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">PROGRAM TO CHECK HDD</th>
+                          <td>{{models.program_to_Check_HDD }}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">APPLICCATION ONLY FOR H24</th>
+                          <td>{{models.Application_only_forH24}}</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  {%elif model2 == 'UPS'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Physicaly clean check:</th>
+                            <td>{{models.Physicaly_clean_check}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Rx module status:</th>
+                            <td>{{models.Rx_module_status }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Control Panel setup:</th>
+                            <td>{{models.Control_Panel_setup}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Physica check antenna cables</th>
+                            <td>{{models.Physica_check_antenna_cables }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">DAT drive cleaning</th>
+                            <td>{{models.DAT_drive_cleaning}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Netuno Server restart </th>
+                            <td>{{models.Netuno_Server_restart }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Remarks:</th>
+                            <td>{{models.remarks}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  
+                      {%elif model2 == 'DVOR'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">EQ EARTH RACK RESISTANCE</th>
+                            <td>{{models.Eq_earth_rack_resistance}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">EARTH RESISTANCE AT ANTENNA:</th>
+                            <td>{{models.earth_resistance_at_antenna}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">EARTH NATURAL VOLTAGE:</th>
+                            <td>{{models.earth_natural_volt}}</td>
+                          </tr>
+                          <p>
+                            staus of lighting and surge protection 
+                          </p>
+                          <tr>
+                            <th scope="row">EARTH RESISTANCE LIGHTING</th>
+                            <td>{{models.earth_resis_lighting}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">STATUS OF LIGHTING PROTECTION SYSTEM</th>
+                            <td>{{models.status_of_lighting_protection_system}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">STATUS SPD AT ER ROOM</th>
+                            <td>{{models.status_SPD_at_eq_room}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      {%elif model2 == 'Localizer'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">EQ EARTH RACK RESISTANCE</th>
+                            <td>{{models.Equ_rack_earth_resis}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">EARTH RESISTANCE AT ANTENNA:</th>
+                            <td>{{models.Earth_resis_antenna}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">EARTH RESIS NF MONITOR ANTENNA:</th>
+                            <td>{{models.Earth_resis_NF_monitor_antenna}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">EARTH RESISTANCE FFM</th>
+                            <td>{{models.Earth_resisFFM}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">EARTH TO NEUTRAL VOLT</th>
+                            <td>{{models.Earth_to_neutral_volt}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      {%elif model2 == 'COMSOFT'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">GPS LATITUDE</th>
+                            <td>{{models.Gps_latitude}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">GPS LONGITUDE:</th>
+                            <td>{{models.GPS_longitude}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">GPS ALTITUDE:</th>
+                            <td>{{models.Gps_altitude}}</td>
+                          </tr>
+                          <tr>
+                            <td>POWER ONSELF TEST RESULT</td>
+                          </tr>
+                          <tr>
+                            <td scope="row">POWER ONSELF TEST RESULT</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">GPS</th>
+                            <td>{{models.GPS}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">TEMPERATURE SENSING</th>
+                            <td>{{models.Temp_sensing}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">VOLTAGE SENSING</th>
+                            <td>{{models.voltage_sensing}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">FPGA</th>
+                            <td>{{models.FPGA}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">RECEIVER</th>
+                            <td>{{models.Reciever}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">CPU LOAD</th>
+                            <td>{{models.Cpu_load}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">GPS STATUS</th>
+                            <td>{{models.GPS_status}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">GPS SYNCH</th>
+                            <td>{{models.Gps_synch}}</td>
+                          </tr>
+                          <tr>
+                            <td>voltage & temprature </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">INTERMEDIATE VOLT</th>
+                            <td>{{models.Intermediate_volt}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">GPS VOLT</th>
+                            <td>{{models.Gps_volt}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">FPGA VOLT</th>
+                            <td>{{models.FPGA_volt}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">DSP BOARD VOLT</th>
+                            <td>{{models.DSP_Board_volt}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">DSP BOARD TEMPERATURE</th>
+                            <td>{{models.DSP_board_tmep}}</td>
+                          </tr>
+                          <TR>
+                            <TD>site monitor statics</TD>
+                          </TR>
+                          <tr>
+                            <th scope="row">SIGNAL STRENGTH RF SITE</th>
+                            <td>{{models.Signal_strength_RF_Site }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">END TO END TEST</th>
+                            <td>{{models.End_to_End_tes}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">RX SENSITIVITY</th>
+                            <td>{{models.Rx_sensitivity}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">TEST TRANSMISSION LOSS</th>
+                            <td>{{models.Test_transmission_loss}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">DECODER TEST</th>
+                            <td>{{models.Decoder_test}}</td>
+                          </tr>
+                          <tr>
+                            <td>Device status</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">GROUND STATION TEST</th>
+                            <td>{{models.Gnd_station_staus}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">OVERALL BUILD TEST RESULT</th>
+                            <td>{{models.overall_build_tst_result}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">UTC SYNCHRONIZATION</th>
+                            <td>{{models.UTC_synchr}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      {%elif model2 == 'Glid_Path'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">PATH AUGLE</th>
+                            <td>{{models.Path_augle}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">CHANGE IN DISPLACEMENT SENS:</th>
+                            <td>{{models.change_in_displacement_sens}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">CLEARNACE SIGNAL:</th>
+                            <td>{{models.clearance_signal}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">REDUCTION POWER</th>
+                            <td>{{models.reduciton_power}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">TOTAL TIME</th>
+                            <td>{{models.total_time}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">MONITOR SYS OPERATION</th>
+                            <td>{{models.moitor_sys_oper}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">ALL FUNCTION REMOTE</th>
+                            <td>{{models.all_function_remote}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">GRADING OF CRITICAL ARE</th>
+                            <td>{{models.grading_of_critical_are}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">ENVIRONMENT</th>
+                            <td>{{models.Envionment}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">STATUS RC LINES</th>
+                            <td>{{models.status_rc_lines}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      {%else%}
+                      <div>
+                      <h1>We have not found any data for your QR..!!!!</h1>
+                <p>
+                  VERIFIED BY MANAGER &emsp;
+                  <span>{{models.verified_by_Manager}}</span>
+                </p>
+           </div>
+           {%endif%}
+        </ul>
+    </div>
+  </div>
+{%else%}
+<h1>
+    We got nothing 😔️😔️
+</h1>
+{%endif%}
+</div>
+
+{%endblock home%}
+
+
+<!--
+  DVTR
+  cleaning_PC_dust = models.BooleanField() 
+    Check_connectors = models.BooleanField() 
+    check_battery_backup = models.BooleanField() 
+    program_to_Check_HDD = models.BooleanField() 
+    Application_only_forH24= models.IntegerField() 
+-->
+
+<!--
+  NDB
+    Carry_out_pow_measur  = models.IntegerField()
+    depth_modulation = models.IntegerField()
+    ident_code = models.IntegerField()
+    check_antenna = models.BooleanField()
+    check_ACU = models.CharField(max_length = 255)
+-->
+<!--
+  DVOR
+  Eq_earth_rack_resistance =  models.IntegerField()
+    earth_resistance_at_antenna  = models.IntegerField()
+    earth_natural_volt = models.IntegerField()
+        #staus of lighting and surge protection 
+    earth_resis_lighting = models.IntegerField()
+    status_of_lighting_protection_system = models.BooleanField()
+    status_SPD_at_eq_room  = models.BooleanField()
+-->
+<!--
+  Localizer
+  Equ_rack_earth_resis = models.IntegerField()
+    Earth_resis_antenna = models.IntegerField()
+    Earth_resis_NF_monitor_antenna = models.IntegerField()
+    Earth_resisFFM = models.IntegerField()
+    Earth_to_neutral_volt = models.IntegerField()
+-->
+<!--
+  COMSOFT
+  Gps_latitude = models.FloatField()
+    GPS_longitude = models.FloatField()
+    Gps_altitude = models.FloatField() # meter
+   # power_onself test result  
+    general_result = models.BooleanField()
+    GPS = models.BooleanField()
+    Temp_sensing = models.BooleanField()
+    voltage_sensing= models.BooleanField()
+    FPGA = models.BooleanField()
+    Reciever = models.BooleanField()
+    Cpu_load = models.FloatField()
+    GPS_status = models.BooleanField()
+    Gps_synch = models.BooleanField()
+    #voltage & temprature 
+    Intermediate_volt = models.IntegerField()
+    Gps_volt = models.IntegerField()
+    FPGA_volt = models.IntegerField()
+    DSP_Board_volt = models.IntegerField()
+    DSP_board_tmep = models.IntegerField()
+    #site monitor statics
+    Signal_strength_RF_Site = models.BooleanField()
+    End_to_End_test = models.BooleanField()
+    Rx_sensitivity = models.BooleanField()
+    Test_transmission_loss = models.BooleanField()
+    Decoder_test = models.BooleanField()
+    # Device staus
+    Gnd_station_staus =models.BooleanField()
+    overall_build_tst_result = models.BooleanField()
+    UTC_synchr = models.BooleanField()
+-->
+<!--
+  Glid_Path
+    Path_augle= models.IntegerField()
+    change_in_displacement_sens = models.IntegerField()
+    clearance_signal = models.IntegerField()
+    reduciton_power = models.IntegerField()
+    total_time = models.IntegerField()
+    moitor_sys_oper = models.IntegerField()
+    all_function_remote = models.BooleanField()
+    grading_of_critical_are = models.IntegerField()
+    Envionment = models.BooleanField()
+    status_rc_lines = models.BooleanField()
+-->
