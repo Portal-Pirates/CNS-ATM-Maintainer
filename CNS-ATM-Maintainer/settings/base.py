@@ -6,6 +6,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 
 
 INSTALLED_APPS = [
+    'core.apps.SuitConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -14,6 +15,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core', 
     'NewEntry',
+     'admin_reorder',
     'accounts.apps.AccountsConfig'
 ]
 
@@ -25,7 +27,8 @@ MIDDLEWARE = [
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
-    'django.middleware.clickjacking.XFrameOptionsMiddleware'
+    'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'admin_reorder.middleware.ModelAdminReorder',#reorder middleware
 ]
 
 ROOT_URLCONF = 'CNS-ATM-Maintainer.urls'
@@ -65,3 +68,19 @@ DATABASES = {
         "NAME": os.path.join(BASE_DIR, 'db.sqlite3')
     }
 }
+
+
+# Reordering Settings
+ADMIN_REORDER = (
+    # Keep original label and models
+    'sites',
+
+    # Rename app
+    {'app': 'auth', 'models': ('auth.User', 'auth.Group', 'core.Profile'), 'label': 'Permissions & Accounts'},
+  
+    # Reorder app models
+     {'app': 'core', 'models': ('core.Airports', 'core.Stations', 'core.Equipments'), 'label': 'Airports & Stations'},
+    {'app': 'core', 'models': ('core.COMSOFT', 'core.VCS_System', 'core.Glid_Path', 'core.Localizer', 'core.DVOR', 'core.NDB', 'core.Datis_Terma', 'core.DVTR', 'core.UPS'), 'label': 'Equipments'},
+    
+     
+)

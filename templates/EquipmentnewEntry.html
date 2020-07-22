@@ -1,0 +1,106 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--CSS FILES-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/newEntry.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/common/footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/common/common.css' %}">
+   <!--CSS FILES ENDS-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"><!-- BOOTSTRAP 4 CDN ---->
+      <!-- FONTS -->
+  <!-- google font family and fontawesome 4 and 5 -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-ekOryaXPbeCpWQNxMwSWVvQ0+1VrStoPJq54shlYhR8HzQgig1v5fas6YgOqLoKz" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans|Nunito:300,400,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <!-- FONTS ENDS---->
+  <!-- JqueryUIautocomplete CSS -->
+  <link rel = "stylesheet" 
+  href = "//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script type = "text/javascript" 
+  src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+</script>
+
+<script type = "text/javascript" 
+  src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js">
+</script>
+
+<script>
+  $(function() {
+     $( "#devicename" ).autocomplete({
+        source: '{% url 'Equipmentautocomplete' %}',
+     });
+  });
+</script>
+  <!-- end of JqueryUIautocomplete CSS -->
+</head>
+
+  <body>
+    {% include 'GenericHeader.html' %}
+    <div class="testbox">
+       
+       {% if daily %}
+             
+      <form action="/NewEntry/Equipmentdetail/daily" method="POST">
+       {% endif %}
+            
+       {% if weekly %}
+             
+      <form action="/NewEntry/Equipmentdetail/weekly" method="POST">
+       {% endif %}
+              
+       {% if monthly %}
+             
+      <form action="/NewEntry/Equipmentdetail/monthly" method="POST">
+       {% endif %}
+              
+       {% if yearly %}
+             
+      <form action="/NewEntry/Equipmentdetail/yearly" method="POST">
+       {% endif %}
+       {% csrf_token %}
+        <h1 style="text-align:center; text-decoration-color: blue"><strong style="font-size: 30px; padding: 5px;">PLEASE FILL EQUIPMENT DETAILS</strong></h1>
+       <h4>DEVICE DETAILS<span>*</span></h4>    
+       <div class="name">
+        <input type="text" name="equipment_name" placeholder="DEVICE NAME" id="devicename" />   
+        <input type="number" name="serial_number" placeholder="SERIAL NUMBER" />
+       </div>
+       <br>
+       <div class="name">
+        <input type="text" name="modal_number" placeholder="MODAL NUMBER" />
+        <input type="text" name="company" placeholder="DEVICE COMPANY NAME" id="devicename" /> 
+     </div>
+     <br>
+     <div class="name">
+      <div class="form-group col-md-4">
+        <label for="inputState">EQUIPMENT TYPE</label>
+        <select id="inputState" class="form-control" name="equipment_type">
+          <option selected>Communication</option>
+          <option>Navigation</option>
+          <option>Surveillance</option>
+        </select>
+      </div>
+    </div>
+        <br>
+        <br>
+        <div class="btn-block">
+          <button type="submit" href="">Next(Fill Report Details)</button>
+        </div>
+      </form>
+    </div>
+
+
+    {% include 'footer.html' %}
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

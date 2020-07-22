@@ -21,104 +21,264 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>
   <!-- FONTS ENDS---->
+  <!-- JqueryUIautocomplete CSS -->
+  <link rel = "stylesheet" 
+  href = "//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
+<script type = "text/javascript" 
+  src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+</script>
+
+<script type = "text/javascript" 
+  src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js">
+</script>
+
+<script>
+  $(function() {
+     $( "#devicename" ).autocomplete({
+        source: '{% url 'Equipmentautocomplete' %}',
+     });
+  });
+</script>
+  <!-- end of JqueryUIautocomplete CSS -->
 </head>
 
   <body>
     {% include 'GenericHeader.html' %}
     <div class="testbox">
-      <form action="/">
+      <form action="" method="POST">
+        {% csrf_token %}
         <h1 style="text-align:center; text-decoration-color: blue"><strong style="font-size: 30px; padding: 5px;">NEW ENTRY FORM</strong></h1>
-            <h4>DEVICE DETAILS<span>*</span></h4>
+            <h4>STATION & LOCATION DETAILS<span>*</span></h4>          
         <div class="name">
-          <input type="text" name="name" placeholder="ID" />
-          <input type="text" name="name" placeholder="DEVICE NAME" />
-        </div>
-        <h4>LOCATION DETAILS<span>*</span></h4>
-        <div class="name">
-          <input type="text" name="name" placeholder="STATION NAME" />
-          <input type="text" name="name" placeholder="REGION NAME" />
-        </div>
-        
-        <h4>EQUIPMENT TYPE<span>*</span></h4>
-        <select>
-          <option class="disabled" value="EquipmentType" disabled selected>*Please Select*</option>
-          <option value="1">Communication</option>
-          <option value="2">Networking</option>
-          <option value="3">Survelliance</option>
-        </select>
-        <h4>MAINTENANCE DATE<span>*</span></h4>
-        <div class="day-maintenance">
-          <input type="date" name="daymaintenance" required/>
-          <i class="fas fa-calendar-alt"></i>
-        </div>
-        <h4>MAINTENANCE TIME<span>*</span></h4>
- <div class="time-maintenance">
-          <input type="time" name="timemaintenance" required/>
-          <i class="fas fa-clock"></i>
+          <input type="text" name="location" placeholder="AIRPORT LOCATION" />
+          <input type="text" name="station_name" placeholder="STATION NAME" />
         </div>
         <br>
-        <h4 style="text-align: center " ><strong style="font-size: 25px;">REPORT</strong></h4>
-        <br>
-        <table border="1">
-          <tr>
-            <th class="first-col"></th>
+        <div class="name">
+           <input type="text" name="region" placeholder="REGION" id="devicename" />       
+        </div>  
+        <h4>REPORT PARAMERTERS<span>*</span></h4>     
+        <!--Daily Report Fields-->     
+          {% if daily %}
+                    
+                  {% if UPS %}
+                  <div class="name">
+                    <input type="text" name="Nominal_value_ohm" placeholder="NOMINAL VALUE IN OHM" />
+                    <input type="text" name="measured_value_ohm" placeholder="MEASURED VALUE IN OHM" />
+                  </div>
+                  <div class="form-check form-check-inline">
+                    Status:
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="status_option1">
+                    <label class="form-check-label" for="inlineRadio1">ok</label>
+                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="status_option2">
+                    <label class="form-check-label" for="inlineRadio2">Not ok</label>
+                  </div>
+                  {% endif %}
 
-            <th  style="text-align:  center;">EXCELLENT</th>
-            <th  style="text-align:  center;"> GOOD</th>
-            <th  style="text-align:  center;">DECENT</th>
-            <th  style="text-align:  center;">POOR</th>
-          </tr>
-          <tr>
-            <td class="first-col"  style="text-align:  center;" >        PARAMETER CHECK  </td>
-             <td><input type="radio" value="none" name="Parameter" /></td>
-            <td><input type="radio" value="none" name="Parameter" /></td>
-            <td><input type="radio" value="none" name="Parameter" /></td>
-            <td><input type="radio" value="none" name="Parameter" /></td>
-          </tr>
-          <tr>
-            <td class="first-col"  style="text-align:  center;">        SERVICE QUALITY  </td>
-            <td><input type="radio" value="none" name="Service" /></td>
-            <td><input type="radio" value="none" name="Service" /></td>
-            <td><input type="radio" value="none" name="Service" /></td>
-            <td><input type="radio" value="none" name="Service" /></td>
-          </tr>
-          <tr>
-            <td class="first-col"  style="text-align:  center;">  SPEED OF DEVICE  </td>
-            <td><input type="radio" value="none" name="Speed" /></td>
-            <td><input type="radio" value="none" name="Speed" /></td>
-            <td><input type="radio" value="none" name="Speed" /></td>
-            <td><input type="radio" value="none" name="Speed" /></td>
-          </tr>
-          <tr>
-            <td class="first-col"  style="text-align:  center;">  STATUS  </td>
-            <td><input type="radio" value="none" name="STATUS" /></td>
-            <td><input type="radio" value="none" name="STATUS" /></td>
-            <td><input type="radio" value="none" name="STATUS" /></td>
-            <td><input type="radio" value="none" name="STATUS" /></td>
-          </tr>
-          <tr>
-            <td class="first-col"  style="text-align:  center;">  OVERALL SERVICE  </td>
-            <td><input type="radio" value="none" name="Experience" /></td>
-            <td><input type="radio" value="none" name="Experience" /></td>
-            <td><input type="radio" value="none" name="Experience" /></td>
-            <td><input type="radio" value="none" name="Experience" /></td>
-          </tr>
-        </table>
-        <br>
-        <br>
-        <h4>ANY REMARKS?</h4>
-        <textarea rows="5"></textarea>
-        <div class="btn-block">
-          <button type="submit" href="/">Send Report</button>
-        </div>
+                  {% if COMSOFT %}
+                    
+                  {% endif %} 
+                  
+                  
+                  {% if GLIDPATH %}
+                    
+                  {% endif %}
+
+                  
+                  {% if VCSSYSTEM %}
+                    
+                  {% endif %}
+
+                  
+                  {% if LOCALIZER %}
+                    
+                  {% endif %}
+                    
+                  
+                  {% if DVOR %}
+                    
+                  {% endif %}
+                  
+                  
+                  {% if NDB %}
+                    
+                  {% endif %}
+                    
+                  
+                  {% if DATISTERMA %}
+                    
+                  {% endif %}
+                  
+                  
+                  {% if DVTR %}
+                    
+                  {% endif %}
+                    
+                    
+
+          {% endif %} 
+             <!--end of Daily Report Fields-->  
+
+         <!--Weekly Report Fields-->  
+          {% if weekly %}
+                    
+                {% if UPS %}
+                  
+                {% endif %}
+
+                {% if COMSOFT %}
+                  
+                {% endif %} 
+
+
+                {% if GLIDPATH %}
+                  
+                {% endif %}
+
+
+                {% if VCSSYSTEM %}
+                  
+                {% endif %}
+
+
+                {% if LOCALIZER %}
+                  
+                {% endif %}
+                  
+
+                {% if DVOR %}
+                  
+                {% endif %}
+                
+
+                {% if NDB %}
+                  
+                {% endif %}
+                  
+
+                {% if DATISTERMA %}
+                  
+                {% endif %}
+                
+
+                {% if DVTR %}
+                  
+                {% endif %}
+          {% endif %}
+           
+          <!-- end of weekly Report Fields-->  
+
+           <!--Monthly Report Fields-->  
+          {% if monthly %}
+                    
+                  {% if UPS %}
+                    <h1> I am UPS</h1>
+                  {% endif %}
+
+                  {% if COMSOFT %}
+                    
+                  {% endif %} 
+
+
+                  {% if GLIDPATH %}
+                    
+                  {% endif %}
+
+
+                  {% if VCSSYSTEM %}
+                    
+                  {% endif %}
+
+
+                  {% if LOCALIZER %}
+                    
+                  {% endif %}
+                    
+
+                  {% if DVOR %}
+                    
+                  {% endif %}
+                  
+
+                  {% if NDB %}
+                    
+                  {% endif %}
+                    
+
+                  {% if DATISTERMA %}
+                    
+                  {% endif %}
+                  
+
+                  {% if DVTR %}
+                    
+                  {% endif %}
+            
+          {% endif %}
+          <!--End of Monthly Fields-->
+           
+          <!--Yearly Fields-->
+          {% if yearly %}
+                    
+                {% if UPS %}
+                  <h1> I am UPS</h1>
+                {% endif %}
+
+                {% if COMSOFT %}
+                  
+                {% endif %} 
+
+
+                {% if GLIDPATH %}
+                  
+                {% endif %}
+
+
+                {% if VCSSYSTEM %}
+                  
+                {% endif %}
+
+
+                {% if LOCALIZER %}
+                  
+                {% endif %}
+                  
+
+                {% if DVOR %}
+                  
+                {% endif %}
+                
+
+                {% if NDB %}
+                  
+                {% endif %}
+                  
+
+                {% if DATISTERMA %}
+                  
+                {% endif %}
+                
+
+                {% if DVTR %}
+                  
+                {% endif %}
+
+          {% endif %}
+        <!--End of yarly Fields-->
+      
+          <h4>ANY REMARKS?</h4>
+          <textarea name="remarks" rows="5"></textarea>
+          <div class="btn-block">
+            <button type="submit" href="/">Send Report</button>
+          </div>
+          <br>
       </form>
     </div>
 
 
     {% include 'footer.html' %}
 
-
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   </body>

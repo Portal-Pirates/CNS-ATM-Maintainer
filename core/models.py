@@ -23,7 +23,8 @@ class Airports(models.Model):
     last_updated = models.DateTimeField(auto_now=True, editable=False)
 
     class Meta:
-        ordering = ('-pk',)
+        verbose_name = 'Airport'
+        verbose_name_plural = 'Airports'
         
 
     def __str__(self):
@@ -48,7 +49,8 @@ class Profile(models.Model):
     )
 
     class Meta:
-        pass
+        verbose_name = 'Profile'
+        verbose_name_plural = 'Profiles'
 
     def __str__(self):
         return self.name
@@ -67,7 +69,8 @@ class Equipments(models.Model):
     last_updated = models.DateTimeField(auto_now=True, editable=False)
 
     class Meta:
-        pass
+        verbose_name = 'Equipment'
+        verbose_name_plural = 'Equipments'
 
     def __str__(self):
         return self.equipment_name
@@ -93,6 +96,9 @@ class Stations(models.Model):
 
     class Meta:
         ordering = ('-created_time',)
+        verbose_name = 'Station'
+        verbose_name_plural = 'Stations'
+        
 
     def __str__(self):
         return self.station_name
@@ -190,6 +196,8 @@ class Glid_Path(models.Model):
     carrier_modulation_homm = models.BooleanField(blank=True, null=True)
     phase_of_modulation_system = models.BooleanField(blank=True, null=True)
 
+    def __str__(self):
+        return self.report_type
 
 class COMSOFT(models.Model):
     equipment_name = models.CharField(max_length=255)
