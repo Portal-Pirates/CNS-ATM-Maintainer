@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block home %}
+<div>
+    {%if models%}
+<div style = "background-color: black; color: whitesmoke;" class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <div style = "background-color: black;">
+        {% if messages %}
+        <p>
+            {%for message in messages%}
+            <p class="lead">{{message}}</p>
+            {%endfor%}
+        </p>
+        {%endif%}
+    </div>
+        <h5> Equipment Name: &emsp; <span>{{models.eq_name}}</span></h5>
+        <ul>
+            <li>
+               <h6> Station: &emsp; <span>{{models.station}}</span> </h6>
+            </li>
+            <li>
+                <p>Last Updated on: &emsp; <span>{{models.last_updated}}</span></p>
+                <p>Modal Number: &emsp; <span>{{models.modal_number}}</span></p>
+                <p>Station Name: &emsp; <span>{{models.station_name}}</span></p>
+                <p>Equipment Category: &emsp; <span>{{model2}}</span></p>
+            </li>     
+                {%if model2 == 'DVOR'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Carrier_frequency</th>
+                            <td>{{models.Carrier_frequency}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Hz_derivation:</th>
+                            <td>{{models.Hz_derivation}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Hz_modulation_depth</th>
+                            <td>{{models.Hz_modulation_depth}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Hz_modulation_frequency</th>
+                            <td>{{models.Hz_modulation_frequency}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">identification_speed</th>
+                            <td>{{models.identification_speed}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">identification_repetition</th>
+                            <td>{{models.identification_repetition}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">identification_tone_frequency</th>
+                            <td>{{models.identification_tone_frequency}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Bearing_monitor</th>
+                            <td>{{models.Bearing_monitor}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      {%elif model2 == 'Localizer'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Frequency</th>
+                            <td>{{models.Frequency}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">carrier_modulation_freq:</th>
+                            <td>{{models.carrier_modulation_freq}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">carrier_module_har_content:</th>
+                            <td>{{models.carrier_module_har_content}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Carrier_modulation_harm</th>
+                            <td>{{models.Carrier_modulation_harm}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Unwanted_modulation</th>
+                            <td>{{models.Unwanted_modulation}}</td>
+                          </tr>
+                          <tr>
+                              <td>#Transmmitter waveform checks </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">CSB_in_watt</th>
+                            <td>{{models.CSB_in_watt}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">SBO</th>
+                            <td>{{models.SBO}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">phase_CORR</th>
+                            <td>{{models.phase_CORR}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">LF_phase_check</th>
+                            <td>{{models.LF_phase_check}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">RF_phase_check</th>
+                            <td>{{models.RF_phase_check}}</td>
+                          </tr>
+                          <tr>
+                            <td>#DDM/SDM checks</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">DDM_check_COU</th>
+                            <td>{{models.DDM_check_COU}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">SDM_check_COU</th>
+                            <td>{{models.SDM_check_COU}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Course_ident_Mod</th>
+                            <td>{{models.Course_ident_Mod}}</td>
+                          </tr>
+                          <tr>
+                              <td>
+                                #Output power check with wattmeter
+                              </td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Cou_Trans_out_pow</th>
+                            <td>{{models.Cou_Trans_out_pow}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">CLR_Tranns_out_pow</th>
+                            <td>{{models.CLR_Tranns_out_pow}}</td>
+                          </tr>
+                          <tr>
+                            <td> #Monitor delay</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Monitor_delay</th>
+                            <td>{{models.Monitor_delay}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      {%elif model2 == 'Glid_Path'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Frequency</th>
+                            <td>{{models.Frequency}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">unwanted_modulation:</th>
+                            <td>{{models.unwanted_modulation}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">carrier_modulation_freq:</th>
+                            <td>{{models.carrier_modulation_freq}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">carrier_modulation_homm</th>
+                            <td>{{models.carrier_modulation_homm}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">phase_of_modulation_system</th>
+                            <td>{{models.phase_of_modulation_system}}</td>
+                          </tr>
+                            </tbody>
+                      </table>
+                      {%else%}
+                      <div>
+                      <h1>We have not found any data for your QR..!!!!</h1>
+                <p>
+                  VERIFIED BY MANAGER &emsp;
+                  <span>{{models.verified_by_Manager}}</span>
+                </p>
+           </div>
+           {%endif%}
+        </ul>
+    </div>
+  </div>
+{%else%}
+<h1>
+    We got nothing 😔️😔️
+</h1>
+{%endif%}
+</div>
+
+{%endblock home%}
