@@ -29,7 +29,7 @@ def NewEntry(request, report_type=None):
 
 
 def select_type(request):
-    return render(request, 'choose.html')
+    return render(request, 'Choose.html')
 
 
 def Equipmentdetail(request, report_type=None):
