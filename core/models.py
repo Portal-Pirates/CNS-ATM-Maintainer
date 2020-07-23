@@ -14,6 +14,12 @@ REPORT_TYPE_CHOICES = [
     ('halfyearly', 'Half-Yearly'),
     ('year', 'Yearly')
 ]
+
+EQUIPMENT_TYPE_CHOICES = [
+    ('communication', 'Communication'),
+    ('navigation', 'Navigation'),
+    ('serviellance', 'Serviellance'),
+]
 class Airports(models.Model):
 
     # Fields
@@ -62,7 +68,7 @@ class Equipments(models.Model):
     equipment_name = models.CharField(max_length=255)
     serial_number = models.IntegerField(blank=True, null=True)
     modal_number = models.CharField(max_length=2000)
-    equipment_type = models.CharField(max_length=2000)
+    equipment_type = models.CharField(max_length=2000, choices=EQUIPMENT_TYPE_CHOICES)
     company = models.CharField(max_length=1000)
     slug = models.SlugField(blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True, editable=False)
