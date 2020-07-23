@@ -33,7 +33,6 @@ def select_type(request):
 
 
 def Equipmentdetail(request, report_type=None):
-    equipmentslist = {'GLIDPATH': False, 'COMSOFT': False, 'VCSSYSTEM': False, 'LOCALIZER': False, 'DVOR': False, 'NDB': False, 'DATISTERMA': False, 'DVTR': False, 'UPS': False}
     if request.method == 'POST':
         equipment_name = request.POST['equipment_name']
         serial_number = request.POST['serial_number']
@@ -51,7 +50,7 @@ def Equipmentdetail(request, report_type=None):
                  report_type: True,
                  'eqobj': obj
             }
-            return render(request, 'newEntry.html', context)
+            return render(request, 'Station&Parameter.html', context)
         else:
             temp = equipment_name.split()
             eq_name = ""
@@ -64,7 +63,7 @@ def Equipmentdetail(request, report_type=None):
                  report_type: True,
                 'eqobj': newobj
             }
-            return render(request, 'newEntry.html', context)
+            return render(request, 'Station&Parameter.html', context)
 
 
 
