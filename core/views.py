@@ -108,8 +108,8 @@ def get_model_from_slug(QuerySet,slug):
     try:
         data = QuerySet.get(slug = slug)
         return data
-    except Exception:
-        pass
+    except Exception as message:
+        return message
 
 def dig_models_daily_reports(request):
     model_class = GetModel()
@@ -161,7 +161,7 @@ def detail_daily_report(request,slug):
             print(model2)
             return render(request,"detailedUps.html",{'models':model_getter,'model2':model2})
         except Exception as message:
-            messages.success(request,message)
+            #messages.success(request,message)
             return render(request,"detailedUps.html")
 
 
