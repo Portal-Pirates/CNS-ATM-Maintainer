@@ -60,6 +60,7 @@ class GetModel:
             model_number = str(result_list[4])
             updated_by = str(result_list[5])
             equipment_type = str(result_list[6])
+            print(equipment_name,airport_name,station_name,serial_number,model_number,updated_by,equipment_type)
             if Airports.objects.filter(Airport_Name = airport_name).exists():
                 if Stations.objects.filter(station_name = station_name).exists():
                     print(serial_number)
@@ -107,8 +108,8 @@ def get_model_from_slug(QuerySet,slug):
     try:
         data = QuerySet.get(slug = slug)
         return data
-    except Exception as message:
-        return message
+    except Exception:
+        pass
 
 def dig_models_daily_reports(request):
     model_class = GetModel()
@@ -150,14 +151,19 @@ def dig_models_monthly_reports(request):
 
 def detail_daily_report(request,slug):
     models = GetModel.static_model
-    model2 = models.model.__name__
     model_getter = get_model_from_slug(models,slug)
     if type(model_getter) == str:
         messages.success(request,"Internal server error")
         return render(request,"detailedUps.html")
     else:
-        print(model2)
-        return render(request,"detailedUps.html",{'models':model_getter,'model2':model2})
+        try:
+            model2 = models.model.__name__
+            print(model2)
+            return render(request,"detailedUps.html",{'models':model_getter,'model2':model2})
+        except Exception as message:
+            messages.success(request,message)
+            return render(request,"detailedUps.html")
+
 
    
     
