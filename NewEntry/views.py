@@ -2,15 +2,15 @@ from django.shortcuts import render
 import json
 from django.http import JsonResponse
 from core.models import Equipments
-# Create your views here.
 
 
-def NewEntry(request, report_type=None):
-    daily = False
-    weekly  = False 
-    monthly = False
-    yearly = False
+# For equipment Entry form
+def EquipmentNewEntry(request, report_type=None):
     if request.method == "GET":
+        daily = False
+        weekly  = False 
+        monthly = False
+        yearly = False
         if report_type == 'Daily':
             daily = True
         elif report_type == 'Weekly':
@@ -28,10 +28,12 @@ def NewEntry(request, report_type=None):
         return render(request, 'EquipmentnewEntry.html', context)
 
 
+# for report Typr
 def select_type(request):
     return render(request, 'Choose.html')
 
 
+# after equipment form submission
 def Equipmentdetail(request, report_type=None):
     if request.method == 'POST':
         equipment_name = request.POST['equipment_name']
@@ -64,6 +66,10 @@ def Equipmentdetail(request, report_type=None):
                 'eqobj': newobj
             }
             return render(request, 'Station&Parameter.html', context)
+
+
+def NewEntry():
+    pass
 
 
 

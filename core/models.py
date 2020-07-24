@@ -70,7 +70,7 @@ class Equipments(models.Model):
     modal_number = models.CharField(max_length=2000)
     equipment_type = models.CharField(max_length=2000, choices=EQUIPMENT_TYPE_CHOICES)
     company = models.CharField(max_length=1000)
-    slug = models.SlugField(blank=True, null=True)
+    
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
 
@@ -87,7 +87,6 @@ class Stations(models.Model):
     # Fields
     station_name = models.CharField(max_length=300)
     region = models.CharField(max_length=255)
-    slug = models.SlugField(blank=True, null=True)
     created_time = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
 
@@ -117,7 +116,7 @@ class Glid_Path(models.Model):
     modal_number = models.CharField(max_length = 255)
     Make = models.CharField(max_length = 255) 
     Airport_Location = models.CharField(max_length = 255) 
-    slug = models.SlugField(blank=True, null=True)
+    
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
         # Fields
@@ -215,7 +214,7 @@ class COMSOFT(models.Model):
     modal_number = models.CharField(max_length = 255)
     Make = models.CharField(max_length = 255)
     Airport_Location = models.CharField(max_length = 255) 
-    slug = models.SlugField(blank=True, null=True)
+    
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
     # Fields
@@ -303,7 +302,7 @@ class VCS_System(models.Model):
     modal_number = models.CharField(max_length = 255)
     Make = models.CharField(max_length = 255)
     Airport_Location = models.CharField(max_length = 255) 
-    slug = models.SlugField( blank=True, null=True)
+    
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
         # Fields
@@ -365,7 +364,7 @@ class Localizer(models.Model):
     modal_number = models.CharField(max_length = 255)
     Make = models.CharField(max_length = 255)
     Airport_Location = models.CharField(max_length = 255) 
-    slug = models.SlugField( blank=True)
+   
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
         # Fields
@@ -494,7 +493,7 @@ class DVOR(models.Model):
     modal_number = models.CharField(max_length = 255)
     Make = models.CharField(max_length = 255) #Thales 
     Airport_Location = models.CharField(max_length = 255) 
-    slug = models.SlugField( blank=True, null=True)
+    
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
         # Fields
@@ -593,7 +592,7 @@ class NDB(models.Model):
     modal_number = models.CharField(max_length = 255)
     Make = models.CharField(max_length = 255) #Thales 
     Airport_Location = models.CharField(max_length = 255) 
-    slug = models.SlugField( blank=True)
+   
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
         # Fields
@@ -665,7 +664,7 @@ class Datis_Terma(models.Model):
     modal_number = models.CharField(max_length = 255)
     Make = models.CharField(max_length = 255) #Thales 
     Airport_Location = models.CharField(max_length = 255) 
-    slug = models.SlugField( blank=True, null=True)
+    
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
         # Fields
@@ -707,7 +706,7 @@ class DVTR(models.Model):
     modal_number = models.CharField(max_length = 255)
     Make = models.CharField(max_length = 255)
     Airport_Location = models.CharField(max_length = 255) 
-    slug = models.SlugField( blank=True)
+   
     
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
@@ -758,7 +757,7 @@ class UPS(models.Model):
     Make = models.CharField(max_length = 255)
     Airport_Location = models.CharField(max_length = 255) 
     
-    slug = models.SlugField( blank=True, null=True)
+    
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
     
@@ -791,7 +790,7 @@ class UPS(models.Model):
     Battery_bank_volt = models.IntegerField(blank=True, null=True)
     Battery_current = models.IntegerField(blank=True, null=True)
     working = models.CharField(max_length=4,  blank=True, null=True)
-    slug = models.SlugField( blank=True, null=True)
+    
    
 
     # Weekly report fields
