@@ -54,6 +54,18 @@ class Glid_PathAdmin(admin.ModelAdmin):
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
 
+    #Sections in forms
+
+    fieldsets = [
+        # BAsic details
+        ("Basic Details", {'fields': [
+         "equipment_name", "modal_number", "Make", "Airport_Location", "verified_by_Manager", "station_name", "created_by", "report_type"]}),
+       
+       #Kuch iss type se daily weekly etc parameters tuples
+        ("Daily Parameters", {"fields": ["Nominal_value_ohm", 'measured_value_ohm', 'status','remarks']}),
+      
+    ]
+
 
 @admin.register(COMSOFT)
 
