@@ -116,6 +116,7 @@ class Glid_Path(models.Model):
     equipment_name = models.CharField(max_length = 255)
     modal_number = models.CharField(max_length = 255)
     Make = models.CharField(max_length = 255) 
+    Airport_Location = models.CharField(max_length = 255) 
     slug = models.SlugField(blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
@@ -202,6 +203,10 @@ class Glid_Path(models.Model):
     carrier_modulation_homm = models.BooleanField(blank=True, null=True)
     phase_of_modulation_system = models.BooleanField(blank=True, null=True)
 
+    class Meta:
+        verbose_name = 'Glid Path Report'
+        verbose_name_plural = 'Glid Path Reports'
+
     def __str__(self):
         return self.report_type
 
@@ -209,6 +214,7 @@ class COMSOFT(models.Model):
     equipment_name = models.CharField(max_length=255)
     modal_number = models.CharField(max_length = 255)
     Make = models.CharField(max_length = 255)
+    Airport_Location = models.CharField(max_length = 255) 
     slug = models.SlugField(blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
@@ -283,12 +289,20 @@ class COMSOFT(models.Model):
     Associated_cables_connectors = models.BooleanField(blank=True, null=True)
     Physical_Chk_LAN_cables = models.BooleanField(blank=True, null=True)
     Physical_chk_power_cables = models.BooleanField(blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Comsoft Report'
+        verbose_name_plural = 'Comsoft reports'
+    
+    def __str__(self):
+        return self.report_type
  
 
 class VCS_System(models.Model):
     equipment_name = models.CharField(max_length=255)
     modal_number = models.CharField(max_length = 255)
     Make = models.CharField(max_length = 255)
+    Airport_Location = models.CharField(max_length = 255) 
     slug = models.SlugField( blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
@@ -338,11 +352,19 @@ class VCS_System(models.Model):
     D2 = models.CharField(max_length = 255, blank=True, null=True)
     D4 = models.CharField(max_length = 255, blank=True, null=True)
 
+    class Meta:
+        verbose_name = 'Vcs System Report'
+        verbose_name_plural = 'Vcs System Reports'
+    
+    def __str__(self):
+        return self.report_type
+
 
 class Localizer(models.Model):
     equipment_name = models.CharField(max_length=255)
     modal_number = models.CharField(max_length = 255)
     Make = models.CharField(max_length = 255)
+    Airport_Location = models.CharField(max_length = 255) 
     slug = models.SlugField( blank=True)
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
@@ -457,11 +479,21 @@ class Localizer(models.Model):
         #Monitor delay 
     Monitor_delay = models.IntegerField(blank=True, null=True)
 
+    class Meta:
+        verbose_name = 'Localizer Report'
+        verbose_name_plural = 'Localizer Reports'
+    
+    def __str__(self):
+        return self.report_type
+
+    
+
 
 class DVOR(models.Model):
     equipment_name = models.CharField(max_length=255)
     modal_number = models.CharField(max_length = 255)
     Make = models.CharField(max_length = 255) #Thales 
+    Airport_Location = models.CharField(max_length = 255) 
     slug = models.SlugField( blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
@@ -548,11 +580,19 @@ class DVOR(models.Model):
     identification_tone_frequency = models.FloatField(blank=True, null=True)
     Bearing_monitor = models.FloatField(blank=True, null=True)
 
+    class Meta:
+        verbose_name = 'DVOR Report'
+        verbose_name_plural = 'DVOR Reports'
+    
+    def __str__(self):
+        return self.report_type
+
 
 class NDB(models.Model):
     equipment_name = models.CharField(max_length=255)
     modal_number = models.CharField(max_length = 255)
     Make = models.CharField(max_length = 255) #Thales 
+    Airport_Location = models.CharField(max_length = 255) 
     slug = models.SlugField( blank=True)
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
@@ -611,11 +651,20 @@ class NDB(models.Model):
     check_modulation_frq = models.FloatField(blank=True, null=True)
     check_monitor_alarm = models.IntegerField(blank=True, null=True)
 
+    class Meta:
+        verbose_name = 'NDB Report'
+        verbose_name_plural = 'NDB Reports'
+    
+    def __str__(self):
+        return self.report_type
+
+
 
 class Datis_Terma(models.Model):
     equipment_name = models.CharField(max_length=255)
     modal_number = models.CharField(max_length = 255)
     Make = models.CharField(max_length = 255) #Thales 
+    Airport_Location = models.CharField(max_length = 255) 
     slug = models.SlugField( blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
@@ -644,11 +693,20 @@ class Datis_Terma(models.Model):
     overall_A = models.CharField(max_length = 255, blank=True, null=True) 
     overall_B= models.CharField(max_length = 255, blank=True, null=True)
 
+    class Meta:
+        verbose_name = 'Datis Terma Report'
+        verbose_name_plural = 'Datis Terma Reports'
+    
+    def __str__(self):
+        return self.report_type
+
+
 
 class DVTR(models.Model):
     equipment_name = models.CharField(max_length=255)
     modal_number = models.CharField(max_length = 255)
     Make = models.CharField(max_length = 255)
+    Airport_Location = models.CharField(max_length = 255) 
     slug = models.SlugField( blank=True)
     
     created = models.DateTimeField(auto_now_add=True, editable=False)
@@ -684,6 +742,13 @@ class DVTR(models.Model):
     program_to_Check_HDD = models.BooleanField(blank=True, null=True) 
     Application_only_forH24= models.IntegerField(blank=True, null=True) 
 
+    class Meta:
+        verbose_name = 'DVTR Report'
+        verbose_name_plural = 'DVTR Reports'
+    
+    def __str__(self):
+        return self.report_type
+
 
 class UPS(models.Model):
 
@@ -691,6 +756,7 @@ class UPS(models.Model):
     equipment_name = models.CharField(max_length=255)
     modal_number = models.CharField(max_length = 255)
     Make = models.CharField(max_length = 255)
+    Airport_Location = models.CharField(max_length = 255) 
     
     slug = models.SlugField( blank=True, null=True)
     created = models.DateTimeField(auto_now_add=True, editable=False)
@@ -749,11 +815,11 @@ class UPS(models.Model):
     # Relationship Field   
 
     class Meta:
-        ordering = ('-created',)
-
+        verbose_name = 'Ups Report'
+        verbose_name_plural = 'Ups Reports'
+    
     def __str__(self):
-        return self.slug
-
+        return self.report_type
 
 
 

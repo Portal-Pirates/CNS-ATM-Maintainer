@@ -7422,3 +7422,4 @@ core/__pycache__/urls.cpython-37.pyc
 core/__pycache__/views.cpython-37.pyc
 core/__pycache__/urls.cpython-37.pyc
 core/__pycache__/views.cpython-37.pyc
+core/migrations/0007_auto_20200723_2311.py

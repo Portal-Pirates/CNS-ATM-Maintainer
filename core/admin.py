@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import *
 
-# Register your models here.
+
 admin.site.site_header = "Admin View of AAI Maintaince"
 admin.site.site_title = "Admin View of AAI Maintaince" 
 admin.site.index_title =  "My Admin"
@@ -44,11 +44,13 @@ class EquipmentsAdmin(admin.ModelAdmin):
     list_per_page = 40
 
 
+# Now all Equipments below
+
 @admin.register(Glid_Path)
 
 class Glid_PathAdmin(admin.ModelAdmin):
-    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
-    list_filter = ['report_type', 'station_name', 'created_by', 'Make']
+    list_display = ['equipment_name', 'modal_number','station_name','Airport_Location', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
+    list_filter = ['report_type', 'station_name__station_name', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
 
@@ -56,16 +58,16 @@ class Glid_PathAdmin(admin.ModelAdmin):
 @admin.register(COMSOFT)
 
 class COMSOFTAdmin(admin.ModelAdmin):
-    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
-    list_filter = ['report_type', 'station_name', 'created_by', 'Make']
+    list_display = ['equipment_name', 'modal_number', 'station_name','Airport_Location', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
+    list_filter = ['report_type', 'station_name', 'Airport_Location', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
 
 
 @admin.register(VCS_System)
 class VCS_SystemAdmin(admin.ModelAdmin):
-    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
-    list_filter = ['report_type', 'station_name', 'created_by', 'Make']
+    list_display = ['equipment_name', 'modal_number', 'station_name','Airport_Location', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
+    list_filter = ['report_type', 'station_name', 'Airport_Location', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
 
@@ -73,16 +75,16 @@ class VCS_SystemAdmin(admin.ModelAdmin):
 @admin.register(Localizer)
 
 class LocalizerAdmin(admin.ModelAdmin):
-    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
-    list_filter = ['report_type', 'station_name', 'created_by', 'Make']
+    list_display = ['equipment_name', 'modal_number', 'station_name','Airport_Location','verified_by_Manager', 'created_by', 'report_type', 'Make']
+    list_filter = ['report_type', 'station_name', 'Airport_Location', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
 
 @admin.register(DVOR)
 
 class DVORAdmin(admin.ModelAdmin):
-    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
-    list_filter = ['report_type', 'station_name', 'created_by', 'Make']
+    list_display = ['equipment_name', 'modal_number', 'station_name','Airport_Location','verified_by_Manager', 'created_by', 'report_type', 'Make']
+    list_filter = ['report_type', 'station_name', 'Airport_Location', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
 
@@ -90,8 +92,8 @@ class DVORAdmin(admin.ModelAdmin):
 @admin.register(NDB)
 
 class NDBAdmin(admin.ModelAdmin):
-    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
-    list_filter = ['report_type', 'station_name', 'created_by', 'Make']
+    list_display = ['equipment_name', 'modal_number','station_name','Airport_Location', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
+    list_filter = ['report_type', 'station_name', 'Airport_Location', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
 
@@ -99,16 +101,16 @@ class NDBAdmin(admin.ModelAdmin):
 @admin.register(Datis_Terma)
 
 class Datis_TermaAdmin(admin.ModelAdmin):
-    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
-    list_filter = ['report_type', 'station_name', 'created_by', 'Make']
+    list_display = ['equipment_name', 'modal_number','station_name','Airport_Location', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
+    list_filter = ['report_type', 'station_name', 'Airport_Location', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
 
 @admin.register(DVTR)
 
 class DVTRAdmin(admin.ModelAdmin):
-    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
-    list_filter = ['report_type', 'station_name', 'created_by', 'Make']
+    list_display = ['equipment_name', 'modal_number', 'station_name','Airport_Location', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
+    list_filter = ['report_type', 'station_name', 'Airport_Location', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
 
@@ -117,8 +119,8 @@ class DVTRAdmin(admin.ModelAdmin):
 
 @admin.register(UPS)
 class UPSAdmin(admin.ModelAdmin):
-    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
-    list_filter = ['report_type', 'station_name', 'created_by', 'Make']
+    list_display = ['equipment_name', 'modal_number', 'station_name','Airport_Location', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
+    list_filter = ['report_type', 'station_name', 'Airport_Location', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
 

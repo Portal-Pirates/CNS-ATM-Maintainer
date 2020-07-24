@@ -80,7 +80,7 @@ ADMIN_REORDER = (
   
     # Reorder app models
      {'app': 'core', 'models': ('core.Airports', 'core.Stations', 'core.Equipments'), 'label': 'Airports & Stations'},
-    {'app': 'core', 'models': ('core.COMSOFT', 'core.VCS_System', 'core.Glid_Path', 'core.Localizer', 'core.DVOR', 'core.NDB', 'core.Datis_Terma', 'core.DVTR', 'core.UPS'), 'label': 'Equipments'},
+    {'app': 'core', 'models': ('core.COMSOFT', 'core.VCS_System', 'core.Glid_Path', 'core.Localizer', 'core.DVOR', 'core.NDB', 'core.Datis_Terma', 'core.DVTR', 'core.UPS'), 'label': 'Equipment Reports'},
     
      
 )
