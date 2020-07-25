@@ -58,41 +58,37 @@ class GetModel:
             station_name = str(result_list[2])
             serial_number = int(result_list[3])
             model_number = str(result_list[4])
-            updated_by = str(result_list[5])
-            equipment_type = str(result_list[6])
-            if Airports.objects.filter(Airport_Name = airport_name).exists():
+            equipment_type = str(result_list[5])
+            print(equipment_name,airport_name,station_name,serial_number,model_number,updated_by,equipment_type)
+            if Airports.objects.filter(Airport_Location = airport_name).exists():
                 if Stations.objects.filter(station_name = station_name).exists():
                     print(serial_number)
-                    query_sr_no = Equipments.objects.filter(serial_number = serial_number)
-                    q = query_sr_no.all()
-                    for i in q:
-                        id = i.id
-                    print(id)
-                    equipment_available = Stations.objects.filter(Number_of_equipments = id).exists()
-                    if equipment_available:
-                        try:
-                            if equipment_type == "Glid_Path" or equipment_type == ("Glid_Path").upper() or equipment_type == ("Glid_Path").lower():
-                                self.equipment_model_model = Glid_Path.objects.filter(modal_number = model_number)
-                            elif equipment_type == "COMSOFT" or equipment_type == ("COMSOFT").upper() or equipment_type == ("COMSOFT").lower():
-                                self.equipment_model_model = COMSOFT.objects.filter(modal_number = model_number)
-                            elif equipment_type == "VCS_System" or equipment_type == ("VCS_System").upper() or equipment_type == ("VCS_System").lower():
-                                self.equipment_model_model = VCS_System.objects.filter(modal_number = model_number)
-                            elif equipment_type == "Localizer" or equipment_type == ("Localizer").upper() or equipment_type == ("Localizer").lower():
-                                self.equipment_model_model = Localizer.objects.filter(modal_number = model_number)
-                            elif equipment_type == "DVOR" or equipment_type == ("DVOR").upper() or equipment_type == ("DVOR").lower():
-                                self.equipment_model_model = DVOR.objects.filter(modal_number = model_number)
-                            elif equipment_type == "NDB" or equipment_type == ("NDB").upper() or equipment_type == ("NDB").lower():
-                                self.equipment_model_model= NDB.objects.filter(modal_number = model_number)
-                            elif equipment_type == "Datis_Terma" or equipment_type == ("Datis_Terma").upper() or equipment_type == ("Datis_Terma").lower():
-                                self.equipment_model_model = Datis_Terma.objects.filter(modal_number = model_number)
-                            elif equipment_type == "DVTR" or equipment_type == ("DVTR").upper() or equipment_type == ("DVTR").lower():
-                                self.equipment_model_model = DVTR.objects.filter(modal_number = model_number)
-                            elif equipment_type == "UPS" or equipment_type == ("UPS").upper() or equipment_type == ("UPS").lower() or equipment_type == "Ups":
-                                self.equipment_model_model = UPS.objects.filter(modal_number = model_number)
-                            GetModel.static_model = self.equipment_model_model
-                            return self.equipment_model_model
-                        except Exception:
-                            return("sorry something is wrong with QR")
+                    if Equipments.objects.filter(serial_number = serial_number).exists():
+                        equipment_available = True
+                        if equipment_available:
+                            try:
+                                if equipment_name == "Glid_Path" or equipment_name == ("Glid_Path").upper() or equipment_name == ("Glid_Path").lower():
+                                    self.equipment_model_model = Glid_Path.objects.filter(modal_number = model_number)
+                                elif equipment_name == "COMSOFT" or equipment_name == ("COMSOFT").upper() or equipment_name == ("COMSOFT").lower():
+                                    self.equipment_model_model = COMSOFT.objects.filter(modal_number = model_number)
+                                elif equipment_name == "VCS_System" or equipment_name == ("VCS_System").upper() or equipment_name == ("VCS_System").lower():
+                                    self.equipment_model_model = VCS_System.objects.filter(modal_number = model_number)
+                                elif equipment_name == "Localizer" or equipment_name == ("Localizer").upper() or equipment_name == ("Localizer").lower():
+                                    self.equipment_model_model = Localizer.objects.filter(modal_number = model_number)
+                                elif equipment_name == "DVOR" or equipment_name == ("DVOR").upper() or equipment_name == ("DVOR").lower():
+                                    self.equipment_model_model = DVOR.objects.filter(modal_number = model_number)
+                                elif equipment_name == "NDB" or equipment_name == ("NDB").upper() or equipment_name == ("NDB").lower():
+                                    self.equipment_model_model= NDB.objects.filter(modal_number = model_number)
+                                elif equipment_name == "Datis_Terma" or equipment_name == ("Datis_Terma").upper() or equipment_name == ("Datis_Terma").lower():
+                                    self.equipment_model_model = Datis_Terma.objects.filter(modal_number = model_number)
+                                elif equipment_name == "DVTR" or equipment_name == ("DVTR").upper() or equipment_name == ("DVTR").lower():
+                                    self.equipment_model_model = DVTR.objects.filter(modal_number = model_number)
+                                elif equipment_name == "UPS" or equipment_name == ("UPS").upper() or equipment_name == ("UPS").lower() or equipment_name == "Ups":
+                                    self.equipment_model_model = UPS.objects.filter(modal_number = model_number)
+                                GetModel.static_model = self.equipment_model_model
+                                return self.equipment_model_model
+                            except Exception:
+                                return("sorry something is wrong with QR")
                     else:
                         return("serial number not exists")
                 else:
@@ -107,8 +103,8 @@ def get_model_from_slug(QuerySet,slug):
     try:
         data = QuerySet.get(slug = slug)
         return data
-    except Exception as message:
-        return message
+    except Exception:
+        pass
 
 def dig_models_daily_reports(request):
     model_class = GetModel()
@@ -131,7 +127,7 @@ def dig_models_weekly_reports(request):
     else:
         model2 = model.model.__name__
         print(model2)
-        model = model.latest('id')
+        model = model.get(report_type = 'weekly')
         return render(request,"upsWeekly.html",{'models':model,'model2': model2})
 
 
@@ -144,20 +140,25 @@ def dig_models_monthly_reports(request):
     else:
         model2 = model.model.__name__
         print(model2)
-        model = model.latest('id')
+        model = model.get(report_type = 'mothly')
         return render(request,"UpsMonthly.html",{'models':model,'model2':model2})
 
 
 def detail_daily_report(request,slug):
     models = GetModel.static_model
-    model2 = models.model.__name__
     model_getter = get_model_from_slug(models,slug)
     if type(model_getter) == str:
         messages.success(request,"Internal server error")
         return render(request,"detailedUps.html")
     else:
-        print(model2)
-        return render(request,"detailedUps.html",{'models':model_getter,'model2':model2})
+        try:
+            model2 = models.model.__name__
+            print(model2)
+            return render(request,"detailedUps.html",{'models':model_getter,'model2':model2})
+        except Exception:
+            #messages.success(request,message)
+            return render(request,"detailedUps.html")
+
 
    
     
@@ -170,8 +171,9 @@ def dig_models_quaterly_reports(request):
     else:
         model2 = model.model.__name__
         print(model2)
-        model = model.latest('id')
+        model = model.get(report_type = 'quarterly')
         return render(request,"quaterly.html",{'models':model,'model2':model2})
+        
 
 def dig_models_yearly_reports(request):
     model_class = GetModel()
@@ -182,7 +184,7 @@ def dig_models_yearly_reports(request):
     else:
         model2 = model.model.__name__
         print(model2)
-        model = model.latest('id')
+        model = model.get(report_type = 'year')
         return render(request,"yearly.html",{'models':model,'model2':model2})
         
 
@@ -196,7 +198,7 @@ def dig_models_six_month_reports(request):
         model2 = model.model.__name__
         print(model2)
         if model2 =='DVOR':
-            model = model.latest('id')
+            model = model.get(report_type = 'halfyearly')
             return render(request,"sixmonth.html",{'models':model,'model2':model2})
         else:
             messages.success(request,"we don't have any six month data for you..!!!")
