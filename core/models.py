@@ -136,8 +136,8 @@ class Glid_Path(models.Model):
     '''parameter of glid path'''
     # Daily report data 
     General_cleanliness_room = models.BooleanField(blank=True, null=True)
-    Status_airconditioners = models.IntegerField(blank=True, null=True)
-    status_obstruction_light = models.IntegerField(blank=True, null=True)
+    Status_airconditioners = models.BooleanField(blank=True, null=True)
+    status_obstruction_light = models.BooleanField(blank=True, null=True)
     main_supply_volt = models.IntegerField(blank=True, null=True)
     main_supply_frequency = models.FloatField(blank=True, null=True)
     verify_equipment_on_UPS = models.BooleanField(blank=True, null=True)
