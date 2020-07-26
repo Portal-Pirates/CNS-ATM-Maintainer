@@ -41,15 +41,18 @@ def Equipmentdetail(request, report_type=None):
         modal_number = request.POST['modal_number']
         company = request.POST['company']
         equipment_type = request.POST['equipment_type']
+        equipment_name = equipment_name.upper()
         if Equipments.objects.filter(equipment_name=equipment_name).exists():
             temp = equipment_name.split()
             eq_name = ""
             for letter in temp:
                 eq_name += letter.upper()
             obj = Equipments.objects.filter(equipment_name=equipment_name)
+            report_type = report_type.upper()
             context = {
                  eq_name : True,
                  report_type: True,
+                 'report': report_type,
                  'eqobj': obj
             }
             return render(request, 'Station&Parameter.html', context)
@@ -60,15 +63,17 @@ def Equipmentdetail(request, report_type=None):
                 eq_name += letter.upper()
             newobj = Equipments(equipment_name=equipment_name, serial_number=serial_number, modal_number=modal_number, equipment_type=equipment_type, company=company)
             newobj.save()
+            report_type = report_type.upper()
             context = {
                  eq_name : True,
                  report_type: True,
+                 'report': report_type,
                 'eqobj': newobj
             }
             return render(request, 'Station&Parameter.html', context)
 
-
-def NewEntry():
+# For actual new Entry of Equipment
+def NewEntry(request):
     pass
 
 

@@ -18,7 +18,7 @@ REPORT_TYPE_CHOICES = [
 EQUIPMENT_TYPE_CHOICES = [
     ('communication', 'Communication'),
     ('navigation', 'Navigation'),
-    ('serviellance', 'Serviellance'),
+    ('surveillance', 'Surveillance'),
 ]
 class Airports(models.Model):
 
@@ -129,13 +129,10 @@ class Glid_Path(models.Model):
     report_type = models.CharField(max_length=20, choices=REPORT_TYPE_CHOICES)
     #Thales 
    
-    Nominal_value_ohm = models.IntegerField(blank=True, null=True)
-    measured_value_ohm = models.IntegerField(blank=True, null=True)
+    
     remarks = models.CharField(max_length = 255, blank=True, null=True)
     status=  models.BooleanField(blank=True, null=True)
-    value = models.IntegerField(blank=True, null=True)
-    observation = models.IntegerField(blank=True, null=True)
-    measured_data = models.IntegerField(blank=True, null=True)
+    
     '''parameter of glid path'''
     # Daily report data 
     General_cleanliness_room = models.BooleanField(blank=True, null=True)
@@ -226,19 +223,14 @@ class COMSOFT(models.Model):
     #Field to deteremine type of report
     report_type = models.CharField(max_length=20, choices=REPORT_TYPE_CHOICES)
 
-    frequency = models.IntegerField(blank=True, null=True)
-    Nominal_value_ohm = models.IntegerField(blank=True, null=True)
-    measured_value_ohm = models.IntegerField(blank=True, null=True)
     remarks = models.CharField(max_length = 255, blank=True, null=True)
     status=  models.BooleanField(blank=True, null=True)
-    value = models.IntegerField(blank=True, null=True)
-    observation = models.IntegerField(blank=True, null=True)
-    measured_data = models.IntegerField(blank=True, null=True)
+   
     
      # Daily report data 
     General_cleanliness_room = models.CharField(max_length = 255, blank=True, null=True) #satisfactory
-    Status_airconditioners = models.IntegerField(blank=True, null=True) #room temp in degree cel
-    status_obstruction_light = models.IntegerField(blank=True, null=True) #percent
+    Status_airconditioners = models.BooleanField(blank=True, null=True) #room temp in degree cel
+    status_obstruction_light = models.BooleanField(blank=True, null=True) #percent
     main_supply_volt = models.FloatField(blank=True, null=True) #volt
     main_supply_frequency = models.IntegerField(blank=True, null=True) # percentage
     verify_equipment_on_UPS = models.CharField(max_length = 255, blank=True, null=True)
@@ -258,7 +250,6 @@ class COMSOFT(models.Model):
     FPGA = models.BooleanField(blank=True, null=True)
     Reciever = models.BooleanField(blank=True, null=True)
     Cpu_load = models.FloatField(blank=True, null=True)
-    GPS_status = models.BooleanField(blank=True, null=True)
     Gps_synch = models.BooleanField(blank=True, null=True)
     #voltage & temprature 
     Intermediate_volt = models.IntegerField(blank=True, null=True)
@@ -314,14 +305,9 @@ class VCS_System(models.Model):
      #Field to deteremine type of report
     report_type = models.CharField(max_length=20, choices=REPORT_TYPE_CHOICES)
 
-    frequency = models.CharField(max_length=8, blank=True, null=True)
-    Nominal_value_ohm = models.IntegerField(blank=True, null=True)
-    measured_value_ohm = models.IntegerField(blank=True, null=True)
     remarks = models.CharField(max_length = 255, blank=True, null=True)
     status=  models.BooleanField(blank=True, null=True)
-    value = models.IntegerField(blank=True, null=True)
-    observation = models.IntegerField(blank=True, null=True)
-    measured_data = models.IntegerField(blank=True, null=True)
+    
     # Daily data 
     Ac_volt_UPS1 = models.CharField(max_length = 255, blank=True, null=True)
     Condition_UPS1 = models.CharField(max_length = 255, blank=True, null=True)
@@ -378,13 +364,10 @@ class Localizer(models.Model):
 
 
 
-    Nominal_value_ohm = models.IntegerField( blank=True, null=True)
-    measured_value_ohm = models.IntegerField( blank=True, null=True)
+   
     remarks = models.CharField(max_length = 255,  blank=True, null=True)
     status=  models.BooleanField( blank=True, null=True)
-    value = models.IntegerField( blank=True, null=True)
-    observation = models.IntegerField( blank=True, null=True)
-    measured_data = models.IntegerField( blank=True, null=True)
+   
     #daily field data 
     General_cleanliness_room = models.CharField(max_length = 255,  blank=True, null=True)
     Status_airconditioners = models.CharField(max_length = 255,  blank=True, null=True)
@@ -411,7 +394,6 @@ class Localizer(models.Model):
     PH_Corr_peak_lev = models.IntegerField( blank=True, null=True)
     CLR_GPA = models.IntegerField( blank=True, null=True)
     PA27lev = models.IntegerField( blank=True, null=True)
-    CSBlevel= models.IntegerField( blank=True, null=True)
     #weekly data filed 
         #parameter 
     course_alignment = models.CharField(max_length = 255,  blank=True, null=True)
@@ -466,7 +448,6 @@ class Localizer(models.Model):
     SBO = models.IntegerField(blank=True, null=True)
     phase_CORR = models.IntegerField(blank=True, null=True)
     LF_phase_check = models.BooleanField(blank=True, null=True)
-    LF_phase_check = models.BooleanField(blank=True, null=True)
     RF_phase_check = models.BooleanField(blank=True, null=True)
         #DDM/SDM checks
     DDM_check_COU = models.IntegerField(blank=True, null=True)
@@ -505,14 +486,10 @@ class DVOR(models.Model):
         #Field to deteremine type of report
     report_type = models.CharField(max_length=20, choices=REPORT_TYPE_CHOICES)
 
-    frequency = models.CharField(max_length=8, blank=True, null=True)
-    Nominal_value_ohm = models.IntegerField(blank=True, null=True)
-    measured_value_ohm = models.IntegerField(blank=True, null=True)
+   
     remarks = models.CharField(max_length = 255, blank=True, null=True)
     status=  models.BooleanField(blank=True, null=True)
-    value = models.IntegerField(blank=True, null=True)
-    observation = models.IntegerField(blank=True, null=True)
-    measured_data = models.IntegerField(blank=True, null=True)
+    
   
 
     # parameter to be checked in daily report 
@@ -524,7 +501,6 @@ class DVOR(models.Model):
     status_battery_operation = models.BooleanField(blank=True, null=True)
     hours_operation = models.FloatField(blank=True, null=True)
     Alarm = models.IntegerField(blank=True, null=True)
-    remark = models.CharField(max_length = 255, blank=True, null=True)
 
     # Weekly data 
         # Transmitter data 
@@ -606,14 +582,10 @@ class NDB(models.Model):
     report_type = models.CharField(max_length=20, choices=REPORT_TYPE_CHOICES)
 
 
-    frequency = models.CharField(max_length=8, blank=True, null=True)
-    Nominal_value_ohm = models.IntegerField(blank=True, null=True)
-    measured_value_ohm = models.IntegerField(blank=True, null=True)
+  
     remarks = models.CharField(max_length = 255, blank=True, null=True)
     status=  models.BooleanField(blank=True, null=True)
-    value = models.IntegerField(blank=True, null=True)
-    observation = models.IntegerField(blank=True, null=True)
-    measured_data = models.IntegerField(blank=True, null=True)
+    
     #daily data for NDB
     #general 
     room_temp = models.IntegerField(blank=True, null=True) # degree celcius 
@@ -677,14 +649,10 @@ class Datis_Terma(models.Model):
     #Field to deteremine type of report
     report_type = models.CharField(max_length=20, choices=REPORT_TYPE_CHOICES)
 
-    frequency = models.CharField(max_length=8, blank=True, null=True)
-    Nominal_value_ohm = models.IntegerField(blank=True, null=True)
-    measured_value_ohm = models.IntegerField(blank=True, null=True)
+    
     remarks = models.CharField(max_length = 255)
     status=  models.BooleanField(blank=True, null=True)
-    value = models.IntegerField(blank=True, null=True)
-    observation = models.IntegerField(blank=True, null=True)
-    measured_data = models.IntegerField(blank=True, null=True)
+    
     #daily data 
     Physical_clean =models.BooleanField(blank=True, null=True) 
     PS_A_UPS =models.CharField(max_length = 255, blank=True, null=True) 
@@ -768,13 +736,10 @@ class UPS(models.Model):
     #this is for creation Info
     created_by = models.ForeignKey(Profile, on_delete=models.CASCADE)
     
-    Nominal_value_ohm = models.IntegerField(blank=True, null=True)
-    measured_value_ohm = models.IntegerField(blank=True, null=True)
+   
     remarks = models.CharField(max_length = 255,  blank=True, null=True)
     status=  models.BooleanField(blank=True, null=True)
-    value = models.IntegerField(blank=True, null=True)
-    observation = models.IntegerField(blank=True, null=True)
-    measured_data = models.IntegerField(blank=True, null=True)
+    
 
     #Field to deteremine type of report
     report_type = models.CharField(max_length=20, choices=REPORT_TYPE_CHOICES)
@@ -807,7 +772,6 @@ class UPS(models.Model):
     Rx_module_status = models.BooleanField( blank=True, null=True)
     Control_Panel_setup  = models.BooleanField( blank=True, null=True)
     Physica_check_antenna_cables = models.BooleanField( blank=True, null=True)
-    remarks = models.CharField(max_length=5, blank=True, null=True)
     DAT_drive_cleaning = models.BooleanField(blank=True, null=True)
     Netuno_Server_restart = models.BooleanField(blank=True, null=True)
     

@@ -158,143 +158,988 @@ $(function() {
   <div class="container1">
       <div class="contact">
         <form action="/">
-                  <h1 style="text-align:center; text-decoration-color: blue"><strong style="font-size: 30px; padding: 5px;">PLEASE FILL STATION DETAILS</strong></h1>
-                      
+          {% csrf_token %}
 
-                    <h4>DEVICE DETAILS<span>*</span></h4>
-                    <div class="name">
-                      <input type="text" name="name" placeholder="ID"  />
-                    </div>
+                  <!--Station Details-->
 
-                  <h4>DEVICE NAME<span>*</span></h4>
-                    <div class="name">
-                      <input type="text" name="name" placeholder="DEVICE NAME" />
-                    </div>
+                  <h1 style="text-align:center; text-decoration-color: blue"><strong style="font-size: 30px; padding: 5px;">PLEASE FILL LOCATION DETAILS</strong></h1>
 
                     <h4>STATION NAME<span>*</span></h4>
                     <div class="name"> 
-                      <input type="text" name="name" placeholder="STATION NAME" />
+                      <input type="text" name="station_name" placeholder="STATION NAME" required/>
                     </div>
 
                     <h4>REGION NAME<span>*</span></h4>
                     <div class="name"> 
-                      <input type="text" name="name" placeholder="REGION NAME" />
+                      <input type="text" name="region" placeholder="REGION NAME" required/>
                     </div>
                     
-                    <h4>EQUIPMENT TYPE<span>*</span></h4>
-                    <select>
-                      <option class="disabled" value="EquipmentType" disabled selected>*Please Select*</option>
-                      <option value="1">Communication</option>
-                      <option value="2">Networking</option>
-                      <option value="3">Survelliance</option>
-                    </select>
+                    <h4>AIRPORT LOCATION<span>*</span></h4>
+                    <div class="name"> 
+                      <input type="text" name="location" placeholder="AIRPORT LOCATION" required/>
+                    </div>
+
+                   <!--DONE WITH STATTION DETAILS-->
                     
-                    <h4>MAINTENANCE DATE<span>*</span></h4>
-                    <div class="day-maintenance">
-                      <input type="date" name="daymaintenance" required/>
-                      <i class="fas fa-calendar-alt"></i>
-                    </div>
-
-                  <h4>PLEASE SELECT YOUR AGE:<span>*</span></h4>
-              <input type="radio"  id="age1" name="age" value="30">
-              <label for="age1">0 - 30</label><br>
-              <input type="radio"  id="age2" name="age" value="60">
-              <label for="age2">31 - 60</label><br>  
-              <input type="radio"   id="age3" name="age" value="100">
-              <label for="age3">61 - 100</label><br><br>
-
-
-                  <h4>WORKS IN TECNICAL DEPARTMENT:<span>*</span></h4>
-                    <input type="radio" id="YES" name="tech" value="YES">
-              <label for="YES">YES</label><br>
-              <input type="radio" id="NO" name="tech" value="NO">
-              <label for="NO">NO</label><br>  
-              <br>
-
-                    <h4>NETWORK QUALITY:<span>*</span></h4>
-                    <!-- <p><input type="radio" id="oddsPref" name="oddsPref" value="decimal" /><span>Decimal</span></p> -->
-                      <input type="radio" id="POOR" name="QUALITY" value="POOR">
-              <label for="age1">POOR</label><br>
-              <input type="radio" id="GOOD" name="QUALITY" value="GOOD">
-              <label for="age2">GOOD</label><br>  
-              <input type="radio" id="EXCELLENT" name="QUALITY" value="EXCELLENT">
-              <label for="age3">EXCELLENT</label><br><br>
-
-                  <h4>ANY REMARKS?</h4>
-                    <textarea rows="5"></textarea>
-
-
-                    <div class="btn-block">
-                      <button type="submit" href="/">Send Report</button>
-                    </div>
-                  
-
-
-            <br><br>
+                   <br><br>
                           
-                    <h1 style="text-align:center; text-decoration-color: blue"><strong style="font-size: 30px; padding: 5px;">STATION FORM</strong></h1>
-                      
+                   <h1 style="text-align:center; text-decoration-color: blue"><strong style="font-size: 30px; padding: 5px;">{{report}} REPORT PARAMETERS</strong></h1>
+                  
+                   {% if UPS %}
+                        
+                        {% if DAILY %}
+                                  <h4>INPUT VOLTAGE<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="text" name="Input_voltage" placeholder="INPUT VOLTAGE WATTS" required/>
+                                  </div>
+                                  <h4>INPUT FREQUENCY<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="text" name="Input_frequency" placeholder="INPUT FREQUENCY IN HTZ" required/>
+                                  </div>
+                                  <h4>OUTPUT VOLTAGE<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="text" name="Output_voltage" placeholder="OUTPUT VOLTAGE WATTS" required/>
+                                  </div> 
+                                  <h4>OUTPUT FREQUENCY<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="text" name="output_frequency" placeholder="OUTPUT FREQUENCY IN HTZ" required/>
+                                  </div>     
+                                  <h4>OUTPUT LOAD<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="text" name="output_load" placeholder="OUTPUT LOAD IN VOLTS" required/>
+                                  </div> 
+                                  <h4>BATTARY BANK VOLT<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="text" name="Battery_bank_volt" placeholder="BATTARY BANK VOLTS" required/>
+                                  </div>  
+                                  <h4>BATTARY CURRENT<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="text" name="Battery_current" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                  </div>    
+                                  <h4>WORKING<span>*</span></h4>
+                                  <select name="working" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>           
+                        {% endif %}
 
-                    <h4>DEVICE DETAILS<span>*</span></h4>
-                    <div class="name">
-                      <input type="text" name="name" placeholder="ID"  />
-                    </div>
+                        
+                        {% if WEEKLY %}
+                        <h4>POWER SUPLLY TERMINAL<span>*</span></h4>
+                        <select name="Power_supply_terminal" required>
+                          <option class="disabled" disabled selected>*Please Select*</option>
+                          <option value="1" >OK</option>
+                          <option value="0">NOT OK</option>
+                        </select> 
+                        <h4>CHECK BATTERY TERMINAL<span>*</span></h4>
+                        <select name="check_battery_terminal" required>
+                          <option class="disabled" disabled selected>*Please Select*</option>
+                          <option value="1" >OK</option>
+                          <option value="0">NOT OK</option>
+                        </select>  
+                        <h4>BATTERY CONDITION<span>*</span></h4>
+                        <select name="Battery_condition" required>
+                          <option class="disabled" disabled selected>*Please Select*</option>
+                          <option value="1" >OK</option>
+                          <option value="0">NOT OK</option>
+                        </select>
+                        <h4>UPS CONDITION<span>*</span></h4>
+                        <select name="UPS_condition" required>
+                          <option class="disabled" disabled selected>*Please Select*</option>
+                          <option value="1" >OK</option>
+                          <option value="0">NOT OK</option>
+                        </select>  
+                        <h4>NEUTRAL LOAD<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="text" name="Neutral_load" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                  </div> 
+                        <h4>EARTHING CONDITION<span>*</span></h4>
+                                  <select name="Earthing_codition" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>  
+                        {% endif %}
 
-                  <h4>DEVICE NAME<span>*</span></h4>
-                    <div class="name">
-                      <input type="text" name="name" placeholder="DEVICE NAME" />
-                    </div>
+                        
+                        {% if MONTHLY %}
+                        <h4>PHYSICAL CLEAN CHECK<span>*</span></h4>
+                                  <select name="Physicaly_clean_check" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>  
+                        <h4>RX MODULE STATUS<span>*</span></h4>
+                                  <select name="Rx_module_status" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                        <h4>CONTROL PANEL SETUP<span>*</span></h4>
+                                  <select name="Control_Panel_setup" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                        <h4>PHYSICAL CHECK ANTENNA CABLES<span>*</span></h4>
+                                  <select name="Physica_check_antenna_cables" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                        <h4>DAT DRIVE CLEANING<span>*</span></h4>
+                                  <select name="DAT_drive_cleaning" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                        <h4>NETUNO SERVER RESTART<span>*</span></h4>
+                                  <select name="Netuno_Server_restart" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                        {% endif %}    
+                        
+                        {% if YEARLY %}
+                          <h1>No PARAMETERS I have!</h1>
+                        {% endif %}
+                          
+                   {% endif %}
+   
+                   {% if COMSOFT %}
 
-                    <h4>STATION NAME<span>*</span></h4>
-                    <div class="name"> 
-                      <input type="text" name="name" placeholder="STATION NAME" />
-                    </div>
+                       {% if DAILY %}
+                       <h4>GENERAL CLEANINESS<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="text" name="General_cleanliness_room" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                        <h4>AIRCONDITIONERS STATUS<span>*</span></h4>
+                              <select name="Status_airconditioners" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                        <h4>OBSTRUCTION LIGHT STATUS<span>*</span></h4>
+                                  <select name="status_obstruction_light" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                       <h4>MAIN SUPPLY VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="main_supply_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                       <h4>MAIN SUPPLY FREQUENCY<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="main_supply_frequency" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                       <h4>VERIFY EQUIPMENT ON UPS<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="text" name="verify_equipment_on_UPS" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                       <h4>STATUS NEAR MONITER<span>*</span></h4>
+                                  <select name="status_near_monitor" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                        <h4>STATUS CRITICAL AREA<span>*</span></h4>
+                                  <select name="status_critical_area" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                        <h4>REMOTE STATUS INDICATION<span>*</span></h4>
+                                  <select name="remote_status_indication" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                        {% endif %}
 
-                    <h4>REGION NAME<span>*</span></h4>
-                    <div class="name"> 
-                      <input type="text" name="name" placeholder="REGION NAME" />
-                    </div>
-                    
-                    <h4>EQUIPMENT TYPE<span>*</span></h4>
-                    <select>
-                      <option class="disabled" value="EquipmentType" disabled selected>*Please Select*</option>
-                      <option value="1">Communication</option>
-                      <option value="2">Networking</option>
-                      <option value="3">Survelliance</option>
-                    </select>
-                    
-                    <h4>MAINTENANCE DATE<span>*</span></h4>
-                    <div class="day-maintenance">
-                      <input type="date" name="daymaintenance" required/>
-                      <i class="fas fa-calendar-alt"></i>
-                    </div>
+                        
+                        {% if WEEKLY %}
+                          <h1>Shortage of data! WE got no parameters!!</h1>
+                        {% endif %}
 
-                  <h4>PLEASE SELECT YOUR AGE:<span>*</span></h4>
-              <input type="radio" id="age1" name="age" value="30">
-              <label for="age1">0 - 30</label><br>
-              <input type="radio" id="age2" name="age" value="60">
-              <label for="age2">31 - 60</label><br>  
-              <input type="radio" id="age3" name="age" value="100">
-              <label for="age3">61 - 100</label><br><br>
-              
+                        
+                        {% if MONTHLY %}
+                        <h4>GPS LATITUDE<span>*</span></h4>
+                            <div class="name"> 
+                              <input type="number" name="Gps_latitude" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                            </div> 
+                        <h4>GPS LONGITUDE<span>*</span></h4>
+                            <div class="name"> 
+                              <input type="number" name="GPS_longitude" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                            </div> 
+                        <h4>GPS ALTITUDE<span>*</span></h4>
+                            <div class="name"> 
+                              <input type="number" name="Gps_altitude" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                            </div> 
+                        <h4>CPU LOAD<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="Cpu_load" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                        <h4>INTERMIDIAT VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="Intermediate_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                        <h4>GPS VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="Gps_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                        <h4>FPGA VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="FPGA_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                        <h4>DSP Board VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="DSP_Board_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                        <h4>DSP BOARD TEMPERATURE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="DSP_board_tmep" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                        <h4>GENERAL RESULT<span>*</span></h4>
+                            <select name="general_result" required>
+                              <option class="disabled" disabled selected>*Please Select*</option>
+                              <option value="1" >OK</option>
+                              <option value="0">NOT OK</option>
+                            </select>
+                        <h4>GPS STATUS<span>*</span></h4>
+                              <select name="GPS" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                        <h4>TEAMPRATURE SENSING<span>*</span></h4>
+                            <select name="Temp_sensing" required>
+                              <option class="disabled" disabled selected>*Please Select*</option>
+                              <option value="1" >OK</option>
+                              <option value="0">NOT OK</option>
+                            </select>
+                        <h4>VOLTAGE SENSING<span>*</span></h4>
+                              <select name="voltage_sensing" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                        <h4>FPGA<span>*</span></h4>
+                            <select name="FPGA" required>
+                              <option class="disabled" disabled selected>*Please Select*</option>
+                              <option value="1" >OK</option>
+                              <option value="0">NOT OK</option>
+                            </select>
+                        <h4>Reciever STATUS<span>*</span></h4>
+                              <select name="Reciever" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                        <h4>GPS SYNCHRONIZATION<span>*</span></h4>
+                              <select name="Gps_synch" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                        <h4>Signal Strength RF Site<span>*</span></h4>
+                              <select name="Signal_strength_RF_Site" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                        <h4>END TO END TEST<span>*</span></h4>
+                              <select name="End_to_End_test" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                        <h4>RX SENSITIVITY<span>*</span></h4>
+                              <select name="Rx_sensitivity" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                        <h4>TEST TRANSITION LOSS<span>*</span></h4>
+                              <select name="Test_transmission_loss" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                        <h4>DECODE TEST<span>*</span></h4>
+                            <select name="Decoder_test" required>
+                              <option class="disabled" disabled selected>*Please Select*</option>
+                              <option value="1" >OK</option>
+                              <option value="0">NOT OK</option>
+                            </select>
+                        <h4>GND STATION STATUS<span>*</span></h4>
+                            <select name="Gnd_station_staus" required>
+                              <option class="disabled" disabled selected>*Please Select*</option>
+                              <option value="1" >OK</option>
+                              <option value="0">NOT OK</option>
+                            </select>
+                        <h4>OVERALL BUILD TEST<span>*</span></h4>
+                              <select name="overall_build_tst_result" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                        <h4>UTC SYNCHRONIZATION<span>*</span></h4>
+                              <select name="UTC_synchr" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                       
+                        {% endif %}
 
-                  <h4>WORKS IN TECNICAL DEPARTMENT:<span>*</span></h4>
-                    <input type="radio" id="YES" name="tech" value="YES">
-              <label for="YES">YES</label><br>
-              <input type="radio" id="NO" name="tech" value="NO">
-              <label for="NO">NO</label><br>  
-              <br>
+                        {% if YEARLY %}
+                          <h1>Shortage of Data! We got no parameters!!!</h1>
+                        {% endif %}
 
-                    <h4>NETWORK QUALITY:<span>*</span></h4>
-                      <input type="radio" id="POOR" name="QUALITY" value="POOR">
-              <label for="age1">POOR</label><br>
-              <input type="radio" id="GOOD" name="QUALITY" value="GOOD">
-              <label for="age2">GOOD</label><br>  
-              <input type="radio" id="EXCELLENT" name="QUALITY" value="EXCELLENT">
-              <label for="age3">EXCELLENT</label><br><br>
+                   {% endif %} 
+   
+   
+                   {% if GLIDPATH %}
 
+                          {% if DAILY %}
+                          <h4>UTC SYNCHRONIZATION<span>*</span></h4>
+                              <select name="UTC_synchr" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                              <h4>GPS VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="Gps_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                              <h4>GPS VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="Gps_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                              <h4>GPS VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="Gps_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                              <h4>GPS VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="Gps_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
+                              <select name="UTC_synchr" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
+                              <select name="UTC_synchr" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
+                              <select name="UTC_synchr" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
+                              <select name="UTC_synchr" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
+                              <select name="UTC_synchr" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
+                              <select name="UTC_synchr" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
+                              <select name="UTC_synchr" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
+                              <select name="UTC_synchr" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
+                              <select name="UTC_synchr" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
+                              <select name="UTC_synchr" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
+                              <select name="UTC_synchr" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
+                              <select name="UTC_synchr" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
+                              <select name="UTC_synchr" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                              <h4>GPS VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="Gps_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          {% endif %}
+
+                          
+                          {% if WEEKLY %}
+                            
+                          {% endif %}
+
+                          
+                          {% if MONTHLY %}
+                            
+                          {% endif %}
+
+                          {% if YEARLY %}
+                            
+                          {% endif %}
+
+                   {% endif %}
+   
+   
+                   {% if VCSSYSTEM %}
+
+                          {% if DAILY %}
+                                          
+                          {% endif %}
+
+                          
+                          {% if WEEKLY %}
+                            
+                          {% endif %}
+
+                          
+                          {% if MONTHLY %}
+                            
+                          {% endif %}
+
+                          {% if YEARLY %}
+                            
+                          {% endif %}
+                     
+                   {% endif %}
+   
+   
+                   {% if LOCALIZER %}
+                          {% if DAILY %}
+                                          
+                          {% endif %}
+
+                          
+                          {% if WEEKLY %}
+                            
+                          {% endif %}
+
+                          
+                          {% if MONTHLY %}
+                            
+                          {% endif %}
+
+                          {% if YEARLY %}
+                            
+                          {% endif %}
+                   {% endif %}
+                     
+   
+                   {% if DVOR %}
+                          {% if DAILY %}
+                                          
+                    <h4>EQUIPMENT SHELTER CLEANINESS<span>*</span></h4>
+                          <select name="Equipment_shelter_cleanlines" required>
+                            <option class="disabled" disabled selected>*Please Select*</option>
+                            <option value="1" >OK</option>
+                            <option value="0">NOT OK</option>
+                          </select>
+                    <h4>STATUS OF AIRCONDITIONERS<span>*</span></h4>
+                          <select name="status_air_conditioners" required>
+                            <option class="disabled" disabled selected>*Please Select*</option>
+                            <option value="1" >OK</option>
+                            <option value="0">NOT OK</option>
+                          </select>
+                      <h4>SHELTER TEMPERATURE IN CELCIOUS<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="shelter_temp_in_celcius" placeholder="OVERALL B" required/>
+                          </div>
+                      <h4>UPS INPUT VOLTAGE FREQUENCY<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="UPS_input_volt_frequency" placeholder="OVERALL B" required/>
+                          </div>
+                     <h4>PS OUTPUT VOLTAGE FREQUENCY<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="PS_output_volt_frequency" placeholder="OVERALL B" required/>
+                          </div>
+                     <h4>HOURS OPERATIONS<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="hours_operation" placeholder="OVERALL B" required/>
+                          </div>
+                    <h4>ALARM<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="Alarm" placeholder="OVERALL B" required/>
+                          </div>
+
+                    <h4>BATTERY STATUS<span>*</span></h4>
+                          <select name="status_battery_operation" required>
+                            <option class="disabled" disabled selected>*Please Select*</option>
+                            <option value="1" >OK</option>
+                            <option value="0">NOT OK</option>
+                          </select>
+                          {% endif %}
+
+                          
+                          {% if WEEKLY %}
+                          <h4>CARRIER POWER<span>*</span></h4>
+                            <div class="name"> 
+                              <input type="number" name="Carrier_pow" placeholder="OVERALL B" required/>
+                            </div>
+                          <h4>AM 30HTZ<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="AM_30hz" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>AM 1020HZ<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="Am_1020hz" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>USB LEVEL<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="USB_level" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>USB RF Phase<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="USB_RF_Phase" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>LSB LEVEL<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="LSB_level" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>AZINMUTH(ANTENNA NEAR FIELD)<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="Azinmuth" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>RF level<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="RF_level" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>FM Index<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="FM_index" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>CARRIER FREQUENCY <span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="Carrier_frequency" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>USB FREQUENCY<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="USB_frequency" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>LSB FREQUENCY<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="LSB_frequency" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>BATTERY VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="battery_volt" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>BATTERY HALF VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="battery_half_volt" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>BATTERY CURRENT<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="battery_current" placeholder="OVERALL B" required/>
+                              </div>
+                            
+                          {% endif %}
+
+                          
+                          {% if MONTHLY %}
+                          <h4>EARTH RACK REGISTANCE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="Eq_earth_rack_resistance" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>EARTH RESISTANCE AT ANTENNA<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="earth_resistance_at_antenna" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>EARTH NATURAL VOLT<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="earth_natural_volt" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>EARTH RESISTANCE OF LIGHTING<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="earth_resis_lighting" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>STATUS OF LIGHTING PROTECTION SYSTEM<span>*</span></h4>
+                              <select name="status_of_lighting_protection_system" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                          <h4>STATUS OF SPD AT EQUIPMENT ROOM<span>*</span></h4>
+                                <select name="status_SPD_at_eq_room" required>
+                                  <option class="disabled" disabled selected>*Please Select*</option>
+                                  <option value="1" >OK</option>
+                                  <option value="0">NOT OK</option>
+                                </select>
+                          {% endif %}
+
+                          {% if YEARLY %}
+                          <h4>CARRIER FREQUENCY<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="Carrier_frequency" placeholder="OVERALL B" required/>
+                          </div>
+                          <h4>DARIVATION IN HTZ<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="Hz_derivation" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>MODULATION DEPTH IN HTZ<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="Hz_modulation_depth" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>MODULATION FREQUENCY IN HTZ<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="Hz_modulation_frequency" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>IDENTIFICATION SPEED<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="identification_speed" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>IDENTIFICATION REPETITION<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="identification_repetition" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>IDENTIFICATION TONE FREQUENCY<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="identification_tone_frequency" placeholder="OVERALL B" required/>
+                              </div>
+                          <h4>Bearing Monitor<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="Bearing_monitor" placeholder="OVERALL B" required/>
+                              </div>
+                          {% endif %}
+                     
+                   {% endif %}
+                   
+   
+                   {% if NDB %}
+                            {% if DAILY %}
+                            <h4>ROOM TEMPERATURE<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="number" name="room_temp" placeholder="OVERALL B" required/>
+                                  </div> 
+                            <h4>AC MAIN VOLTAGE<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="number" name="AC_main_volt" placeholder="OVERALL B" required/>
+                                  </div> 
+                            <h4>UPS OUT VOLTAGE<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="number" name="UPS_out_volt" placeholder="OVERALL B" required/>
+                                  </div> 
+                            <h4>CLEANINESS<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="text" name="cleanlines" placeholder="OVERALL B" required/>
+                                  </div> 
+                            <h4>REFLECTED POWER<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="number" name="reflected_power" placeholder="OVERALL B" required/>
+                                  </div> 
+                            <h4>Forword Power<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="number" name="Forword_Power" placeholder="OVERALL B" required/>
+                                  </div> 
+                            <h4>MODULATION<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="number" name="modulation" placeholder="OVERALL B" required/>
+                                  </div> 
+                            <h4>PA VOLTAGE<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="number" name="PA_volt" placeholder="OVERALL B" required/>
+                                  </div> 
+                            <h4>PA CURRENT<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="text" name="PA_current" placeholder="OVERALL B" required/>
+                                  </div> 
+                            <h4>SYSTEM LED STATUS<span>*</span></h4>
+                                  <select name="System_staus_LED" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                            <h4>PRIMERY LED STATUS<span>*</span></h4>
+                                  <select name="primary_tx_led" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                            <h4>TX POWER ON LED<span>*</span></h4>
+                                  <select name="tx_power_on_led" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                                            
+                            {% endif %}
+
+                            
+                            {% if WEEKLY %}
+                            <h4>MAIN POWER SUPPLY TERMINAL<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="text" name="main_pow_supp_terminal" placeholder="OVERALL B" required/>
+                                  </div> 
+                            <h4>UPS LOAD OUT<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="number" name="UPs_out_load" placeholder="OVERALL B" required/>
+                                  </div> 
+                            <h4>BATTERY TERMINAL STATUS<span>*</span></h4>
+                                  <select name="check_battery_terminal" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                            <h4>CONDITION OF BATTERY<span>*</span></h4>
+                                  <select name="condition_of_Battery" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                            <h4>CONDITION OF UPS<span>*</span></h4>
+                                  <select name="condition_of_UPS" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                            <h4>CONDITION EARTHING<span>*</span></h4>
+                                  <select name="condition_earthing" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                            {% endif %}
+
+                            
+                            {% if MONTHLY %}
+                            <h4>CARRY OUT POWER MEASURE<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="number" name="Carry_out_pow_measur" placeholder="OVERALL B" required/>
+                                  </div> 
+
+                            <h4>DEPTH MODULATION<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="number" name="depth_modulation" placeholder="OVERALL B" required/>
+                                  </div> 
+
+                            <h4>INDENT CODE<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="number" name="ident_code" placeholder="OVERALL B" required/>
+                                  </div> 
+                            <h4>ANTENA CONDITION<span>*</span></h4>
+                                <select name="check_antenna" required>
+                                  <option class="disabled" disabled selected>*Please Select*</option>
+                                  <option value="1" >OK</option>
+                                  <option value="0">NOT OK</option>
+                                </select>
+                            <h4>CHECK ACU<span>*</span></h4>
+                                <div class="name"> 
+                                  <input type="text" name="check_ACU" placeholder="OVERALL B" required/>
+                                </div>
+                              
+                            {% endif %}
+
+                            {% if YEARLY %}
+                              <h1>Shortage of Data, No parameters found!</h1>
+                            {% endif %}
+                   {% endif %}
+                     
+   
+                   {% if DATISTERMA %}
+
+                          {% if DAILY %}
+                          <h4>PHYSICAL CLEANINESS<span>*</span></h4>
+                                  <select name="Physical_clean" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                          <h4>PS_A_UPS<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="text" name="PS_A_UPS" placeholder="PS_A_UPS" required/>
+                                  </div> 
+                          <h4>PS_B_UPS<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="text" name="PS_B_UPS" placeholder="PS_B_UPS" required/>
+                                  </div> 
+                          <h4>OVERALL A<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="text" name="overall_A" placeholder="OVERALL A" required/>
+                                  </div> 
+                          <h4>OVERALL B<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="text" name="overall_B" placeholder="OVERALL B" required/>
+                                  </div> 
+                          {% endif %}
+
+                          
+                          {% if WEEKLY %}
+                          <h1>Shortage of parameters, No PARAMETERS I have!</h1>
+                          {% endif %}
+
+                          
+                          {% if MONTHLY %}
+                          <h1>Shortage of parameters, No PARAMETERS I have!</h1>
+                          {% endif %}
+
+                          {% if YEARLY %}
+                          <h1>Shortage of parameters, No PARAMETERS I have!</h1>
+                          {% endif %}
+                     
+                   {% endif %}
+                   
+   
+                   {% if DVTR %}
+
+                            {% if DAILY %}
+                            <h4>FREQUENCY<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="number" name="frequency" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                  </div> 
+                            <h4>ROOM TEMPRATURE<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="number" name="room_temp" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                  </div> 
+                            <h4>AC MAIN VOLTAGE<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="number" name="AC_main_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                  </div> 
+                            <h4>UPS OUT VOLTAGE<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="number" name="UPS_out_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                  </div> 
+                            <h4>CLEANINESS<span>*</span></h4>
+                                  <select name="cleanlines" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                            <h4>UPS STATUS<span>*</span></h4>
+                                  <select name="status_UPS" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                            <h4>RECORDING ALL CHANNELS<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="text" name="recording_all_channels" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                  </div> 
+                            <h4>DISK SPACE FREE STATUS<span>*</span></h4>
+                                  <select name="Free_space_disk" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                            <h4>MEDIA STATUS<span>*</span></h4>
+                                  <select name="media_staus" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                            <h4>STATUS INDICATION<span>*</span></h4>
+                                  <select name="status_indication" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                            <h4>COOLING FAN STATUS<span>*</span></h4>
+                                  <select name="status_cooling_fans" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                                            
+                            {% endif %}
+
+                            
+                            {% if WEEKLY %}
+                              <h1>No PARAMETERS I have!</h1>
+                            {% endif %}
+
+                            
+                            {% if MONTHLY %}
+                            <h4>CLEANING PC STATUS<span>*</span></h4>
+                                  <select name="cleaning_PC_dust" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                            <h4>CHECK CONNECTORS STATUS<span>*</span></h4>
+                                  <select name="Check_connectors" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                            <h4>BATTERY BACKUP STATUS<span>*</span></h4>
+                                  <select name="check_battery_backup" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                            <h4>PROGRAM TO CHECK HDD<span>*</span></h4>
+                                  <select name="program_to_Check_HDD" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                            <h4>APPLICATION ONLY FOR H24<span>*</span></h4>
+                                  <div class="name"> 
+                                    <input type="number" name="Application_only_forH24" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                  </div> 
+                              
+                            {% endif %}
+
+                            {% if YEARLY %}
+                            <h1>Shortage of parameters, No PARAMETERS I have!</h1>
+                            {% endif %}
+                     
+                   {% endif %}
+                  
+                   <h4>REPORT STATUS<span>*</span></h4>
+                   <select name="status" required>
+                     <option class="disabled" disabled selected>*Please Select*</option>
+                     <option value="1" >OK</option>
+                     <option value="0">NOT OK</option>
+                   </select>
+                  
                   <h4>ANY REMARKS?</h4>
-                    <textarea rows="5"></textarea>
+                    <textarea rows="5" name="remarks"></textarea>
 
 
                     <div class="btn-block">
