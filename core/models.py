@@ -327,15 +327,10 @@ class VCS_System(models.Model):
     PDE_4601 = models.CharField(max_length = 255, blank=True, null=True)
     D2 = models.CharField(max_length = 255, blank=True, null=True)
     DMC02= models.CharField(max_length = 255, blank=True, null=True)
-    D5 = models.CharField(max_length = 255, blank=True, null=True)
-    D4 = models.CharField(max_length = 255, blank=True, null=True)
-    D3 = models.CharField(max_length = 255, blank=True, null=True)
-    PDE4601= models.CharField(max_length = 255, blank=True, null=True)
-    D2 = models.CharField(max_length = 255, blank=True, null=True)
     MPC_01 = models.CharField(max_length = 255, blank=True, null=True)
     D1PDE4662= models.CharField(max_length = 255, blank=True, null=True)
-    D2 = models.CharField(max_length = 255, blank=True, null=True)
-    D4 = models.CharField(max_length = 255, blank=True, null=True)
+   
+   
 
     class Meta:
         verbose_name = 'Vcs System Report'

@@ -108,7 +108,7 @@ class VCS_SystemAdmin(admin.ModelAdmin):
                  ("Daily-Parameter", {'fields':['Ac_volt_UPS1','Condition_UPS1','RAD1PSU','TEL1_PSU','TEL2_PSU','TEL3_PSU','TEL4_PSU',
                                                 'PSU_FuseLED','system_A','Overall_perform']}),
                  ("Weekly-Parameter",{'fields':['DMC01D5','D5','D4','D3','PDE_4601','D2',
-                                                'DMC02','PDE4601','MPC_01','D1PDE4662',
+                                                'DMC02','MPC_01','D1PDE4662',
                                                 ]})
                  ]
 

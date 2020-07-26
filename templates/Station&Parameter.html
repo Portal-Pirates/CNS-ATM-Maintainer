@@ -511,118 +511,257 @@ $(function() {
                                 <option value="1" >OK</option>
                                 <option value="0">NOT OK</option>
                               </select>
-                              <h4><span>*</span></h4>
+                          <h4>AIRCONDITIONERS STATUS<span>*</span></h4>
+                              <select name="Status_airconditioners" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                          <h4>OBSTRUCTION LIGHT STATUS<span>*</span></h4>
+                              <select name="status_obstruction_light" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                          <h4>MAIN SUPPLY IN VOLTAGE<span>*</span></h4>
                               <div class="name"> 
-                                <input type="number" name="Gps_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                <input type="number" name="main_supply_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
                               </div> 
-                              <h4>GPS VOLTAGE<span>*</span></h4>
+                          <h4>MAIN SUPPLY FREQUENCY<span>*</span></h4>
                               <div class="name"> 
-                                <input type="number" name="Gps_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                <input type="number" name="main_supply_frequency" placeholder="BATTARY CURRENT IN VOLTS" required/>
                               </div> 
-                              <h4>GPS VOLTAGE<span>*</span></h4>
+                          <h4>UPS STATUS<span>*</span></h4>
+                              <select name="verify_equipment_on_UPS" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                          <h4>STATUS NEAR MONITER<span>*</span></h4>
+                              <select name="status_near_monitor" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                          <h4>CRITICAL AREA STATUS<span>*</span></h4>
+                              <select name="status_critical_area" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                          <h4>REMOTE STATUS INDICATION<span>*</span></h4>
+                              <select name="remote_status_indication" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                          <h4>PARAM STATUS<span>*</span></h4>
+                              <select name="param" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                          <h4>Disagr STATUS<span>*</span></h4>
+                              <select name="Disagr" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                          <h4>BATT STATUS<span>*</span></h4>
+                              <select name="batt" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                           <h4>MAINT STATUS<span>*</span></h4>
+                              <select name="maint" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                            <h4>STANDBY<span>*</span></h4>
+                              <select name="standby" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >YES</option>
+                                <option value="0">NO</option>
+                              </select>
+                            <h4>COURSE STATUS<span>*</span></h4>
+                              <select name="course" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                            <h4>CLEARANCE<span>*</span></h4>
+                              <select name="clearnance" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >YES</option>
+                                <option value="0">NO</option>
+                              </select>
+                            <h4>TAX TO AIR STATUS<span>*</span></h4>
+                              <select name="txtoair" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                            <h4>MAIN SYSTEM STATUS<span>*</span></h4>
+                              <select name="main" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                            <h4>SMPS STATUS<span>*</span></h4>
                               <div class="name"> 
-                                <input type="number" name="Gps_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
-                              </div> 
-                              <h4>GPS VOLTAGE<span>*</span></h4>
-                              <div class="name"> 
-                                <input type="number" name="Gps_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
-                              </div> 
-                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
-                              <select name="UTC_synchr" required>
-                                <option class="disabled" disabled selected>*Please Select*</option>
-                                <option value="1" >OK</option>
-                                <option value="0">NOT OK</option>
-                              </select>
-                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
-                              <select name="UTC_synchr" required>
-                                <option class="disabled" disabled selected>*Please Select*</option>
-                                <option value="1" >OK</option>
-                                <option value="0">NOT OK</option>
-                              </select>
-                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
-                              <select name="UTC_synchr" required>
-                                <option class="disabled" disabled selected>*Please Select*</option>
-                                <option value="1" >OK</option>
-                                <option value="0">NOT OK</option>
-                              </select>
-                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
-                              <select name="UTC_synchr" required>
-                                <option class="disabled" disabled selected>*Please Select*</option>
-                                <option value="1" >OK</option>
-                                <option value="0">NOT OK</option>
-                              </select>
-                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
-                              <select name="UTC_synchr" required>
-                                <option class="disabled" disabled selected>*Please Select*</option>
-                                <option value="1" >OK</option>
-                                <option value="0">NOT OK</option>
-                              </select>
-                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
-                              <select name="UTC_synchr" required>
-                                <option class="disabled" disabled selected>*Please Select*</option>
-                                <option value="1" >OK</option>
-                                <option value="0">NOT OK</option>
-                              </select>
-                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
-                              <select name="UTC_synchr" required>
-                                <option class="disabled" disabled selected>*Please Select*</option>
-                                <option value="1" >OK</option>
-                                <option value="0">NOT OK</option>
-                              </select>
-                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
-                              <select name="UTC_synchr" required>
-                                <option class="disabled" disabled selected>*Please Select*</option>
-                                <option value="1" >OK</option>
-                                <option value="0">NOT OK</option>
-                              </select>
-                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
-                              <select name="UTC_synchr" required>
-                                <option class="disabled" disabled selected>*Please Select*</option>
-                                <option value="1" >OK</option>
-                                <option value="0">NOT OK</option>
-                              </select>
-                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
-                              <select name="UTC_synchr" required>
-                                <option class="disabled" disabled selected>*Please Select*</option>
-                                <option value="1" >OK</option>
-                                <option value="0">NOT OK</option>
-                              </select>
-                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
-                              <select name="UTC_synchr" required>
-                                <option class="disabled" disabled selected>*Please Select*</option>
-                                <option value="1" >OK</option>
-                                <option value="0">NOT OK</option>
-                              </select>
-                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
-                              <select name="UTC_synchr" required>
-                                <option class="disabled" disabled selected>*Please Select*</option>
-                                <option value="1" >OK</option>
-                                <option value="0">NOT OK</option>
-                              </select>
-                              <h4>UTC SYNCHRONIZATION<span>*</span></h4>
-                              <select name="UTC_synchr" required>
-                                <option class="disabled" disabled selected>*Please Select*</option>
-                                <option value="1" >OK</option>
-                                <option value="0">NOT OK</option>
-                              </select>
-                              <h4>GPS VOLTAGE<span>*</span></h4>
-                              <div class="name"> 
-                                <input type="number" name="Gps_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                <input type="number" name="smps" placeholder="BATTARY CURRENT IN VOLTS" required/>
                               </div> 
                           {% endif %}
 
                           
                           {% if WEEKLY %}
-                            
+                          <h4>System TIME SYNCHRONIZATION<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="text" name="System_time_synch" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>TIME OF OBSERVATION IN UTC<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="text" name="time_of_observation_UTC" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>ILC DATATIME IN UTC<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="text" name="ILS_datetime_UTC" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>UPS OUT VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="ups_out_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>UPS OUT FREQUENCY<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="ups_out_freq" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>UPS BATTRY IN VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="ups_battery_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>BATTARY VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="battery_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>OPERATIONS OF BATTERY<span>*</span></h4>
+                              <select name="opearation_on_battery" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                          <h4>RMS_5 VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="RMS_5volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>RMS Battery VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="RMS_battery" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>PS1 VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="PS1" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>PS2 VOLTAGE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="PS2" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>CLR150 VALUE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="CLR150" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>CLR90 VALUE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="CLR90" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>COU150 VALUE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="COU150" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>COU90 VALUE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="COU90" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
                           {% endif %}
 
                           
                           {% if MONTHLY %}
+                          <h4>Path augle VALUE<span>*</span></h4>
+                                <div class="name"> 
+                                  <input type="number" name="Path_augle" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                </div> 
+                          <h4>CHANGE IN DISPLACEMENT<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="change_in_displacement_sens" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>CLEARANCE SIGNAL VALUE<span>*</span></h4>
+                                <div class="name"> 
+                                  <input type="number" name="clearance_signal" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                </div> 
+                          <h4>REDUCTION POWER<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="reduciton_power" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>total time VALUE<span>*</span></h4>
+                                <div class="name"> 
+                                  <input type="number" name="total_time" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                </div> 
+                          <h4>MONITER  SYSTEM OPERATIONS VALUE<span>*</span></h4>
+                                <div class="name"> 
+                                  <input type="number" name="moitor_sys_oper" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                </div> 
+                          <h4>GRADING OF CRITICAL CARE<span>*</span></h4>
+                                <div class="name"> 
+                                  <input type="number" name="grading_of_critical_are" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                </div> 
+                          <h4>REMOTE ALL function STATUS<span>*</span></h4>
+                                <select name="all_function_remote" required>
+                                  <option class="disabled" disabled selected>*Please Select*</option>
+                                  <option value="1" >OK</option>
+                                  <option value="0">NOT OK</option>
+                                </select>
+                          <h4>Envionment<span>*</span></h4>
+                                <select name="Envionment" required>
+                                  <option class="disabled" disabled selected>*Please Select*</option>
+                                  <option value="1" >OK</option>
+                                  <option value="0">NOT OK</option>
+                                </select>
+                          <h4>SOURCE RC LINES <span>*</span></h4>
+                              <select name="status_rc_lines" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
                             
                           {% endif %}
 
                           {% if YEARLY %}
-                            
+                          <h4>Frequency<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="Frequency" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>UNWONTED MODULATION VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="unwanted_modulation" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>CARRIER MODULATION Frequency<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="carrier_modulation_freq" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+
+                      <h4>CARRIER MODULATION FORM STATUS<span>*</span></h4>
+                          <select name="carrier_modulation_homm" required>
+                            <option class="disabled" disabled selected>*Please Select*</option>
+                            <option value="1" >OK</option>
+                            <option value="0">NOT OK</option>
+                          </select>
+                     <h4>PHASE MODULATION SYSTEM STATUS<span>*</span></h4>
+                        <select name="phase_of_modulation_system" required>
+                          <option class="disabled" disabled selected>*Please Select*</option>
+                          <option value="1" >OK</option>
+                          <option value="0">NOT OK</option>
+                        </select>
                           {% endif %}
 
                    {% endif %}
@@ -631,11 +770,88 @@ $(function() {
                    {% if VCSSYSTEM %}
 
                           {% if DAILY %}
+                          <h4>AC VOLTAGE UPS-1 <span>*</span></h4>
+                              <div class="name"> 
+                                <input type="text" name="Ac_volt_UPS1" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>Condition UPS1<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="text" name="Condition_UPS1" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>RAD1PSU<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="text" name="RAD1PSU" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>TEL1 PSU<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="text" name="TEL1_PSU" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>TEL2 PSU<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="text" name="TEL2_PSU" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>TEL3 PSU<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="text" name="TEL3_PSU" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>TEL4 PSU<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="text" name="TEL4_PSU" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>PSU FuseLED<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="text" name="PSU_FuseLED" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>system A<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="text" name="system_A" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>OVERALL PERFORMANCE <span>*</span></h4>
+                              <div class="name"> 
+                                <input type="text" name="Overall_perform" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
                                           
                           {% endif %}
 
                           
                           {% if WEEKLY %}
+                          <h4>DMC01D5 VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="text" name="DMC01D5" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>D5 VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="text" name="D5" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>D4 VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="text" name="D4" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>D3 VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="text" name="D3" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>PDE4601 VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="text" name="PDE_4601" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>D2 VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="text" name="D2" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>DMC02 VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="text" name="DMC02" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>MPC 01 VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="text" name="MPC_01" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>D1PDE4662 VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="text" name="D1PDE4662" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                         
                             
                           {% endif %}
 
