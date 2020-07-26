@@ -297,7 +297,7 @@ class VCS_System(models.Model):
     created = models.DateTimeField(auto_now_add=True, editable=False)
     last_updated = models.DateTimeField(auto_now=True, editable=False)
         # Fields
-    verified_by_Manager = models.BooleanField(default=False, editable=False)
+    verified_by_Manager = models.BooleanField(default=False)
     # Relationship Fields
     station_name = models.ForeignKey(Stations, on_delete=models.CASCADE)
     #this is for creation Info
@@ -682,7 +682,7 @@ class DVTR(models.Model):
     #Field to deteremine type of report
     report_type = models.CharField(max_length=20, choices=REPORT_TYPE_CHOICES)
         # Fields
-    verified_by_Manager = models.BooleanField(default=False, editable=False)
+    verified_by_Manager = models.BooleanField(default=False)
     # Relationship Fields
     station_name = models.ForeignKey(Stations, on_delete=models.CASCADE)
     #this is for creation Info

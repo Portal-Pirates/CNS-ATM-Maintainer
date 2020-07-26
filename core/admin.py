@@ -54,10 +54,10 @@ class Glid_PathAdmin(admin.ModelAdmin):
     list_per_page = 40
     # section
     fieldsets = [
-        ("Basic-Details",{'fields':["equipment_name","model_number","Make","Airport_Location","verified_by_Manager","station_name","created_by","report_type"]}),
+        ("Basic-Details",{'fields':["equipment_name","modal_number","Make","Airport_Location","verified_by_Manager","station_name","created_by","report_type"]}),
         ("Daily-Parameters",{"fields":["General_cleanliness_room","Status_airconditioners","status_obstruction_light",
                                         "main_supply_volt","main_supply_frequency","verify_equipment_on_UPS","status_near_monitor",
-                                        "status_critical_area","remote_status_indication","param"," Disagr",
+                                        "status_critical_area","remote_status_indication","param","Disagr",
                                         "batt","maint","standby","course","clearnance","txtoair","main","smps"]}),
         ("Weekly-Parameters",{"fields":["System_time_synch","time_of_observation_UTC","ILS_datetime_UTC","ups_out_volt",
                                         "ups_out_freq","ups_battery_volt","battery_volt","opearation_on_battery","RMS_5volt","RMS_battery",
@@ -65,7 +65,7 @@ class Glid_PathAdmin(admin.ModelAdmin):
         ("Monthy-Parameters",{"fields":["Path_augle","change_in_displacement_sens","clearance_signal","reduciton_power","total_time","moitor_sys_oper",
                                         "all_function_remote","grading_of_critical_are","Envionment","status_rc_lines"]}),
         ("Quaterly-Parameters",{"fields":["path_angle_monitor","change_in_displacement","totoal_time_out_of_tolerance","coverage","carrier_modulation"]}),
-        ("Annual-Parameters",{"fields":[" Frequency","unwanted_modulation","carrier_modulation_freq","carrier_modulation_homm","phase_of_modulation_system"]})
+        ("Annual-Parameters",{"fields":["Frequency","unwanted_modulation","carrier_modulation_freq","carrier_modulation_homm","phase_of_modulation_system"]})
 
     ]
 
@@ -78,10 +78,10 @@ class COMSOFTAdmin(admin.ModelAdmin):
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
 
-    fieldsets = [("Basic-Details",{'fields':["equipment_name", "model_number", "Make", "Airport_Location", "verified_by_Manager",
+    fieldsets = [("Basic-Details",{'fields':["equipment_name", "modal_number", "Make", "Airport_Location", "verified_by_Manager",
                                    "station_name", "created_by", "report_type"]}),
                  ("Daily-Parameter",{'fields':['General_cleanliness_room','Status_airconditioners','status_obstruction_light','main_supply_volt','main_supply_frequency','verify_equipment_on_UPS','status_near_monitor','status_critical_area','remote_status_indication']}),
-                 ("Monthly-Parameter",{'fields':['Gps_latitude','GPS_longitude','Gps_altitude','general_result','GPS','voltage_sensing','FPGA','Reciever','Cpu_load','GPS_status','Gps_synch','Intermediate_volt',
+                 ("Monthly-Parameter",{'fields':['Gps_latitude','GPS_longitude','Gps_altitude','general_result','GPS','voltage_sensing','FPGA','Reciever','Cpu_load','Gps_synch','Intermediate_volt',
                                                 'Gps_volt','FPGA_volt','DSP_Board_volt','DSP_board_tmep','Signal_strength_RF_Site','End_to_End_test',
     'Rx_sensitivity',
     'Test_transmission_loss',
@@ -103,7 +103,7 @@ class VCS_SystemAdmin(admin.ModelAdmin):
     list_per_page = 40
 
     fieldsets = [("Basic-Details",
-                  {'fields': ["equipment_name", "model_number", "Make", "Airport_Location", "verified_by_Manager",
+                  {'fields': ["equipment_name", "modal_number", "Make", "Airport_Location", "verified_by_Manager",
                               "station_name", "created_by", "report_type"]}),
                  ("Daily-Parameter", {'fields':['Ac_volt_UPS1','Condition_UPS1','RAD1PSU','TEL1_PSU','TEL2_PSU','TEL3_PSU','TEL4_PSU',
                                                 'PSU_FuseLED','system_A','Overall_perform']}),
@@ -121,7 +121,7 @@ class LocalizerAdmin(admin.ModelAdmin):
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
     
-    fieldsets = [("Basic-Details",{'fields': ["equipment_name", "model_number", "Make", "Airport_Location", "verified_by_Manager",
+    fieldsets = [("Basic-Details",{'fields': ["equipment_name", "modal_number", "Make", "Airport_Location", "verified_by_Manager",
                               "station_name", "created_by", "report_type"]}),
                  ("Daily-Parameter", {'fields': ['General_cleanliness_room',
                                                  'Status_airconditioners',
@@ -138,7 +138,7 @@ class LocalizerAdmin(admin.ModelAdmin):
                                                 'course_shift',
                                                 'change_in_displ_sensitivity','Reduction_pow',
                                                 'Total_time_out_tolerance','physical_inspection',
-                                                'check_allcables_conn','check_allnuts_bolt'
+                                                'check_allcables_conn','check_allnuts_bolt',
                                                 'Tx_parameters_DC_pow','MonitorSystemOperation',
                                                 'All_function_remotecontrol','Grading_ofcritical_area',
                                                 'Environment_vegetaion','status_RClines','auto_changeover_value','PA27Leval',
@@ -166,10 +166,10 @@ class DVORAdmin(admin.ModelAdmin):
     list_per_page = 40
 
     fieldsets = [("Basic-Details",
-                  {'fields': ["equipment_name", "model_number", "Make", "Airport_Location", "verified_by_Manager",
+                  {'fields': ["equipment_name", "modal_number", "Make", "Airport_Location", "verified_by_Manager",
                               "station_name", "created_by", "report_type"]}),
                  ("Daily-Parameter",{'fields': ['Equipment_shelter_cleanlines','status_air_conditioners','shelter_temp_in_celcius','UPS_input_volt_frequency','PS_output_volt_frequency','status_battery_operation',
-                                                 'hours_operation','Alarm','remark']}),
+                                                 'hours_operation','Alarm','remarks']}),
                  ("Weekly-Parameter",{'fields':['Carrier_pow','AM_30hz','Am_1020hz',
                                                 'USB_level','USB_RF_Phase','LSB_level','Azinmuth','RF_level','FM_index','Carrier_frequency',
                                                 'USB_frequency','LSB_frequency','Azimuth_Ul_near','Azimuth_LL_nar','battery_volt',
@@ -178,7 +178,7 @@ class DVORAdmin(admin.ModelAdmin):
                                                  'status_of_lighting_protection_system','status_SPD_at_eq_room']}),
                  ("Six-Monthly Parameter",{'fields':['Physical_condition_antenna','ground_calibration_done_on','Error_spread','Verify_counter_poise',
                                                      'Alarm_co_time']}),
-                 ("Annual-Parameter",{'fields':[' Carrier_frequency','Hz_derivation','Hz_modulation_depth','Hz_modulation_frequency','identification_speed','identification_repetition','identification_tone_frequency',
+                 ("Annual-Parameter",{'fields':['Hz_derivation','Hz_modulation_depth','Hz_modulation_frequency','identification_speed','identification_repetition','identification_tone_frequency',
                                                 'Bearing_monitor']})
                  ]
 
@@ -194,7 +194,7 @@ class NDBAdmin(admin.ModelAdmin):
     list_per_page = 40
 
     fieldsets = [("Basic-Details",
-                  {'fields': ["equipment_name", "model_number", "Make", "Airport_Location", "verified_by_Manager",
+                  {'fields': ["equipment_name", "modal_number", "Make", "Airport_Location", "verified_by_Manager",
                               "station_name", "created_by", "report_type"]}),
                  ("Daily-Parameter", {'fields': ['room_temp','AC_main_volt','UPS_out_volt','cleanlines',
                                                  'reflected_power','Forword_Power','modulation','PA_volt',
@@ -215,7 +215,7 @@ class Datis_TermaAdmin(admin.ModelAdmin):
     list_per_page = 40
 
     fieldsets = [("Basic-Details",
-                  {'fields': ["equipment_name", "model_number", "Make", "Airport_Location", "verified_by_Manager",
+                  {'fields': ["equipment_name", "modal_number", "Make", "Airport_Location", "verified_by_Manager",
                               "station_name", "created_by", "report_type"]}),
                  ("Daily-Parameter", {'fields': ['Physical_clean','PS_A_UPS','PS_B_UPS','overall_A','overall_B']})
                     ]
@@ -229,7 +229,7 @@ class DVTRAdmin(admin.ModelAdmin):
     list_per_page = 40
 
     fieldsets = [("Basic-Details",
-                  {'fields': ["equipment_name", "model_number", "Make", "Airport_Location", "verified_by_Manager",
+                  {'fields': ["equipment_name", "modal_number", "Make", "Airport_Location", "verified_by_Manager",
                               "station_name", "created_by", "report_type"]}),
                  ("Daily-Parameter", {'fields': ['frequency','room_temp','AC_main_volt','UPS_out_volt',
     'cleanlines',
@@ -254,19 +254,13 @@ class UPSAdmin(admin.ModelAdmin):
     list_per_page = 40
 
     fieldsets = [("Basic-Details",
-                  {'fields': ["equipment_name", "model_number", "Make", "Airport_Location", "verified_by_Manager",
+                  {'fields': ["equipment_name", "modal_number", "Make", "Airport_Location", "verified_by_Manager",
                               "station_name", "created_by", "report_type"]}),
                  ("Daily-Parameter", {'fields': ['Input_voltage','Input_frequency','Output_voltage',
                                                  'output_frequency','output_load','Battery_bank_volt','Battery_current',
-                                                'working','slug']}),
+                                                'working']}),
                  ("Weekly-Parameter",{'fields':['Power_supply_terminal','check_battery_terminal','Battery_condition',
                                       'UPS_condition','UPS_load_percent','Neutral_load','Earthing_codition']}),
                  ("Monthly-Parameter",{'fields':['Physicaly_clean_check','Rx_module_status','Control_Panel_setup','Physica_check_antenna_cables','remarks',
                                                  'DAT_drive_cleaning','Netuno_Server_restart']})
-
-
-<<<<<<< HEAD
                 ]
-=======
-                ]
->>>>>>> 961b8fef944c9a826458c734d14e3e367aaa5c9e

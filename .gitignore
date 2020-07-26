@@ -7446,3 +7446,4 @@ core/migrations/0011_auto_20200726_1033.py
 core/migrations/0013_auto_20200726_1531.py
 core/migrations/0012_remove_dvor_remark.py
 core/migrations/0014_auto_20200726_1615.py
+core/migrations/0015_auto_20200726_1639.py
