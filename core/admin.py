@@ -120,6 +120,42 @@ class LocalizerAdmin(admin.ModelAdmin):
     list_filter = ['report_type', 'station_name', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
+    
+    fieldsets = [("Basic-Details",{'fields': ["equipment_name", "model_number", "Make", "Airport_Location", "verified_by_Manager",
+                              "station_name", "created_by", "report_type"]}),
+                 ("Daily-Parameter", {'fields': ['General_cleanliness_room',
+                                                 'Status_airconditioners',
+                                                 'status_obstruction_light',
+                                                 'main_supply_volt',
+                                                 'main_supply_frequency']}),
+                 ("Weekly-Parameter",{'fields':['System_time_synch','Time_of_observ_UTC',
+                                                'ILS_data_UTC','Time_source_synch',
+                                                'Ups_out_volt','Ups_out_freq',
+                                                'Ups_battery_volt','Battery_volt_before_discharge',
+                                                'operation_on_battery','Battery_terminal_cleaned',
+                                                'course_LPA','CSBlevel','SBOlevel',
+                                                'PH_Corr_peak_lev','CLR_GPA',
+                                                'course_shift',
+                                                'change_in_displ_sensitivity','Reduction_pow',
+                                                'Total_time_out_tolerance','physical_inspection',
+                                                'check_allcables_conn','check_allnuts_bolt'
+                                                'Tx_parameters_DC_pow','MonitorSystemOperation',
+                                                'All_function_remotecontrol','Grading_ofcritical_area',
+                                                'Environment_vegetaion','status_RClines','auto_changeover_value','PA27Leval',
+                                                'PA27Level','Auto_changeOver_ok','Auto_shutdown_from_tx']}),
+                 ("Monthly-Parameter",{'fields':['Equ_rack_earth_resis','Earth_resis_antenna','Earth_resis_NF_monitor_antenna',
+                                                 'Earth_resisFFM','Earth_to_neutral_volt']}),
+                 ("Quaterly-Parameter",{'fields':['Suprious_modul','Coverage_dist','Carrier_modulation','carrier_modul_harmonic',
+                                                  'Carrier_module_hor_contetn','sun_modul_depths','course_alignment','identification',
+                                                  'identification_repetition_rate']}),
+                 ("Annual-Parameter",{'fields':['Frequency','carrier_modulation_freq','carrier_module_har_content',
+                                                'Carrier_modulation_harm','Unwanted_modulation','CSB_in_watt',
+                                                'SBO','phase_CORR','LF_phase_check','RF_phase_check',
+                                                'DDM_check_COU','SDM_check_COU','Course_ident_Mod','Cou_Trans_out_pow',
+                                                'CLR_Tranns_out_pow','Monitor_delay']})
+
+
+                 ]
 
 @admin.register(DVOR)
 
@@ -229,4 +265,8 @@ class UPSAdmin(admin.ModelAdmin):
                                                  'DAT_drive_cleaning','Netuno_Server_restart']})
 
 
+<<<<<<< HEAD
                 ]
+=======
+                ]
+>>>>>>> 961b8fef944c9a826458c734d14e3e367aaa5c9e
