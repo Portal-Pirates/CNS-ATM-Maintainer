@@ -364,8 +364,8 @@ class Localizer(models.Model):
     status=  models.BooleanField( blank=True, null=True)
    
     #daily field data 
-    General_cleanliness_room = models.CharField(max_length = 255,  blank=True, null=True)
-    Status_airconditioners = models.CharField(max_length = 255,  blank=True, null=True)
+    General_cleanliness_room = models.BooleanField(max_length = 255,  blank=True, null=True)
+    Status_airconditioners = models.BooleanField(max_length = 255,  blank=True, null=True)
     status_obstruction_light = models.BooleanField( blank=True, null=True)
     main_supply_volt = models.IntegerField( blank=True, null=True)
     main_supply_frequency = models.FloatField( blank=True, null=True)
