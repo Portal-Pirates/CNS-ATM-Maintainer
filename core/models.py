@@ -410,7 +410,6 @@ class Localizer(models.Model):
     status_RClines = models.BooleanField( blank=True, null=True)
         #Monitor integrity check 
     auto_changeover_value = models.IntegerField( blank=True, null=True)
-    PA27Leval= models.IntegerField( blank=True, null=True)
     Auto_Shutdown = models.BooleanField( blank=True, null=True)
     PA27Level = models.IntegerField( blank=True, null=True)
     Auto_changeOver_ok = models.BooleanField( blank=True, null=True)

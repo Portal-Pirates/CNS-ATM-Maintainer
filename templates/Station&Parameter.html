@@ -869,21 +869,292 @@ $(function() {
    
                    {% if LOCALIZER %}
                           {% if DAILY %}
+                          <h4>GENERAL CLEANINESS<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="text" name="General_cleanliness_room" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                    <h4>AIRCONDITIONERS STATUS<span>*</span></h4>
+                          <select name="Status_airconditioners" required>
+                            <option class="disabled" disabled selected>*Please Select*</option>
+                            <option value="1" >OK</option>
+                            <option value="0">NOT OK</option>
+                          </select>
+                    <h4>OBSTRUCTION LIGHT STATUS<span>*</span></h4>
+                              <select name="status_obstruction_light" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                   <h4>MAIN SUPPLY VOLTAGE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="main_supply_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                   <h4>MAIN SUPPLY FREQUENCY<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="main_supply_frequency" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
                                           
                           {% endif %}
 
                           
                           {% if WEEKLY %}
-                            
+                          <h4>SYSTEM TIME SYNCHRONIZATION VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="System_time_synch" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>TIME OF OBSERVATION IN UTC <span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="Time_of_observ_UTC" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>ILS DATA UTC<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="ILS_data_UTC" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>TIME SOURCE SYNCHRONIZATION VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="Time_source_synch" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>UPS OUT VOLTAGE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="Ups_out_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>UPS OUT FREQUENCY<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="Ups_out_freq" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>UPS BATTERY VOLTAGE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="Ups_battery_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>BATTERY VOLTAGE BEFORE DISCHARGE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="Battery_volt_before_discharge" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>BETTARY VOLTAGE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="battery_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div>   
+                          <h4>BATTERY OPARATIONAL STATUS<span>*</span></h4>
+                          <select name="operation_on_battery" required>
+                            <option class="disabled" disabled selected>*Please Select*</option>
+                            <option value="1" >OK</option>
+                            <option value="0">NOT OK</option>
+                          </select>
+                          <h4>BETTARY TERMINAL CLEANINESS<span>*</span></h4>
+                          <select name="Battery_terminal_cleaned" required>
+                            <option class="disabled" disabled selected>*Please Select*</option>
+                            <option value="1" >OK</option>
+                            <option value="0">NOT OK</option>
+                          </select>
+                          <h4>COURCE LPA<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="course_LPA" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div>  
+                          <h4>CSB LEVEL VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="CSBlevel" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div>  
+                          <h4>SBO LEVEL VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="SBOlevel" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div>  
+                          <h4>PH CORE PEAK LEVEL<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="PH_Corr_peak_lev" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div>  
+                          <h4>CLR GPA VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="CLR_GPA" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div>  
+                          <h4>PA 27 LEVEL<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="PA27lev" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div>  
+                          <h4>COURSE SHIFT<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="text" name="course_shift" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>COURSE ALIGNMENT<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="text" name="course_alignment" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>CHANGE IN DISPLACEMENT SENSITIVITY<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="text" name="change_in_displ_sensitivity" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>REDUCTION POWER<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="text" name="Reduction_pow" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div>  
+                          <h4>TOTAL TIME OUT TOLERANCE <span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="Total_time_out_tolerance" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>PHISICAL INSPECTION<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="physical_inspection" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>CHECK ALL CABLES CONNECTION VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="check_allcables_conn" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>CHECK ALL NUT AND VOLTS<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="check_allnuts_bolt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>TX PARAMETERS DC POWER VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="Tx_parameters_DC_pow" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>GRADING OF CRITICAL VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="Grading_ofcritical_area" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>ENVIRONMENT VEGETATION<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="Environment_vegetaion" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>AUTO CHANGEOVER VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="auto_changeover_value" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>PA27 LevEl VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="PA27Level" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>AUTO SHUTDOWN VALUE<span>*</span></h4>
+                          <div class="name"> 
+                            <input type="number" name="Auto_shutdown_from_tx" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                          </div> 
+                          <h4>Monitor System Operation<span>*</span></h4>
+                                <select name="MonitorSystemOperation" required>
+                                  <option class="disabled" disabled selected>*Please Select*</option>
+                                  <option value="1" >OK</option>
+                                  <option value="0">NOT OK</option>
+                                </select>
+                          <h4>ALL FUNCTIONS OF REMOTE<span>*</span></h4>
+                                  <select name="All_function_remotecontrol" required>
+                                    <option class="disabled" disabled selected>*Please Select*</option>
+                                    <option value="1" >OK</option>
+                                    <option value="0">NOT OK</option>
+                                  </select>
+                          <h4>STATUS RCLIENS<span>*</span></h4>
+                                <select name="status_RClines" required>
+                                  <option class="disabled" disabled selected>*Please Select*</option>
+                                  <option value="1" >OK</option>
+                                  <option value="0">NOT OK</option>
+                                </select>
+                          <h4>AUTO SHUTDOWN STATUS<span>*</span></h4>
+                              <select name="Auto_Shutdown" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                          <h4>AUTO CHANGEOVER STATUS<span>*</span></h4>
+                                <select name="Auto_changeOver_ok" required>
+                                  <option class="disabled" disabled selected>*Please Select*</option>
+                                  <option value="1" >OK</option>
+                                  <option value="0">NOT OK</option>
+                                </select>
                           {% endif %}
 
                           
                           {% if MONTHLY %}
-                            
+                                <h4>EQUIPMENT RACK EARTH RESISTANCE VALUE<span>*</span></h4>
+                                    <div class="name"> 
+                                      <input type="number" name="Equ_rack_earth_resis" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                    </div> 
+                                <h4>EARTH RESISTANCE ANTENNA VALUE<span>*</span></h4>
+                                    <div class="name"> 
+                                      <input type="number" name="Earth_resis_antenna" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                    </div> 
+                                <h4>EARTH RESISTANCE NF MONITER ANTENNA VALUE<span>*</span></h4>
+                                    <div class="name"> 
+                                      <input type="number" name="Earth_resis_NF_monitor_antenna" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                    </div> 
+                                <h4>EARTH RESISTANCE FFM<span>*</span></h4>
+                                    <div class="name"> 
+                                      <input type="number" name="Earth_resisFFM" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                    </div> 
+                                <h4>EARTH TO NATURAL VOLT VALUE<span>*</span></h4>
+                                    <div class="name"> 
+                                      <input type="number" name="Earth_to_neutral_volt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                    </div> 
                           {% endif %}
 
                           {% if YEARLY %}
-                            
+                          <h4>FREQUENCY VALUE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="Frequency" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>CARRIER MODULATION FREQUENCY<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="carrier_modulation_freq" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>CARRIER MODULATION HARM VALUE<span>*</span></h4>
+                                <div class="name"> 
+                                  <input type="number" name="Carrier_modulation_harm" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                </div> 
+                          <h4>UNWANTED MODULATION<span>*</span></h4>
+                                <div class="name"> 
+                                  <input type="text" name="Unwanted_modulation" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                </div> 
+                          <h4>CSB IN WATT<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="CSB_in_watt" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>SBO VALUE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="SBO" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div> 
+                          <h4>PHASE CORR VALUE<span>*</span></h4>
+                                <div class="name"> 
+                                  <input type="number" name="phase_CORR" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                </div> 
+                          <h4>DDM CHECK COU VALUE<span>*</span></h4>
+                                <div class="name"> 
+                                  <input type="number" name="DDM_check_COU" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                </div>
+                          <h4>SDM CHECK COU<span>*</span></h4>
+                                <div class="name"> 
+                                  <input type="number" name="SDM_check_COU" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                </div>
+                          <h4>COU TRANSMITION OUT POWER VALUE<span>*</span></h4>
+                                <div class="name"> 
+                                  <input type="number" name="Cou_Trans_out_pow" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                                </div>
+                          <h4>CLR TRANSMITION OUT POWER VALUE<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="CLR_Tranns_out_pow" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div>
+                          <h4>MONITER DELAY<span>*</span></h4>
+                              <div class="name"> 
+                                <input type="number" name="Monitor_delay" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                              </div>
+                          <h4>CARRIER MODULE HAR CONTENT STATUS<span>*</span></h4>
+                              <select name="carrier_module_har_content" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                          <h4>LF PHASE CHECK<span>*</span></h4>
+                              <select name="LF_phase_check" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                          <h4>RF PHASE CHECK<span>*</span></h4>
+                              <select name="RF_phase_check" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
+                          <h4>COURSE IDENT MODULATION<span>*</span></h4>
+                              <select name="Course_ident_Mod" required>
+                                <option class="disabled" disabled selected>*Please Select*</option>
+                                <option value="1" >OK</option>
+                                <option value="0">NOT OK</option>
+                              </select>
                           {% endif %}
                    {% endif %}
                      
