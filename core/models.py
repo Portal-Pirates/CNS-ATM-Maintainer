@@ -9,7 +9,7 @@ User = get_user_model()
 REPORT_TYPE_CHOICES = [
     ('daily', 'Daily'),
     ('weekly', 'Weekly'),
-    ('mothly', 'Monthly'),
+    ('monthly', 'Monthly'),
     ('quarterly', 'Quaterly'),
     ('halfyearly', 'Half-Yearly'),
     ('year', 'Yearly')
