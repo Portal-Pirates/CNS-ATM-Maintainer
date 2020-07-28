@@ -131,7 +131,7 @@ class Glid_Path(models.Model):
    
     
     remarks = models.CharField(max_length = 255, blank=True, null=True)
-    status=  models.BooleanField(blank=True, null=True)
+    status=  models.BooleanField(blank=True, null=True, verbose_name="Report status")
     
     '''parameter of glid path'''
     # Daily report data 
@@ -224,7 +224,7 @@ class COMSOFT(models.Model):
     report_type = models.CharField(max_length=20, choices=REPORT_TYPE_CHOICES)
 
     remarks = models.CharField(max_length = 255, blank=True, null=True)
-    status=  models.BooleanField(blank=True, null=True)
+    status=  models.BooleanField(blank=True, null=True, verbose_name="Report status")
    
     
      # Daily report data 
@@ -306,7 +306,7 @@ class VCS_System(models.Model):
     report_type = models.CharField(max_length=20, choices=REPORT_TYPE_CHOICES)
 
     remarks = models.CharField(max_length = 255, blank=True, null=True)
-    status=  models.BooleanField(blank=True, null=True)
+    status=  models.BooleanField(blank=True, null=True, verbose_name="Report status")
     
     # Daily data 
     Ac_volt_UPS1 = models.CharField(max_length = 255, blank=True, null=True)
@@ -361,7 +361,7 @@ class Localizer(models.Model):
 
    
     remarks = models.CharField(max_length = 255,  blank=True, null=True)
-    status=  models.BooleanField( blank=True, null=True)
+    status=  models.BooleanField( blank=True, null=True, verbose_name="Report Status")
    
     #daily field data 
     General_cleanliness_room = models.BooleanField(max_length = 255,  blank=True, null=True)
@@ -482,7 +482,7 @@ class DVOR(models.Model):
 
    
     remarks = models.CharField(max_length = 255, blank=True, null=True)
-    status=  models.BooleanField(blank=True, null=True)
+    status=  models.BooleanField(blank=True, null=True, verbose_name="Report status")
     
   
 
@@ -578,7 +578,7 @@ class NDB(models.Model):
 
   
     remarks = models.CharField(max_length = 255, blank=True, null=True)
-    status=  models.BooleanField(blank=True, null=True)
+    status=  models.BooleanField(blank=True, null=True, verbose_name="Report status")
     
     #daily data for NDB
     #general 
@@ -645,7 +645,7 @@ class Datis_Terma(models.Model):
 
     
     remarks = models.CharField(max_length = 255)
-    status=  models.BooleanField(blank=True, null=True)
+    status=  models.BooleanField(blank=True, null=True, verbose_name="Report status")
     
     #daily data 
     Physical_clean =models.BooleanField(blank=True, null=True) 
@@ -682,7 +682,9 @@ class DVTR(models.Model):
     #this is for creation Info
     created_by = models.ForeignKey(Profile, on_delete=models.CASCADE)
 
-
+    remarks = models.CharField(max_length = 255)
+    status=  models.BooleanField(blank=True, null=True, verbose_name="Report status")
+    
     #daily data 
     frequency = models.CharField(max_length=8, blank=True, null=True)
     room_temp = models.IntegerField(blank=True, null=True) 
@@ -732,7 +734,7 @@ class UPS(models.Model):
     
    
     remarks = models.CharField(max_length = 255,  blank=True, null=True)
-    status=  models.BooleanField(blank=True, null=True)
+    status=  models.BooleanField(blank=True, null=True, verbose_name="Report status")
     
 
     #Field to deteremine type of report
