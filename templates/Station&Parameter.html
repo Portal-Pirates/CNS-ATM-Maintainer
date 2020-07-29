@@ -157,7 +157,7 @@ $(function() {
 
   <div class="container1">
       <div class="contact">
-        <form action="/">
+      <form action="/NewEntry/add/{{eqobj.id}}/{{report}}" method="POST">
           {% csrf_token %}
 
                   <!--Station Details-->
@@ -188,35 +188,35 @@ $(function() {
                    {% if UPS %}
                         
                         {% if DAILY %}
-                                  <h4>INPUT VOLTAGE<span>*</span></h4>
+                              <h4>INPUT VOLTAGE<span>*</span></h4>
                                   <div class="name"> 
                                     <input type="text" name="Input_voltage" placeholder="INPUT VOLTAGE WATTS" required/>
                                   </div>
-                                  <h4>INPUT FREQUENCY<span>*</span></h4>
+                              <h4>INPUT FREQUENCY<span>*</span></h4>
                                   <div class="name"> 
                                     <input type="text" name="Input_frequency" placeholder="INPUT FREQUENCY IN HTZ" required/>
                                   </div>
-                                  <h4>OUTPUT VOLTAGE<span>*</span></h4>
+                             <h4>OUTPUT VOLTAGE<span>*</span></h4>
                                   <div class="name"> 
                                     <input type="text" name="Output_voltage" placeholder="OUTPUT VOLTAGE WATTS" required/>
                                   </div> 
-                                  <h4>OUTPUT FREQUENCY<span>*</span></h4>
+                              <h4>OUTPUT FREQUENCY<span>*</span></h4>
                                   <div class="name"> 
                                     <input type="text" name="output_frequency" placeholder="OUTPUT FREQUENCY IN HTZ" required/>
                                   </div>     
-                                  <h4>OUTPUT LOAD<span>*</span></h4>
+                              <h4>OUTPUT LOAD<span>*</span></h4>
                                   <div class="name"> 
                                     <input type="text" name="output_load" placeholder="OUTPUT LOAD IN VOLTS" required/>
                                   </div> 
-                                  <h4>BATTARY BANK VOLT<span>*</span></h4>
+                              <h4>BATTARY BANK VOLT<span>*</span></h4>
                                   <div class="name"> 
                                     <input type="text" name="Battery_bank_volt" placeholder="BATTARY BANK VOLTS" required/>
                                   </div>  
-                                  <h4>BATTARY CURRENT<span>*</span></h4>
+                              <h4>BATTARY CURRENT<span>*</span></h4>
                                   <div class="name"> 
                                     <input type="text" name="Battery_current" placeholder="BATTARY CURRENT IN VOLTS" required/>
                                   </div>    
-                                  <h4>WORKING<span>*</span></h4>
+                              <h4>WORKING<span>*</span></h4>
                                   <select name="working" required>
                                     <option class="disabled" disabled selected>*Please Select*</option>
                                     <option value="1" >OK</option>
@@ -232,6 +232,10 @@ $(function() {
                           <option value="1" >OK</option>
                           <option value="0">NOT OK</option>
                         </select> 
+                        <h4>UPS Load percent<span>*</span></h4>
+                        <div class="name"> 
+                          <input type="text" name="UPS_load_percent" placeholder="BATTARY CURRENT IN VOLTS" required/>
+                        </div>   
                         <h4>CHECK BATTERY TERMINAL<span>*</span></h4>
                         <select name="check_battery_terminal" required>
                           <option class="disabled" disabled selected>*Please Select*</option>

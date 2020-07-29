@@ -70,19 +70,19 @@
         <h1 style="text-align:center; text-decoration-color: blue"><strong style="font-size: 30px; padding: 5px;">PLEASE FILL EQUIPMENT DETAILS</strong></h1>
        <h4>DEVICE DETAILS<span>*</span></h4>    
        <div class="name">
-        <input type="text" name="equipment_name" placeholder="DEVICE NAME" id="devicename" />   
-        <input type="number" name="serial_number" placeholder="SERIAL NUMBER" />
+        <input type="text" name="equipment_name" placeholder="DEVICE NAME" id="devicename" required/>   
+        <input type="number" name="serial_number" placeholder="SERIAL NUMBER" required/>
        </div>
        <br>
        <div class="name">
-        <input type="text" name="modal_number" placeholder="MODAL NUMBER" />
-        <input type="text" name="company" placeholder="DEVICE COMPANY NAME" id="devicename" /> 
+        <input type="text" name="modal_number" placeholder="MODAL NUMBER" required/>
+        <input type="text" name="company" placeholder="DEVICE COMPANY NAME" id="devicename" required/> 
      </div>
      <br>
      <div class="name">
       <div class="form-group col-md-4">
         <label for="inputState">EQUIPMENT TYPE</label>
-        <select id="inputState" class="form-control" name="equipment_type">
+        <select id="inputState" class="form-control" name="equipment_type" required>
           <option selected>communication</option>
           <option>navigation</option>
           <option>surveillance</option>
