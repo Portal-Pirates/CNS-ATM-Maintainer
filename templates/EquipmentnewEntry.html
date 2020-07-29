@@ -39,7 +39,23 @@
         source: '{% url 'Equipmentautocomplete' %}',
      });
   });
+  $(function() {
+    $( "#serial" ).autocomplete({
+       source: '{% url 'EquipmentSerialautocomplete' %}',
+    });
+ });
+ $(function() {
+  $( "#model_number" ).autocomplete({
+     source: '{% url 'EquipmentModelNumberAutocomplete' %}',
+  });
+});
+$(function() {
+  $( "#company" ).autocomplete({
+     source: '{% url 'EquipmentCompanyAutocomplete' %}',
+  });
+});
 </script>
+
   <!-- end of JqueryUIautocomplete CSS -->
 </head>
 
@@ -71,12 +87,12 @@
        <h4>DEVICE DETAILS<span>*</span></h4>    
        <div class="name">
         <input type="text" name="equipment_name" placeholder="DEVICE NAME" id="devicename" required/>   
-        <input type="number" name="serial_number" placeholder="SERIAL NUMBER" required/>
+        <input type="number" name="serial_number" placeholder="SERIAL NUMBER" id="serial" required/>
        </div>
        <br>
        <div class="name">
-        <input type="text" name="modal_number" placeholder="MODAL NUMBER" required/>
-        <input type="text" name="company" placeholder="DEVICE COMPANY NAME" id="devicename" required/> 
+        <input type="text" name="modal_number" placeholder="MODAL NUMBER" id="model_number" required/>
+        <input type="text" name="company" placeholder="DEVICE COMPANY NAME" id="company" required/> 
      </div>
      <br>
      <div class="name">

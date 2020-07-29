@@ -144,10 +144,20 @@ src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js">
 </script>
 
 <script>
+  $(function() {
+    $( "#stationname" ).autocomplete({
+       source: '{% url 'StationNameAutocomplete' %}',
+    });
+ });
+ $(function() {
+  $( "#model_number" ).autocomplete({
+     source: '{% url 'EquipmentModelNumberAutocomplete' %}',
+  });
+});
 $(function() {
-   $( "#devicename" ).autocomplete({
-      source: '{% url 'Equipmentautocomplete' %}',
-   });
+  $( "#company" ).autocomplete({
+     source: '{% url 'EquipmentCompanyAutocomplete' %}',
+  });
 });
 </script>
 </head>
@@ -161,12 +171,14 @@ $(function() {
           {% csrf_token %}
 
                   <!--Station Details-->
-
+                  
+                  {% if station %}
+                 
                   <h1 style="text-align:center; text-decoration-color: blue"><strong style="font-size: 30px; padding: 5px;">PLEASE FILL LOCATION DETAILS</strong></h1>
 
                     <h4>STATION NAME<span>*</span></h4>
                     <div class="name"> 
-                      <input type="text" name="station_name" placeholder="STATION NAME" required/>
+                      <input type="text" name="station_name" placeholder="STATION NAME" id="stationname" required/>
                     </div>
 
                     <h4>REGION NAME<span>*</span></h4>
@@ -178,7 +190,8 @@ $(function() {
                     <div class="name"> 
                       <input type="text" name="location" placeholder="AIRPORT LOCATION" required/>
                     </div>
-
+                     
+                    {% endif %}
                    <!--DONE WITH STATTION DETAILS-->
                     
                    <br><br>

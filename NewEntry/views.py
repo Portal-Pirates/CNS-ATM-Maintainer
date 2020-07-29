@@ -51,6 +51,7 @@ def Equipmentdetail(request, report_type=None):
             obj = Equipments.objects.filter(equipment_name__iexact=equipment_name).first()
             report_type = report_type.upper()
             context = {
+                'station' : True,
                  eq_name : True,
                  report_type: True,
                  'report': report_type,
@@ -1310,4 +1311,46 @@ def Equipmentautocomplete(request):
             equipments.append(item.equipment_name)
         # titles = [product.title for product in qs]
         return JsonResponse(equipments, safe = False)
+    return render(request, "NewEntry.html")
+
+def EquipmentSerialautocomplete(request):
+    if 'term' in request.GET:
+        qs = Equipments.objects.filter(serial_number__icontains=int(request.GET.get('term')))
+        serials = list()
+        for item in qs:
+            serials.append(str(item.serial_number))
+        # titles = [product.title for product in qs]
+        return JsonResponse(serials, safe = False)
+    return render(request, "NewEntry.html")
+
+
+def EquipmentModelNumberAutocomplete(request):
+    if 'term' in request.GET:
+        qs = Equipments.objects.filter(modal_number__icontains=request.GET.get('term'))
+        serials = list()
+        for item in qs:
+            serials.append(item.modal_number)
+        # titles = [product.title for product in qs]
+        return JsonResponse(serials, safe = False)
+    return render(request, "NewEntry.html")
+
+
+def EquipmentCompanyAutocomplete(request):
+    if 'term' in request.GET:
+        qs = Equipments.objects.filter(company__icontains=request.GET.get('term'))
+        campanies = list()
+        for item in qs:
+            campanies.append(item.company)
+        # titles = [product.title for product in qs]
+        return JsonResponse(campanies, safe = False)
+    return render(request, "NewEntry.html")
+
+def StationNameAutocomplete(request):
+    if 'term' in request.GET:
+        qs = Stations.objects.filter(station_name__icontains=request.GET.get('term'))
+        station_names = list()
+        for item in qs:
+            station_names.append(item.station_name)
+        # titles = [product.title for product in qs]
+        return JsonResponse(station_names, safe = False)
     return render(request, "NewEntry.html")
