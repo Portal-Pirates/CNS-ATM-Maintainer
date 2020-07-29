@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+{% static 'media' as md %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> QR Generation </title>
+    <link rel="stylesheet" type="text/css" href="/static/css/Home.css">
+</head>
+<body>
+<div class="title" > <h1> QR code Application </h1></div>
+  <div class="container">
+       <div class="left" align='center'>
+            <h3> Choose data for QR </h3>
+                <form action="generate" method="post">
+                     {%csrf_token%}
+
+
+                Airport   :<select class="custom-select" name='airport_name' style="width:150px;">
+                       <option selected="selected" disabled > select </option>
+                       <option value="varansi" > varansi</option>
+                       <option value="Bhopal" > Bhopal</option>
+                       <option value="Kolkatta" > Kolkatta</option>
+                   </select>
+                    <br><br>
+                Station    : <select class="custom-select" name='station_name' style="width:150px;">
+                       <option selected="selected" disabled > select </option>
+                       <option value="varansi" > varansi</option>
+                       <option value="Bhopal" > Bhopal</option>
+                       <option value="Kolkatta" > Kolkatta</option>
+                   </select>
+                    <br><br>
+                Serial no. :<input type="text" name="serial_number" class="entry-box" style="width:150px;">
+
+                   <br><br>
+                Euip type  :<select class="custom-select" name="equipment_type" style="width:150px;">
+                         <option selected="selected" disabled> select</option>
+                        <option value="communication">communication</option>
+                        <option value="nevigation">nevigation</option>
+                        <option value="survillence">survillence</option>
+
+                   </select>
+
+                   <br><br>
+                Equipment  : <input type="text" name="equipment_name" class="entry-box" style="width:150px;">
+
+                    <br><br>
+                Modal No.  : <input type="text" name="modal_number" class="entry-box" style="width:150px;">
+                    <br><br>
+                Updated by : <input type="text" name="updated_by" class="entry-box" style="width:150px;">
+
+
+                   <br><br>
+
+                   <input type="submit" value="Generate" class="submitbtn">
+
+            </form>
+       </div>
+     <div class="right">
+          {%csrf_token%}
+         <h3> Your QR code - </h3>
+
+
+            <img src="{{md}}/{{image_name}}.png" >
+
+         <br><br>
+
+
+         <a href="{{md}}/{{image_name}}.png" download="Download"> Download </a>
+
+
+     </div>
+  </div>
+
+</body>
+</html>
