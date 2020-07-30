@@ -48,13 +48,13 @@ class EquipmentsAdmin(admin.ModelAdmin):
 @admin.register(Glid_Path)
 
 class Glid_PathAdmin(admin.ModelAdmin):
-    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
+    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make', 'status']
     list_filter = ['report_type', 'station_name', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
     # section
     fieldsets = [
-        ("Basic-Details",{'fields':["equipment_name","modal_number","Make","Airport_Location","verified_by_Manager","station_name","created_by","report_type"]}),
+        ("Basic-Details",{'fields':["equipment_name","modal_number","Make","Airport_Location","verified_by_Manager","station_name","created_by","report_type", 'remarks', 'status']}),
         ("Daily-Parameters",{"fields":["General_cleanliness_room","Status_airconditioners","status_obstruction_light",
                                         "main_supply_volt","main_supply_frequency","verify_equipment_on_UPS","status_near_monitor",
                                         "status_critical_area","remote_status_indication","param","Disagr",
@@ -73,13 +73,13 @@ class Glid_PathAdmin(admin.ModelAdmin):
 @admin.register(COMSOFT)
 
 class COMSOFTAdmin(admin.ModelAdmin):
-    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
+    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make', 'status']
     list_filter = ['report_type', 'station_name', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
 
     fieldsets = [("Basic-Details",{'fields':["equipment_name", "modal_number", "Make", "Airport_Location", "verified_by_Manager",
-                                   "station_name", "created_by", "report_type"]}),
+                                   "station_name", "created_by", "report_type", 'remarks', 'status']}),
                  ("Daily-Parameter",{'fields':['General_cleanliness_room','Status_airconditioners','status_obstruction_light','main_supply_volt','main_supply_frequency','verify_equipment_on_UPS','status_near_monitor','status_critical_area','remote_status_indication']}),
                  ("Monthly-Parameter",{'fields':['Gps_latitude','GPS_longitude','Gps_altitude','general_result','GPS','voltage_sensing','FPGA','Reciever','Cpu_load','Gps_synch','Intermediate_volt',
                                                 'Gps_volt','FPGA_volt','DSP_Board_volt','DSP_board_tmep','Signal_strength_RF_Site','End_to_End_test',
@@ -97,14 +97,14 @@ class COMSOFTAdmin(admin.ModelAdmin):
 @admin.register(VCS_System)
 
 class VCS_SystemAdmin(admin.ModelAdmin):
-    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
+    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make', 'status']
     list_filter = ['report_type', 'station_name', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
 
     fieldsets = [("Basic-Details",
                   {'fields': ["equipment_name", "modal_number", "Make", "Airport_Location", "verified_by_Manager",
-                              "station_name", "created_by", "report_type"]}),
+                              "station_name", "created_by", "report_type", 'remarks', 'status']}),
                  ("Daily-Parameter", {'fields':['Ac_volt_UPS1','Condition_UPS1','RAD1PSU','TEL1_PSU','TEL2_PSU','TEL3_PSU','TEL4_PSU',
                                                 'PSU_FuseLED','system_A','Overall_perform']}),
                  ("Weekly-Parameter",{'fields':['DMC01D5','D5','D4','D3','PDE_4601','D2',
@@ -116,13 +116,14 @@ class VCS_SystemAdmin(admin.ModelAdmin):
 @admin.register(Localizer)
 
 class LocalizerAdmin(admin.ModelAdmin):
-    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
+    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make', 'status']
     list_filter = ['report_type', 'station_name', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
     
+    
     fieldsets = [("Basic-Details",{'fields': ["equipment_name", "modal_number", "Make", "Airport_Location", "verified_by_Manager",
-                              "station_name", "created_by", "report_type"]}),
+                              "station_name", "created_by", "report_type", 'remarks', 'status']}),
                  ("Daily-Parameter", {'fields': ['General_cleanliness_room',
                                                  'Status_airconditioners',
                                                  'status_obstruction_light',
@@ -141,7 +142,7 @@ class LocalizerAdmin(admin.ModelAdmin):
                                                 'check_allcables_conn','check_allnuts_bolt',
                                                 'Tx_parameters_DC_pow','MonitorSystemOperation',
                                                 'All_function_remotecontrol','Grading_ofcritical_area',
-                                                'Environment_vegetaion','status_RClines','auto_changeover_value','PA27Leval',
+                                                'Environment_vegetaion','status_RClines','auto_changeover_value',
                                                 'PA27Level','Auto_changeOver_ok','Auto_shutdown_from_tx']}),
                  ("Monthly-Parameter",{'fields':['Equ_rack_earth_resis','Earth_resis_antenna','Earth_resis_NF_monitor_antenna',
                                                  'Earth_resisFFM','Earth_to_neutral_volt']}),
@@ -157,19 +158,20 @@ class LocalizerAdmin(admin.ModelAdmin):
 
                  ]
 
+
 @admin.register(DVOR)
 
 class DVORAdmin(admin.ModelAdmin):
-    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
+    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make', 'status']
     list_filter = ['report_type', 'station_name', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
 
     fieldsets = [("Basic-Details",
                   {'fields': ["equipment_name", "modal_number", "Make", "Airport_Location", "verified_by_Manager",
-                              "station_name", "created_by", "report_type"]}),
+                              "station_name", "created_by", "report_type", 'remarks', 'status']}),
                  ("Daily-Parameter",{'fields': ['Equipment_shelter_cleanlines','status_air_conditioners','shelter_temp_in_celcius','UPS_input_volt_frequency','PS_output_volt_frequency','status_battery_operation',
-                                                 'hours_operation','Alarm','remarks']}),
+                                                 'hours_operation','Alarm']}),
                  ("Weekly-Parameter",{'fields':['Carrier_pow','AM_30hz','Am_1020hz',
                                                 'USB_level','USB_RF_Phase','LSB_level','Azinmuth','RF_level','FM_index','Carrier_frequency',
                                                 'USB_frequency','LSB_frequency','Azimuth_Ul_near','Azimuth_LL_nar','battery_volt',
@@ -188,14 +190,14 @@ class DVORAdmin(admin.ModelAdmin):
 @admin.register(NDB)
 
 class NDBAdmin(admin.ModelAdmin):
-    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
+    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make', 'status']
     list_filter = ['report_type', 'station_name', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
 
     fieldsets = [("Basic-Details",
                   {'fields': ["equipment_name", "modal_number", "Make", "Airport_Location", "verified_by_Manager",
-                              "station_name", "created_by", "report_type"]}),
+                              "station_name", "created_by", "report_type", 'remarks', 'status']}),
                  ("Daily-Parameter", {'fields': ['room_temp','AC_main_volt','UPS_out_volt','cleanlines',
                                                  'reflected_power','Forword_Power','modulation','PA_volt',
                                                  'PA_current','System_staus_LED','primary_tx_led','tx_power_on_led']}),
@@ -209,28 +211,28 @@ class NDBAdmin(admin.ModelAdmin):
 @admin.register(Datis_Terma)
 
 class Datis_TermaAdmin(admin.ModelAdmin):
-    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
+    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make', 'status']
     list_filter = ['report_type', 'station_name', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
 
     fieldsets = [("Basic-Details",
                   {'fields': ["equipment_name", "modal_number", "Make", "Airport_Location", "verified_by_Manager",
-                              "station_name", "created_by", "report_type"]}),
+                              "station_name", "created_by", "report_type", 'remarks', 'status']}),
                  ("Daily-Parameter", {'fields': ['Physical_clean','PS_A_UPS','PS_B_UPS','overall_A','overall_B']})
                     ]
 
 @admin.register(DVTR)
 
 class DVTRAdmin(admin.ModelAdmin):
-    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
+    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make', 'status']
     list_filter = ['report_type', 'station_name', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
 
     fieldsets = [("Basic-Details",
                   {'fields': ["equipment_name", "modal_number", "Make", "Airport_Location", "verified_by_Manager",
-                              "station_name", "created_by", "report_type"]}),
+                              "station_name", "created_by", "report_type", 'remarks', 'status']}),
                  ("Daily-Parameter", {'fields': ['frequency','room_temp','AC_main_volt','UPS_out_volt',
     'cleanlines',
     'status_UPS',
@@ -248,19 +250,27 @@ class DVTRAdmin(admin.ModelAdmin):
 
 @admin.register(UPS)
 class UPSAdmin(admin.ModelAdmin):
-    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make']
+    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make', 'status']
     list_filter = ['report_type', 'station_name', 'created_by', 'Make']
     search_fields = ['modal_number', 'station_name', 'report_type']
     list_per_page = 40
 
     fieldsets = [("Basic-Details",
                   {'fields': ["equipment_name", "modal_number", "Make", "Airport_Location", "verified_by_Manager",
-                              "station_name", "created_by", "report_type"]}),
+                              "station_name", "created_by", "report_type", 'remarks', 'status']}),
                  ("Daily-Parameter", {'fields': ['Input_voltage','Input_frequency','Output_voltage',
                                                  'output_frequency','output_load','Battery_bank_volt','Battery_current',
                                                 'working']}),
                  ("Weekly-Parameter",{'fields':['Power_supply_terminal','check_battery_terminal','Battery_condition',
                                       'UPS_condition','UPS_load_percent','Neutral_load','Earthing_codition']}),
-                 ("Monthly-Parameter",{'fields':['Physicaly_clean_check','Rx_module_status','Control_Panel_setup','Physica_check_antenna_cables','remarks',
+                 ("Monthly-Parameter",{'fields':['Physicaly_clean_check','Rx_module_status','Control_Panel_setup','Physica_check_antenna_cables',
                                                  'DAT_drive_cleaning','Netuno_Server_restart']})
                 ]
+
+@admin.register(OtherEquipmentsReport)
+
+class OtherEquipmentsReportAdmin(admin.ModelAdmin):
+    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make', 'status']
+    list_filter = ['report_type', 'station_name', 'created_by', 'Make']
+    search_fields = ['modal_number', 'station_name', 'report_type']
+    list_per_page = 40
