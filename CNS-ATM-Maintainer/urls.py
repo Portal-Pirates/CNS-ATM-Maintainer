@@ -9,6 +9,7 @@ urlpatterns = [
     path('NewEntry/', include('NewEntry.urls')),
     path('accounts/', include('accounts.urls')), # new
     path('accounts/', include('django.contrib.auth.urls')),
+    path('HomeView/',include('QRgeneration.urls')),
 ]
 
 # This is core project urls
