@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from django.http.response import StreamingHttpResponse,HttpResponse
-from core.camera import *
 from core.models import *
 from django.contrib import messages
 from .forms import *
@@ -8,30 +7,14 @@ from .forms import *
 def homepage(request):
     return render(request, "index.html")
 
-# htao ISE Cz open-cv python and Django saath mill k stream nhi kra paa rhy hai!!!
+
 class Generate_data_feed:
     data_from_qr = ''
     def __init__(self):
         Generate_data_feed.data_from_qr = ''
 
-    """def generate_data(self,camera):
-        for i in range(0,1500):
-            frame = camera.get_frame()
-            try:
-                if type(frame) == str:
-                    Generate_data_feed.data_from_qr = frame
-                    raise StopIteration()
-            except StopIteration:
-                print("We got your data")
-                return HttpResponse("We got your data")
-            try:
-                yield (b'--frame\r\n'
-					    b'Content-Type: image/jpeg\r\n\r\n' + frame + b'\r\n\r\n')
-            except Exception:
-                pass
-        else:
-            print("Time out")
-            return"""
+
+
 
 def redirect_to_scan_qr(request):
     if request.method == "POST":
@@ -42,14 +25,13 @@ def redirect_to_scan_qr(request):
         form = QRdata()
         return render(request,"scanqr.html",{'form':form})
 
-##To be removed##
-"""def video_feed(request):
-    qr_scanner = Generate_data_feed()
-    results = qr_scanner.generate_data(VideoCamera())
-    return StreamingHttpResponse(results,content_type='multipart/x-mixed-replace; boundary=frame')"""
+
 
 def show_data(request):
     return render(request,"listviews.html")
+
+
+
 
 class GetModel:
     static_model = None
@@ -111,6 +93,11 @@ class GetModel:
             return("We haven't got your data")
 
 
+
+
+
+
+#Function to get model from the date it 
 def get_model_from_slug(QuerySet,created):
     try:
         data = QuerySet.get(created = created)
@@ -118,6 +105,9 @@ def get_model_from_slug(QuerySet,created):
     except Exception as message:
         return message
 
+
+
+#getting models for daily report list view
 def dig_models_daily_reports(request):
     model_class = GetModel()
     model = model_class.dig_models_for_results()
@@ -125,23 +115,50 @@ def dig_models_daily_reports(request):
         messages.success(request,model)
         return render(request,"daily.html")
     else:
-        model = model.filter(report_type = "daily")
-        print(model)
-        return render(request,"daily.html",{'model':model})
+        try:
+            model = model.filter(report_type = "daily")
+            print(model)
+            return render(request,"daily.html",{'model':model})
+        except Exception:
+            messages.success(request,model)
+            return render(request,"daily.html")
 
 
+#Digging models for creating list view for Weekly reports
 def dig_models_weekly_reports(request):
     model_class = GetModel()
     model = model_class.dig_models_for_results()
     print("I am monthly called model",model)
     if type(model) == str:
         messages.success(request,model)
-        return render(request,'upsWeekly.html')
+        return render(request,'weeklyList.html')
     else:
-        model2 = model.model.__name__
-        print(model2)
-        model = model.get(report_type = 'weekly')
-        return render(request,"upsWeekly.html",{'models':model,'model2': model2})
+        try:
+            print("We are running man")
+            model = model.filter(report_type = 'weekly')
+            return render(request,"weeklyList.html",{'model':model})
+        except Exception:
+            messages.success(request,model)
+            return render(request,"weeklyList.html")
+            
+
+#For Digging detailed information about the selected weekly report
+def detail_weekly_report(request,created):
+    models = GetModel.static_model
+    model_getter = get_model_from_slug(models,created)
+    if type(model_getter) == str:
+        messages.success(request,"Internal server error")
+        return render(request,"upsWeekly.html")
+    else:
+        try:
+            model2 = models.model.__name__
+            print(model2)
+            model = model_getter
+            print("Going to return weekly report")
+            return render(request,"upsWeekly.html",{'models':model,'model2': model2})
+        except Exception:
+            #messages.success(request,message)
+            return render(request,"upsWeekly.html")
 
 
 def dig_models_monthly_reports(request):
@@ -168,8 +185,7 @@ def detail_daily_report(request,created):
             model2 = models.model.__name__
             print(model2)
             return render(request,"detailedUps.html",{'models':model_getter,'model2':model2})
-        except Exception as message:
-            #messages.success(request,message)
+        except Exception:
             return render(request,"detailedUps.html")
 
 
@@ -255,10 +271,13 @@ def search_in_action(request):
         if type(model) == str:
             return HttpResponse("No data found")
         if report_type == "Daily Report":
-            check = model[0]
-            print(check.Input_frequency)
-            model2 = model.model.__name__
-            return render(request,"detailedUps.html",{'models':check,'model2':model2})
+            try:
+                check = model[0]
+                model2 = model.model.__name__
+                return render(request,"detailedUps.html",{'models':check,'model2':model2})
+            except Exception:
+                messages.success(request,"Sorry We have no data found")
+                return render(request,"detailedUps.html")
         elif report_type == "Weekly Report":
             model2 = model.model.__name__
             print(model2)

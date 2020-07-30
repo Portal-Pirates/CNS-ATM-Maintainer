@@ -1,27 +1,43 @@
-{% extends 'base1.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block home %}
-<p class="lead" style = "margin-top:2.5rem;">
-  <ul>
-    <li>
-      <a class="btn btn-primary btn-lg" href="{%url 'daily'%}" role="button">Daily report</a>
-    </li>
-    <li>
-      <a class="btn btn-primary btn-lg" href="{%url 'weekly'%}" role="button">Weekly Report</a>
-    </li>
-    <li>
-      <a class="btn btn-primary btn-lg" href="{%url 'monthly'%}" role="button">Monthly Report</a>
-    </li>
-    <li>
-      <a class="btn btn-primary btn-lg" href="{%url 'quaterly'%}" role="button">Quaterly Report</a>
-    </li>
-    <li>
-      <a class="btn btn-primary btn-lg" href="{%url 'sixmonth'%}" role="button">Six Months Report</a>
-    </li>
-    <li>
-      <a class="btn btn-primary btn-lg" href="{%url 'yearly'%}" role="button">Yearly Report</a>
-    </li>
-  </ul>
-</p>
+{% include 'GenericHeader.html' %}
+
+<center>
+  <p class="lead">
+    <ul>
+      <li>
+        <p>
+          <a class="btn btn-primary btn-lg" href="{%url 'daily'%}" role="button">Daily report</a>
+        </p>
+      </li>
+      <li>
+       <p>
+        <a class="btn btn-primary btn-lg" href="{%url 'weekly'%}" role="button">Weekly Report</a>
+       </p>
+      </li>
+      <li>
+        <p>
+        <a class="btn btn-primary btn-lg" href="{%url 'monthly'%}" role="button">Monthly Report</a>
+        </p>
+      </li>
+      <li>
+        <p>
+        <a class="btn btn-primary btn-lg" href="{%url 'quaterly'%}" role="button">Quaterly Report</a>
+        </p>
+      </li>
+      <li>
+        <p>
+        <a class="btn btn-primary btn-lg" href="{%url 'sixmonth'%}" role="button">Six Months Report</a>
+        </p>
+      </li>
+      <li>
+        <p>
+        <a class="btn btn-primary btn-lg" href="{%url 'yearly'%}" role="button">Yearly Report</a>
+        </p>
+      </li>
+    </ul>
+  </p>
+</center>
 {%endblock home%}

@@ -6,15 +6,7 @@
     {%if models%}
 <div style = "background-color: black; color: whitesmoke;" class="jumbotron jumbotron-fluid">
     <div class="container">
-      <div style = "background-color: black;">
-        {% if messages %}
-        <p>
-            {%for message in messages%}
-            <p class="lead">{{message}}</p>
-            {%endfor%}
-        </p>
-        {%endif%}
-    </div>
+      
         <h5> Equipment Name: &emsp; <span>{{models.equipment_name}}</span></h5>
         <ul>
             <li>
@@ -37,23 +29,23 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <th scope="row">Carrier_frequency</th>
+                            <th scope="row">Carrier frequency</th>
                             <td>{{models.Carrier_frequency}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Hz_derivation:</th>
+                            <th scope="row">Hz derivation:</th>
                             <td>{{models.Hz_derivation}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Hz_modulation_depth</th>
+                            <th scope="row">Hz modulation depth</th>
                             <td>{{models.Hz_modulation_depth}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Hz_modulation_frequency</th>
+                            <th scope="row">Hz modulation frequency</th>
                             <td>{{models.Hz_modulation_frequency}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">identification_speed</th>
+                            <th scope="row">identification speed</th>
                             <td>{{models.identification_speed}}</td>
                           </tr>
                           <tr>
@@ -61,11 +53,11 @@
                             <td>{{models.identification_repetition}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">identification_tone_frequency</th>
+                            <th scope="row">identification tone frequency</th>
                             <td>{{models.identification_tone_frequency}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Bearing_monitor</th>
+                            <th scope="row">Bearing monitor</th>
                             <td>{{models.Bearing_monitor}}</td>
                           </tr>
                         </tbody>
@@ -85,26 +77,26 @@
                             <td>{{models.Frequency}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">carrier_modulation_freq:</th>
+                            <th scope="row">carrier modulation freq:</th>
                             <td>{{models.carrier_modulation_freq}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">carrier_module_har_content:</th>
+                            <th scope="row">carrier module har content:</th>
                             <td>{{models.carrier_module_har_content}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Carrier_modulation_harm</th>
+                            <th scope="row">Carrier modulation harm</th>
                             <td>{{models.Carrier_modulation_harm}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Unwanted_modulation</th>
+                            <th scope="row">Unwanted modulation</th>
                             <td>{{models.Unwanted_modulation}}</td>
                           </tr>
                           <tr>
                               <td>#Transmmitter waveform checks </td>
                           </tr>
                           <tr>
-                            <th scope="row">CSB_in_watt</th>
+                            <th scope="row">CSB in watt</th>
                             <td>{{models.CSB_in_watt}}</td>
                           </tr>
                           <tr>
@@ -112,30 +104,30 @@
                             <td>{{models.SBO}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">phase_CORR</th>
+                            <th scope="row">Phase CORR</th>
                             <td>{{models.phase_CORR}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">LF_phase_check</th>
+                            <th scope="row">LF phase check</th>
                             <td>{{models.LF_phase_check}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">RF_phase_check</th>
+                            <th scope="row">RF phase check</th>
                             <td>{{models.RF_phase_check}}</td>
                           </tr>
                           <tr>
                             <td>#DDM/SDM checks</td>
                           </tr>
                           <tr>
-                            <th scope="row">DDM_check_COU</th>
+                            <th scope="row">DDM check COU</th>
                             <td>{{models.DDM_check_COU}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">SDM_check_COU</th>
+                            <th scope="row">SDM check COU</th>
                             <td>{{models.SDM_check_COU}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Course_ident_Mod</th>
+                            <th scope="row">Course ident Mod</th>
                             <td>{{models.Course_ident_Mod}}</td>
                           </tr>
                           <tr>
@@ -144,18 +136,18 @@
                               </td>
                           </tr>
                           <tr>
-                            <th scope="row">Cou_Trans_out_pow</th>
+                            <th scope="row">Cou Trans out pow</th>
                             <td>{{models.Cou_Trans_out_pow}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">CLR_Tranns_out_pow</th>
+                            <th scope="row">CLR Tranns out pow</th>
                             <td>{{models.CLR_Tranns_out_pow}}</td>
                           </tr>
                           <tr>
                             <td> #Monitor delay</td>
                           </tr>
                           <tr>
-                            <th scope="row">Monitor_delay</th>
+                            <th scope="row">Monitor delay</th>
                             <td>{{models.Monitor_delay}}</td>
                           </tr>
                         </tbody>
@@ -175,19 +167,19 @@
                             <td>{{models.Frequency}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">unwanted_modulation:</th>
+                            <th scope="row">unwanted modulation:</th>
                             <td>{{models.unwanted_modulation}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">carrier_modulation_freq:</th>
+                            <th scope="row">carrier modulation freq:</th>
                             <td>{{models.carrier_modulation_freq}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">carrier_modulation_homm</th>
+                            <th scope="row">carrier modulation homm</th>
                             <td>{{models.carrier_modulation_homm}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">phase_of_modulation_system</th>
+                            <th scope="row">phase of modulation system</th>
                             <td>{{models.phase_of_modulation_system}}</td>
                           </tr>
                             </tbody>
@@ -206,7 +198,15 @@
   </div>
 {%else%}
 <h1>
-    We got nothing 😔️😔️
+  <div style = "background-color: black;">
+    {% if messages %}
+    <p>
+        {%for message in messages%}
+        <p class="lead">{{message}}</p>
+        {%endfor%}
+    </p>
+    {%endif%}
+</div>
 </h1>
 {%endif%}
 </div>

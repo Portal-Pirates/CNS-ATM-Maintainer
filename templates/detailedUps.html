@@ -6,15 +6,7 @@
     {%if models%}
 <div style = "background-color: black; color: whitesmoke;" class="jumbotron jumbotron-fluid">
     <div class="container">
-      <div style = "background-color: black;">
-        {% if messages %}
-        <p>
-            {%for message in messages%}
-            <p class="lead">{{message}}</p>
-            {%endfor%}
-        </p>
-        {%endif%}
-    </div>
+      
         <h5> Equipment Name: &emsp; <span>{{models.equipment_name}}</span></h5>
         <ul>
             <li>
@@ -510,7 +502,15 @@
   </div>
 {%else%}
 <h1>
-    We got nothing 😔️😔️
+  <div style = "background-color: black;">
+    {% if messages %}
+    <p>
+        {%for message in messages%}
+        <p class="lead">{{message}}</p>
+        {%endfor%}
+    </p>
+    {%endif%}
+</div>
 </h1>
 {%endif%}
 </div>
