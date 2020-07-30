@@ -266,3 +266,11 @@ class UPSAdmin(admin.ModelAdmin):
                  ("Monthly-Parameter",{'fields':['Physicaly_clean_check','Rx_module_status','Control_Panel_setup','Physica_check_antenna_cables',
                                                  'DAT_drive_cleaning','Netuno_Server_restart']})
                 ]
+
+@admin.register(OtherEquipmentsReport)
+
+class OtherEquipmentsReportAdmin(admin.ModelAdmin):
+    list_display = ['equipment_name', 'modal_number', 'verified_by_Manager', 'created_by', 'report_type', 'Make', 'status']
+    list_filter = ['report_type', 'station_name', 'created_by', 'Make']
+    search_fields = ['modal_number', 'station_name', 'report_type']
+    list_per_page = 40

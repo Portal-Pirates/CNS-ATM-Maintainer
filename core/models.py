@@ -781,7 +781,35 @@ class UPS(models.Model):
         return self.report_type
 
 
+#Class for Other equipments 
+class OtherEquipmentsReport(models.Model):
+    # Fields
+    equipment_name = models.CharField(max_length=255)
+    modal_number = models.CharField(max_length = 255)
+    Make = models.CharField(max_length = 255)
+    Airport_Location = models.CharField(max_length = 255) 
+    
+    
+    created = models.DateTimeField(auto_now_add=True, editable=False)
+    last_updated = models.DateTimeField(auto_now=True, editable=False)
+    
+        # Fields
+    verified_by_Manager = models.BooleanField(default=False)
+    # Relationship Fields
+    station_name = models.ForeignKey(Stations, on_delete=models.CASCADE)
+    #this is for creation Info
+    created_by = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    
+   
+    remarks = models.CharField(max_length = 255,  blank=True, null=True)
+    status=  models.BooleanField(blank=True, null=True, verbose_name="Report status")
 
+    #Field to deteremine type of report
+    report_type = models.CharField(max_length=20, choices=REPORT_TYPE_CHOICES)
 
-
-
+    class Meta:
+        verbose_name = 'Other Equipment Report'
+        verbose_name_plural = 'Other Equipment Reports'
+    
+    def __str__(self):
+        return self.equipment_name + " report " + self.report_type

@@ -7452,3 +7452,4 @@ core/migrations/0017_auto_20200726_1951.py
 core/migrations/0018_auto_20200728_1134.py
 core/migrations/0019_auto_20200728_1138.py
 core/migrations/0020_auto_20200728_1625.py
+core/migrations/0021_otherequipmentsreport.py
