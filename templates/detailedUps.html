@@ -15,10 +15,10 @@
         </p>
         {%endif%}
     </div>
-        <h5> Equipment Name: &emsp; <span>{{models.eq_name}}</span></h5>
+        <h5> Equipment Name: &emsp; <span>{{models.equipment_name}}</span></h5>
         <ul>
             <li>
-               <h6> Station: &emsp; <span>{{models.station}}</span> </h6>
+               <h6> Station: &emsp; <span>{{models.Airport_Location}}</span> </h6>
             </li>
             <li>
                 <p>Last Updated on: &emsp; <span>{{models.last_updated}}</span></p>
@@ -90,7 +90,7 @@
 
                   </tbody>
                 </table>
-             
+
                 {%elif model2 == 'DVTR'%}
                 <div>
                   <table class="table table-dark">
@@ -102,15 +102,15 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <th scope="row">room_temp</th>
+                          <th scope="row">Room Temp</th>
                           <td>{{models.room_temp}}</td>
                         </tr>
                         <tr>
-                          <th scope="row"> AC_main_volt</th>
+                          <th scope="row"> AC main volt</th>
                           <td>{{models.AC_main_volt }}</td>
                         </tr>
                         <tr>
-                          <th scope="row">UPS_out_volt</th>
+                          <th scope="row">UPS out volt</th>
                           <td>{{models.UPS_out_volt}}</td>
                         </tr>
                         <tr>
@@ -123,27 +123,27 @@
                             </TD>
                         </TR>
                         <tr>
-                          <th scope="row">status_UPS</th>
+                          <th scope="row">status UPS</th>
                           <td>{{models.status_UPS}}</td>
                         </tr>
                         <tr>
-                            <th scope="row">recording_all_channels</th>
+                            <th scope="row">recording all channels</th>
                             <td>{{models.recording_all_channels}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">media_staus </th>
+                            <th scope="row">media staus </th>
                             <td>{{models.media_staus }}</td>
                           </tr>
                           <tr>
-                            <th scope="row">status_indication</th>
+                            <th scope="row">status indication</th>
                             <td>{{models.status_indication}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">status_cooling_fans</th>
+                            <th scope="row">status cooling fans</th>
                             <td>{{models.status_cooling_fans}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Free_space_disk </th>
+                            <th scope="row">Free space disk </th>
                             <td>{{models.Free_space_disk}}</td>
                           </tr>
                       </tbody>
@@ -154,32 +154,32 @@
                         <thead>
                           <tr>
                             <th scope="col">ACTIVITY/COMPONENT</th>
-                            <th>scope="col">VALUE</th>
+                            <th scope="col">VALUE</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
-                            <th scope="row">Input_voltage</th>
+                            <th scope="row">Input voltage</th>
                             <td>{{models.Input_voltage}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Input_frequency:</th>
+                            <th scope="row">Input frequency:</th>
                             <td>{{models.Input_frequency}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Output_voltage:</th>
+                            <th scope="row">Output voltage:</th>
                             <td>{{models.Output_voltage}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">output_frequency</th>
+                            <th scope="row">output frequency</th>
                             <td>{{models.output_frequency}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">output_load</th>
+                            <th scope="row">output load</th>
                             <td>{{models.output_load}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Battery_bank_volt </th>
+                            <th scope="row">Battery bank volt </th>
                             <td>{{models.Battery_bank_volt}}</td>
                           </tr>
                           <tr>
@@ -199,32 +199,31 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <th scope="row">Equipment_shelter_cleanlines</th>
+                            <th scope="row">Equipment shelter cleanlines</th>
                             <td>{{models.Equipment_shelter_cleanlines}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">status_air_conditioners:</th>
+                            <th scope="row">status air conditioners:</th>
                             <td>{{models.status_air_conditioners}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">shelter_temp_in_celcius</th>
+                            <th scope="row">shelter temp in celcius</th>
                             <td>{{models.shelter_temp_in_celcius}}</td>
                           </tr>
-
                           <tr>
-                            <th scope="row">UPS_input_volt_frequency</th>
+                            <th scope="row">UPS input volt frequency</th>
                             <td>{{models.UPS_input_volt_frequency}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">PS_output_volt_frequency</th>
+                            <th scope="row">PS output volt frequency</th>
                             <td>{{models.PS_output_volt_frequency}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">status_battery_operation </th>
+                            <th scope="row">status battery operation </th>
                             <td>{{models.status_battery_operation }}</td>
                           </tr>
                           <tr>
-                            <th scope="row">hours_operation </th>
+                            <th scope="row">hours operation </th>
                             <td>{{models.hours_operation }}</td>
                           </tr>
                           <tr>
@@ -249,23 +248,23 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <th scope="row">General_cleanliness_room</th>
+                            <th scope="row">General cleanliness room</th>
                             <td>{{models.General_cleanliness_room}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Status_airconditioners</th>
+                            <th scope="row">Status airconditioners</th>
                             <td>{{models.Status_airconditioners}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">status_obstruction_light</th>
+                            <th scope="row">status obstruction light</th>
                             <td>{{models.status_obstruction_light}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">main_supply_volt</th>
+                            <th scope="row">main supply volt</th>
                             <td>{{models.main_supply_volt}}</td>
                           </tr>
                           <tr>
-                            <th scope="row"> main_supply_frequency </th>
+                            <th scope="row"> main supply frequency </th>
                             <td>{{models.main_supply_frequency }}</td>
                           </tr>
                         </tbody>
@@ -281,28 +280,28 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <th scope="row">Physical_clean</th>
+                            <th scope="row">Physical clean</th>
                             <td>{{models.Physical_clean}}</td>
                           </tr>
                           <tr>
-                            <th scope="row"> PS_A_UPS</th>
+                            <th scope="row"> PS A UPS</th>
                             <td>{{models.PS_A_UPS}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">PS_B_UPS</th>
+                            <th scope="row">PS B UPS</th>
                             <td>{{models.PS_B_UPS}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">overall_A</th>
+                            <th scope="row">overall A</th>
                             <td>{{models.overall_A}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">overall_B</th>
+                            <th scope="row">overall B</th>
                             <td>{{models.overall_B}}</td>
                           </tr>
                         </tbody>
                       </table>
-                      
+
                       {%elif model2 == 'VCS_System'%}
                   <div>
                     <table class="table table-dark">
@@ -314,11 +313,11 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <th scope="row">Ac_volt_UPS1</th>
+                            <th scope="row">Ac volt UPS1</th>
                             <td>{{models.Ac_volt_UPS1}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Condition_UPS1</th>
+                            <th scope="row">Condition UPS1</th>
                             <td>{{models.Condition_UPS1}}</td>
                           </tr>
                           <tr>
@@ -326,31 +325,31 @@
                             <td>{{models.RAD1PSU}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">TEL1_PSU</th>
+                            <th scope="row">TEL1 PSU</th>
                             <td>{{models.TEL1_PSU}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">TEL2_PSU</th>
+                            <th scope="row">TEL2 PSU</th>
                             <td>{{models.TEL2_PSU}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">TEL3_PSU</th>
+                            <th scope="row">TEL3 PSU</th>
                             <td>{{models.TEL3_PSU}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">TEL4_PSU</th>
+                            <th scope="row">TEL4 PSU</th>
                             <td>{{models.TEL4_PSU}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">PSU_FuseLED</th>
+                            <th scope="row">PSU FuseLED</th>
                             <td>{{models.PSU_FuseLED}}</td>
                           </tr>
                           <tr>
-                            <th scope="row">system_A </th>
+                            <th scope="row">system A </th>
                             <td>{{models.system_A }}</td>
                           </tr>
                           <tr>
-                            <th scope="row">Overall_perform</th>
+                            <th scope="row">Overall perform</th>
                             <td>{{models.Overall_perform}}</td>
                           </tr>
                         </tbody>
@@ -367,7 +366,7 @@
                         </thead>
                         <tbody>
                           <tr>
-                            <th scope="row">General_cleanliness_room </th>
+                            <th scope="row">General cleanliness room </th>
                             <td>{{models.General_cleanliness_room }}</td>
                           </tr>
                           <tr>
@@ -402,7 +401,7 @@
                             <th scope="row">remote_status_indication</th>
                             <td>{{models.remote_status_indication}}</td>
                           </tr>
-                          
+
                         </tbody>
                       </table>
                       {%elif model2 == 'Glid_Path'%}
@@ -520,18 +519,18 @@
 
 <!--
     NDB
-    room_temp = models.IntegerField() # degree celcius 
-    AC_main_volt =models.IntegerField() # volt 
+    room_temp = models.IntegerField() # degree celcius
+    AC_main_volt =models.IntegerField() # volt
     UPS_out_volt =models.IntegerField() # volt
-    cleanlines = models.CharField(max_length = 255) 
-    # equipment checks 
+    cleanlines = models.CharField(max_length = 255)
+    # equipment checks
     ''' same for two type of transmitter '''
-    reflected_power  = models.FloatField() # percentage  
-    Forword_Power = models.FloatField() # percentage FWD power 
-    modulation = models.FloatField() 
-    PA_volt = models.IntegerField() #volt 
+    reflected_power  = models.FloatField() # percentage
+    Forword_Power = models.FloatField() # percentage FWD power
+    modulation = models.FloatField()
+    PA_volt = models.IntegerField() #volt
     PA_current = models.IntegerField() #volt
-    # Local control panel 
+    # Local control panel
     System_staus_LED   = models.BooleanField()
     primary_tx_led = models.BooleanField()
     tx_power_on_led = models.BooleanField()
@@ -586,16 +585,16 @@
 -->
 <!--
     DVTR
-    room_temp = models.IntegerField() 
-    AC_main_volt =models.IntegerField() 
-    UPS_out_volt =models.IntegerField() 
-    cleanlines = models.BooleanField() 
+    room_temp = models.IntegerField()
+    AC_main_volt =models.IntegerField()
+    UPS_out_volt =models.IntegerField()
+    cleanlines = models.BooleanField()
      # main DVTR , attributes will also check on standby DVTR
-    status_UPS = models.BooleanField() 
-    recording_all_channels = models.CharField(max_length = 255) 
-    media_staus = models.BooleanField() 
-    status_indication = models.BooleanField() 
-    status_cooling_fans = models.BooleanField() 
+    status_UPS = models.BooleanField()
+    recording_all_channels = models.CharField(max_length = 255)
+    media_staus = models.BooleanField()
+    status_indication = models.BooleanField()
+    status_cooling_fans = models.BooleanField()
     Free_space_disk = models.BooleanField()
 -->
 <!--

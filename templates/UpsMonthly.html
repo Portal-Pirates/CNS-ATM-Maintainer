@@ -15,10 +15,10 @@
         </p>
         {%endif%}
     </div>
-        <h5> Equipment Name: &emsp; <span>{{models.eq_name}}</span></h5>
+        <h5> Equipment Name: &emsp; <span>{{models.equipment_name}}</span></h5>
         <ul>
             <li>
-               <h6> Station: &emsp; <span>{{models.station}}</span> </h6>
+               <h6> Station: &emsp; <span>{{models.Airport_Location}}</span> </h6>
             </li>
             <li>
                 <p>Last Updated on: &emsp; <span>{{models.last_updated}}</span></p>
@@ -58,7 +58,7 @@
                     </tr>
                   </tbody>
                 </table>
-             
+
                 {%elif model2 == 'DVTR'%}
                 <div>
                   <table class="table table-dark">
@@ -131,7 +131,7 @@
                           </tr>
                         </tbody>
                       </table>
-                  
+
                       {%elif model2 == 'DVOR'%}
                   <div>
                     <table class="table table-dark">
@@ -155,7 +155,7 @@
                             <td>{{models.earth_natural_volt}}</td>
                           </tr>
                           <p>
-                            staus of lighting and surge protection 
+                            staus of lighting and surge protection
                           </p>
                           <tr>
                             <th scope="row">EARTH RESISTANCE LIGHTING</th>
@@ -402,11 +402,11 @@
 
 <!--
   DVTR
-  cleaning_PC_dust = models.BooleanField() 
-    Check_connectors = models.BooleanField() 
-    check_battery_backup = models.BooleanField() 
-    program_to_Check_HDD = models.BooleanField() 
-    Application_only_forH24= models.IntegerField() 
+  cleaning_PC_dust = models.BooleanField()
+    Check_connectors = models.BooleanField()
+    check_battery_backup = models.BooleanField()
+    program_to_Check_HDD = models.BooleanField()
+    Application_only_forH24= models.IntegerField()
 -->
 
 <!--
@@ -422,7 +422,7 @@
   Eq_earth_rack_resistance =  models.IntegerField()
     earth_resistance_at_antenna  = models.IntegerField()
     earth_natural_volt = models.IntegerField()
-        #staus of lighting and surge protection 
+        #staus of lighting and surge protection
     earth_resis_lighting = models.IntegerField()
     status_of_lighting_protection_system = models.BooleanField()
     status_SPD_at_eq_room  = models.BooleanField()
@@ -440,7 +440,7 @@
   Gps_latitude = models.FloatField()
     GPS_longitude = models.FloatField()
     Gps_altitude = models.FloatField() # meter
-   # power_onself test result  
+   # power_onself test result
     general_result = models.BooleanField()
     GPS = models.BooleanField()
     Temp_sensing = models.BooleanField()
@@ -450,7 +450,7 @@
     Cpu_load = models.FloatField()
     GPS_status = models.BooleanField()
     Gps_synch = models.BooleanField()
-    #voltage & temprature 
+    #voltage & temprature
     Intermediate_volt = models.IntegerField()
     Gps_volt = models.IntegerField()
     FPGA_volt = models.IntegerField()
