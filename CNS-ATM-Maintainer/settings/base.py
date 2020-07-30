@@ -15,8 +15,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'core', 
     'NewEntry',
-     'admin_reorder',
-    'accounts.apps.AccountsConfig'
+    'admin_reorder',
+    'accounts.apps.AccountsConfig',
+    
 ]
 
 MIDDLEWARE = [
@@ -82,5 +83,13 @@ ADMIN_REORDER = (
      {'app': 'core', 'models': ('core.Airports', 'core.Stations', 'core.Equipments'), 'label': 'Airports & Stations'},
     {'app': 'core', 'models': ('core.COMSOFT', 'core.VCS_System', 'core.Glid_Path', 'core.Localizer', 'core.DVOR', 'core.NDB', 'core.Datis_Terma', 'core.DVTR', 'core.UPS', 'core.OtherEquipmentsReport'), 'label': 'Equipment Reports'},
     
-     
 )
+
+#Settings for email sending apis
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST_USER ='ac7908840@gmail.com'
+EMAIL_HOST_PASSWORD = 'abcd*12345'

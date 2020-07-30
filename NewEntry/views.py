@@ -117,7 +117,7 @@ def NewEntry(request, id=None, report_type=None):
                     working = request.POST['working']
                     upsobj = UPS(status=status, working=working, Battery_current=Battery_current, Battery_bank_volt=Battery_bank_volt, output_load=output_load, output_frequency=output_frequency, equipment_name=eq_obj.equipment_name, modal_number=eq_obj.modal_number, Make=eq_obj.company, Airport_Location=location, station_name=st_obj, created_by=user_profile, report_type=report_type.lower(), Input_voltage=Input_voltage, Input_frequency=Input_frequency, Output_voltage=Output_voltage)
                     upsobj.save()
-                    messages.success(request, "Saved Successfully...")
+                    messages.success(request, "Saved Successfully🥳...")
                     return redirect('/')
                 if report_type.upper() == 'WEEKLY':
                     Power_supply_terminal = int(request.POST['Power_supply_terminal'])
@@ -129,7 +129,7 @@ def NewEntry(request, id=None, report_type=None):
                     Earthing_codition = int(request.POST['Earthing_codition'])
                     upsobj = UPS(status=status, Earthing_codition=Earthing_codition,Neutral_load=Neutral_load, UPS_load_percent=UPS_load_percent, UPS_condition=UPS_condition, Battery_condition=Battery_condition, check_battery_terminal=check_battery_terminal, Power_supply_terminal=Power_supply_terminal,equipment_name=eq_obj.equipment_name, modal_number=eq_obj.modal_number, Make=eq_obj.company, Airport_Location=location, station_name=st_obj, created_by=user_profile, report_type=report_type.lower())
                     upsobj.save()
-                    messages.success(request, "Saved Successfully...")
+                    messages.success(request, "Saved Successfully🥳...")
                     return redirect('/')
                 if report_type.upper() == 'MONTHLY':
                     Physicaly_clean_check =int(request.POST['Physicaly_clean_check'])
@@ -140,11 +140,11 @@ def NewEntry(request, id=None, report_type=None):
                     Netuno_Server_restart = int(request.POST['Netuno_Server_restart'])
                     upsobj = UPS(status=status, Netuno_Server_restart=Netuno_Server_restart, DAT_drive_cleaning=DAT_drive_cleaning, Physica_check_antenna_cables=Physica_check_antenna_cables, Control_Panel_setup=Control_Panel_setup, Rx_module_status=Rx_module_status, Physicaly_clean_check=Physicaly_clean_check, equipment_name=eq_obj.equipment_name, modal_number=eq_obj.modal_number, Make=eq_obj.company, Airport_Location=location, station_name=st_obj, created_by=user_profile, report_type=report_type.lower())
                     upsobj.save()
-                    messages.success(request, "Saved Successfully...")
+                    messages.success(request, "Saved Successfully🥳...")
                     return redirect('/')
                 upsobj = UPS(status=status, equipment_name=eq_obj.equipment_name, modal_number=eq_obj.modal_number, Make=eq_obj.company, Airport_Location=location, station_name=st_obj, created_by=user_profile, report_type=report_type.lower())
                 upsobj.save()
-                messages.success(request, "Saved Successfully...")
+                messages.success(request, "Saved Successfully🥳...")
                 return redirect('/')
             if eq_obj.equipment_name.upper() == 'COMSOFT':
                 if report_type == 'DAILY':
@@ -159,7 +159,7 @@ def NewEntry(request, id=None, report_type=None):
                     remote_status_indication= int(request.POST['remote_status_indication'])
                     comsoft_obj = COMSOFT(status=status,remote_status_indication=remote_status_indication,status_critical_area=status_critical_area,status_near_monitor=status_near_monitor,verify_equipment_on_UPS=verify_equipment_on_UPS,main_supply_frequency=main_supply_frequency,main_supply_volt=main_supply_volt,status_obstruction_light=status_obstruction_light, Status_airconditioners=Status_airconditioners, General_cleanliness_room=General_cleanliness_room, equipment_name=eq_obj.equipment_name, modal_number=eq_obj.modal_number, Make=eq_obj.company, Airport_Location=location, station_name=st_obj, created_by=user_profile, report_type=report_type.lower())
                     comsoft_obj.save()
-                    messages.success(request, "Saved Successfully...")
+                    messages.success(request, "Saved Successfully🥳...")
                     return redirect('/')
                 if report_type.upper() == 'MONTHLY':
                     Gps_latitude= int(request.POST['Gps_latitude'])
@@ -187,11 +187,11 @@ def NewEntry(request, id=None, report_type=None):
                     UTC_synchr= int(request.POST['UTC_synchr'])
                     comsoft_obj = COMSOFT(status=status,UTC_synchr=UTC_synchr,overall_build_tst_result=overall_build_tst_result,Gnd_station_staus=Gnd_station_staus,Decoder_test=Decoder_test,Test_transmission_loss=Test_transmission_loss,Rx_sensitivity=Rx_sensitivity,End_to_End_test=End_to_End_test,Signal_strength_RF_Site=Signal_strength_RF_Site,DSP_board_tmep=DSP_board_tmep,DSP_Board_volt=DSP_Board_volt,FPGA_volt=FPGA_volt,Gps_volt=Gps_volt,Intermediate_volt=Intermediate_volt,Gps_synch=Gps_synch,Cpu_load=Cpu_load,Reciever=Reciever,FPGA=FPGA,voltage_sensing=voltage_sensing,GPS=GPS,general_result=general_result,Gps_altitude=Gps_altitude,GPS_longitude=GPS_longitude, Gps_latitude=Gps_latitude, equipment_name=eq_obj.equipment_name, modal_number=eq_obj.modal_number, Make=eq_obj.company, Airport_Location=location, station_name=st_obj, created_by=user_profile, report_type=report_type.lower())
                     comsoft_obj.save()
-                    messages.success(request, "Saved Successfully...")
+                    messages.success(request, "Saved Successfully🥳...")
                     return redirect('/')
                 comsoft_obj = COMSOFT(status=status, equipment_name=eq_obj.equipment_name, modal_number=eq_obj.modal_number, Make=eq_obj.company, Airport_Location=location, station_name=st_obj, created_by=user_profile, report_type=report_type.lower())
                 comsoft_obj.save()
-                messages.success(request, "Saved Successfully...")
+                messages.success(request, "Saved Successfully🥳...")
                 return redirect('/')
             if eq_obj.equipment_name.upper() == 'GLIDPATH':
                 if report_type.upper() == 'DAILY':
@@ -217,7 +217,7 @@ def NewEntry(request, id=None, report_type=None):
                     smps=int( request.POST['smps'])
                     glidpath_obj = Glid_Path(smps=smps,main=main,txtoair=txtoair,clearnance=clearnance,course=course,standby=standby,maint=maint,batt=batt,Disagr=Disagr,param=param,remote_status_indication=remote_status_indication,status_critical_area=status_critical_area,status_near_monitor=status_near_monitor,verify_equipment_on_UPS=verify_equipment_on_UPS,main_supply_frequency=main_supply_frequency,main_supply_volt=main_supply_volt,status_obstruction_light=status_obstruction_light,Status_airconditioners=Status_airconditioners,General_cleanliness_room=General_cleanliness_room,status=status, equipment_name=eq_obj.equipment_name, modal_number=eq_obj.modal_number, Make=eq_obj.company, Airport_Location=location, station_name=st_obj, created_by=user_profile, report_type=report_type.lower())
                     glidpath_obj.save()
-                    messages.success(request, "Saved Successfully...")
+                    messages.success(request, "Saved Successfully🥳...")
                     return redirect('/')
                     
                 if report_type.upper() == 'WEEKLY':
@@ -238,7 +238,7 @@ def NewEntry(request, id=None, report_type=None):
                     COU90=int(request.POST['COU90'])
                     glidpath_obj = Glid_Path(COU90=COU90,COU150=COU150,CLR90=CLR90,PS2=PS2,PS1=PS1,RMS_battery=RMS_battery,RMS_5volt=RMS_5volt,opearation_on_battery=opearation_on_battery,battery_volt=battery_volt,ups_battery_volt=ups_battery_volt,ups_out_freq=ups_out_freq,ups_out_volt=ups_out_volt,ILS_datetime_UTC=ILS_datetime_UTC,time_of_observation_UTC=time_of_observation_UTC,System_time_synch=System_time_synch, status=status, equipment_name=eq_obj.equipment_name, modal_number=eq_obj.modal_number, Make=eq_obj.company, Airport_Location=location, station_name=st_obj, created_by=user_profile, report_type=report_type.lower())
                     glidpath_obj.save()
-                    messages.success(request, "Saved Successfully...")
+                    messages.success(request, "Saved Successfully🥳...")
                     return redirect('/')
 
                 if report_type.upper() == 'MONTHLY':
@@ -254,7 +254,7 @@ def NewEntry(request, id=None, report_type=None):
                     status_rc_lines=int(request.POST['status_rc_lines'])
                     glidpath_obj = Glid_Path(status_rc_lines=status_rc_lines,Envionment=Envionment,grading_of_critical_are=grading_of_critical_are,all_function_remote=all_function_remote,moitor_sys_oper=moitor_sys_oper,total_time=total_time,reduciton_power=reduciton_power,clearance_signal=clearance_signal,change_in_displacement_sens=change_in_displacement_sens,Path_augle=Path_augle, status=status, equipment_name=eq_obj.equipment_name, modal_number=eq_obj.modal_number, Make=eq_obj.company, Airport_Location=location, station_name=st_obj, created_by=user_profile, report_type=report_type.lower())
                     glidpath_obj.save()
-                    messages.success(request, "Saved Successfully...")
+                    messages.success(request, "Saved Successfully🥳...")
                     return redirect('/')
                 if report_type.upper() == 'YEARLY':
                     Frequency = int(request.POST['Frequency '])
@@ -264,7 +264,7 @@ def NewEntry(request, id=None, report_type=None):
                     phase_of_modulation_system=int( request.POST['phase_of_modulation_system'])
                     glidpath_obj = Glid_Path(phase_of_modulation_system=phase_of_modulation_system,carrier_modulation_freq=carrier_modulation_freq,unwanted_modulation=unwanted_modulation,Frequency=Frequency,status=status, equipment_name=eq_obj.equipment_name, modal_number=eq_obj.modal_number, Make=eq_obj.company, Airport_Location=location, station_name=st_obj, created_by=user_profile, report_type=report_type.lower())
                     glidpath_obj.save()
-                    messages.success(request, "Saved Successfully...")
+                    messages.success(request, "Saved Successfully🥳...")
                     return redirect('/')
 
             if eq_obj.equipment_name.upper() == 'VCSSYSTEM':
@@ -291,7 +291,7 @@ def NewEntry(request, id=None, report_type=None):
                                 Ac_volt_UPS1=Ac_volt_UPS1,
                                 status=status, equipment_name=eq_obj.equipment_name, modal_number=eq_obj.modal_number, Make=eq_obj.company, Airport_Location=location, station_name=st_obj, created_by=user_profile, report_type=report_type.lower())
                     vcs_obj.save()
-                    messages.success(request, "Saved Successfully...")
+                    messages.success(request, "Saved Successfully🥳...")
                     return redirect('/')
                 if report_type.upper() == 'WEEKLY':
                     DMC01D5= request.POST['DMC01D5']
@@ -316,11 +316,11 @@ def NewEntry(request, id=None, report_type=None):
                                 D1PDE4662=D1PDE4662,
                     status=status, equipment_name=eq_obj.equipment_name, modal_number=eq_obj.modal_number, Make=eq_obj.company, Airport_Location=location, station_name=st_obj, created_by=user_profile, report_type=report_type.lower())
                     vcs_obj.save()
-                    messages.success(request, "Saved Successfully...")
+                    messages.success(request, "Saved Successfully🥳...")
                     return redirect('/')
                 vcs_obj =  VCS_System(status=status, equipment_name=eq_obj.equipment_name, modal_number=eq_obj.modal_number, Make=eq_obj.company, Airport_Location=location, station_name=st_obj, created_by=user_profile, report_type=report_type.lower())
                 vcs_obj.save()
-                messages.success(request, "Saved Successfully...")
+                messages.success(request, "Saved Successfully🥳...")
                 return redirect('/')
                 
             if eq_obj.equipment_name.upper() == 'LOCALIZER':
@@ -338,7 +338,7 @@ def NewEntry(request, id=None, report_type=None):
                         Airport_Location=location, station_name=st_obj, created_by=user_profile,
                         report_type=report_type.lower())
                     localizer_obj.save()
-                    messages.success(request, "Saved Successfully...")
+                    messages.success(request, "Saved Successfully🥳...")
                     return redirect('/')
                 if report_type.upper() == 'WEEKLY':
                     System_time_synch = int(request.POST['System_time_synch'])
