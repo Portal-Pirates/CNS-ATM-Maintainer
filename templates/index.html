@@ -1,0 +1,190 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block home %}
+
+  <div id="index-banner" class="landing">
+    <div class="header-content-container center" style="">
+      <img src="{% static '1.ico' %}" class="logo-type responsive-img" alt="AAI Logo" style="">
+      <img src="{% static '1.ico' %}" class="logo-type-mobile responsive-img" alt="AAI Logo">
+
+
+    <h1 class="font-weight-bold" style=" font-family: 'Playfair Display', serif; @media only screen and (max-width: 700px) {
+      #index-banner h1 {
+          /*flex-direction: column;*/
+          font-size: 3.5 rem;
+      }
+    };">Airport Authority Of India</h1> 
+       
+
+      <div class="header-section">
+       <a class="gs-button-link" href="{%url 'search'%}" class="center-margin" >
+          <button class="gs-button gs-button-orange animate__animated animate__tada">
+            <span class="fa fa-search" data-icon="fa-solid:search" data-inline="false"></span>&nbsp;&nbsp;search reports
+          </button>
+        </a>
+     </div>
+    </div>
+
+  
+  </div>
+  
+
+  <!--==================================CARDS SECTION BEGIN===================-->
+
+  <section class="header-extradiv">
+  <div class="container">
+  <div class="row">
+  <div class="extra-div col-lg-4 col-md-4 col-12">
+            <a href="{% url 'HomeView' %}"><i class="fa-4x fa fa-qrcode" aria-hidden="true"></i></a>
+
+            <h2>Qr Generation</h2>
+            <P> click here Qr-Code Generation</P>
+
+     </div>
+
+      <div class="extra-div col-lg-4 col-md-4 col-12">
+            <a href="{%url 'qrredirect'%}"><i class="fa-4x fa  fa-camera" aria-hidden="true"></i></a>
+         
+            <h2>SCAN QR CODE</h2>
+            <P> click here for scanning.</P>
+
+     </div>
+      <div class="extra-div col-lg-4 col-md-4 col-12">
+            <a href="{%url 'select_type' %}"><i class=" far fa-plus-square fa-4x"></i></a>
+            <a href="{%url 'select_type' %}">
+            <h2 style="color: #212529;">NEW ENTRIES</h2>
+            <P>&nbsp;click here for New Entry</P>
+          </a>
+     </div>
+   </div>
+ </div>  
+</section>
+  
+  
+
+  <!--=======================IMAGE OVERLAY=============-->
+ <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+      <img src="{% static 'images/1.jpg' %}" class="image responsive-img" alt="Unsplashed background img 3">
+    </div>
+  </div>
+
+
+
+  <!--================ START :  Home page  section - Our services ===================-->
+<div id="about">
+<section class="pt-3 pb-4">
+    <div class="container">
+        <div class="row mt-4">
+          <div class="col text-center">
+            <h3>
+              Out Best in Class Services
+            </h3>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <img class="img-fluid qualities-img p-5" src="{% static 'imgs/services/web-design.png' %}" alt="Card image cap">
+            <h5>
+             COMMUNICATION
+            </h5>
+            <p>
+             Communication is the exchange of voice and data information between the pilot and air traffic controllers or flight information centres. <!-- <a href="#"><b>Read more...</b></a> -->
+            </p>
+  
+          </div>
+          <div class="col-md-4 text-center">
+            <img class="img-fluid qualities-img p-5" src="{% static 'imgs/services/web-development.png' %}" alt="Card image cap">
+            <h5>
+            NAVIGATION
+            </h5>
+            <p>
+              Navigation Element Of CNS/ATM Systems Is meant To provide Accurate, Reliable And Seamless Position Determination Capability to aircrafts. <!-- <a href="#"><b>Read more...</b></a> -->
+            </p>
+  
+          </div>
+          <div class="col-md-4 text-center">
+            <img class="img-fluid qualities-img p-5" src="{% static 'imgs/services/seo.png' %}" alt="Card image cap">
+            <h5>
+             SURVEILLANCE
+            </h5>
+            <p>
+             The surveillance systems can be divided into two main types:- Dependent surveillance and Independent surveillance.The current voice position reporting is a dependent surveillance systems in which the position of the aircraft is determined from on-board navigation equipment. <!-- <a href="#"><b>Read more...</b></a> -->
+            </p>
+  
+          </div>
+        </div>
+  
+        <div class="row mb-md-3">
+          <div class="col-md-4 text-center">
+            <img class="img-fluid qualities-img p-5" src="{% static 'imgs/services/software-dev.png' %}" alt="Card image cap">
+            <h5>
+              DIGITALIZATION
+            </h5>
+            <p>
+            From manually handeled docmuments to Digitally Customized doctuments and data. <!-- <a href="#"><b>Read more...</b></a> -->
+            </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <img class="img-fluid qualities-img p-5" src="{% static 'imgs/services/mobile-app.png' %}" alt="Card image cap">
+            <h5>
+             QR GENERATION
+            </h5>
+            <p>
+              Quick and an easy way to get access to your data and upload more.  <!-- <a href="#"><b>Read more...</b></a> -->
+            </p>
+          </div>
+          <div class="col-md-4 text-center">
+            <img class="img-fluid qualities-img p-5" src="{% static 'imgs/services/graphic-design.png' %}" alt="Card image cap">
+            <h5>
+             NEW ENTRIES
+            </h5>
+            <p>
+              Add newly entered data in the maintenance section.<!-- <a href="#"><b>Read more...</b></a> -->
+            </p>
+          </div>
+        </div>
+  </section>
+</div>
+
+
+          <!--============================ABOUT ENDS============================-->
+
+
+
+  <!-- AAI section -->
+  <section id="aai">
+    <div class="container">
+      <div class="row">
+        <h2 class="section-heading"><b>Airports Authority of India</b></h2>
+        <p class="section-text">The Airports Authority of India or AAI is a statutory body (created through the Airports Authority of India Act, 1994) working under the Ministry of Civil Aviation, Government of India is responsible for creating, upgrading, maintaining and managing civil aviation infrastructure in India. </p>
+        <p class="section-text">It provides Communication Navigation Surveillance / Air Traffic Management (CNS/ATM) services over Indian airspace and adjoining oceanic areas.</p>
+      </div>
+    </div>
+    <img class="section-back-icon" src="{% static 'images/aai.png' %}">
+  </section>
+
+  <!--=======IMAGE OVERLAY=========-->
+    <div class="parallax-container valign-wrapper">
+    <div class="section no-pad-bot">
+      <div class="container">
+        <div class="row center">
+        </div>
+      </div>
+    </div>
+    <div class="parallax">
+      <img src="{% static 'images/1.jpg' %}" class="image responsive-img" alt="Unsplashed background img 3">
+    </div>
+  </div>
+  <a href="{% url "predictdata" %}"> I am Mail</a>
+
+{% endblock home %}
+

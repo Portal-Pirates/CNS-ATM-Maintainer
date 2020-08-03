@@ -1,0 +1,612 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block home %}
+<div>
+    {%if models%}
+<div style = "background-color: black; color: whitesmoke;" class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h5> Equipment Name: &emsp; <span>{{models.equipment_name}}</span></h5>
+        <ul>
+            <li>
+               <h6> Station: &emsp; <span>{{models.Airport_Location}}</span> </h6>
+            </li>
+            <li>
+                <p>Last Updated on: &emsp; <span>{{models.last_updated}}</span></p>
+                <p>Modal Number: &emsp; <span>{{models.modal_number}}</span></p>
+                <p>Station Name: &emsp; <span>{{models.station_name}}</span></p>
+                <p>Equipment Category: &emsp; <span>{{model2}}</span></p>
+                {%if model3%}
+                <p>Equipment Id &emsp; <span>{{model3}}</span></p>
+                <a href="/NewEntry/select_type/{{model3}}/daily/{{models.station_name}}"><button class="btn btn-primary">Click Here, For new Entry</button></a>
+                {%endif%}
+              </li>
+             {%if model2 == 'NDB'%}
+             <div>
+              <table class="table table-dark">
+                  <thead>
+                    <tr>
+                      <th scope="col">ACTIVITY/COMPONENT</th>
+                      <th scope="col">VALUE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">ROOM TEMPERATUR</th>
+                      <td>{{models.room_temp }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">AC MAIN VOLTAGE:</th>
+                      <td>{{models.AC_main_volt }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">UPS OUT VOLT:</th>
+                      <td>{{models.UPS_out_volt}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">CLEANLINESS</th>
+                      <td>{{models.cleanlines  }}</td>
+                    </tr>
+                    <tr>
+                        <td>EQUIPMENT CHECKS</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">REFLECTED POWER</th>
+                      <td>{{models.reflected_power }}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">FORWARD POWER</th>
+                        <td>{{models.Forword_Power }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">MODULATION</th>
+                        <td>{{models.modulation }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">PA VOLT</th>
+                        <td>{{models.PA_volt  }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">PA CURRENT</th>
+                        <td>{{models.PA_current }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">SYSTEM STATUS LED</th>
+                        <td>{{models.System_staus_LED }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">PRIMARY TX LED</th>
+                        <td>{{models.primary_tx_led }}</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">TX POWER ON LED</th>
+                        <td>{{models.tx_power_on_led }}</td>
+                      </tr>
+
+                  </tbody>
+                </table>
+
+                {%elif model2 == 'DVTR'%}
+                <div>
+                  <table class="table table-dark">
+                      <thead>
+                        <tr>
+                          <th scope="col">ACTIVITY/COMPONENT</th>
+                          <th scope="col">VALUE</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">Room Temp</th>
+                          <td>{{models.room_temp}}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row"> AC main volt</th>
+                          <td>{{models.AC_main_volt }}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">UPS out volt</th>
+                          <td>{{models.UPS_out_volt}}</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">cleanlines</th>
+                          <td>{{models.cleanlines}}</td>
+                        </tr>
+                        <TR>
+                            <TD>
+                                # main DVTR , attributes will also check on standby DVTR
+                            </TD>
+                        </TR>
+                        <tr>
+                          <th scope="row">status UPS</th>
+                          <td>{{models.status_UPS}}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">recording all channels</th>
+                            <td>{{models.recording_all_channels}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">media staus </th>
+                            <td>{{models.media_staus }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">status indication</th>
+                            <td>{{models.status_indication}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">status cooling fans</th>
+                            <td>{{models.status_cooling_fans}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Free space disk </th>
+                            <td>{{models.Free_space_disk}}</td>
+                          </tr>
+                      </tbody>
+                    </table>
+                  {%elif model2 == 'UPS'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Input voltage</th>
+                            <td>{{models.Input_voltage}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Input frequency:</th>
+                            <td>{{models.Input_frequency}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Output voltage:</th>
+                            <td>{{models.Output_voltage}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">output frequency</th>
+                            <td>{{models.output_frequency}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">output load</th>
+                            <td>{{models.output_load}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Battery bank volt </th>
+                            <td>{{models.Battery_bank_volt}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">working</th>
+                            <td>{{models.working}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      {%elif model2 == 'DVOR'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Equipment shelter cleanlines</th>
+                            <td>{{models.Equipment_shelter_cleanlines}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">status air conditioners:</th>
+                            <td>{{models.status_air_conditioners}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">shelter temp in celcius</th>
+                            <td>{{models.shelter_temp_in_celcius}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">UPS input volt frequency</th>
+                            <td>{{models.UPS_input_volt_frequency}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">PS output volt frequency</th>
+                            <td>{{models.PS_output_volt_frequency}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">status battery operation </th>
+                            <td>{{models.status_battery_operation }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">hours operation </th>
+                            <td>{{models.hours_operation }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Alarm </th>
+                            <td>{{models.Alarm }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">remark</th>
+                            <td>{{models.remark}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      {%elif model2 == 'Localizer'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">General cleanliness room</th>
+                            <td>{{models.General_cleanliness_room}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Status airconditioners</th>
+                            <td>{{models.Status_airconditioners}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">status obstruction light</th>
+                            <td>{{models.status_obstruction_light}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">main supply volt</th>
+                            <td>{{models.main_supply_volt}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row"> main supply frequency </th>
+                            <td>{{models.main_supply_frequency }}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      {%elif model2 == 'Datis_Terma'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Physical clean</th>
+                            <td>{{models.Physical_clean}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row"> PS A UPS</th>
+                            <td>{{models.PS_A_UPS}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">PS B UPS</th>
+                            <td>{{models.PS_B_UPS}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">overall A</th>
+                            <td>{{models.overall_A}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">overall B</th>
+                            <td>{{models.overall_B}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      {%elif model2 == 'VCS_System'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Ac volt UPS1</th>
+                            <td>{{models.Ac_volt_UPS1}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Condition UPS1</th>
+                            <td>{{models.Condition_UPS1}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">RAD1PSU:</th>
+                            <td>{{models.RAD1PSU}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">TEL1 PSU</th>
+                            <td>{{models.TEL1_PSU}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">TEL2 PSU</th>
+                            <td>{{models.TEL2_PSU}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">TEL3 PSU</th>
+                            <td>{{models.TEL3_PSU}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">TEL4 PSU</th>
+                            <td>{{models.TEL4_PSU}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">PSU FuseLED</th>
+                            <td>{{models.PSU_FuseLED}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">system A </th>
+                            <td>{{models.system_A }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Overall perform</th>
+                            <td>{{models.Overall_perform}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                  </div>
+                      {%elif model2 == 'COMSOFT'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">General cleanliness room </th>
+                            <td>{{models.General_cleanliness_room }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Status_airconditioners:</th>
+                            <td>{{models.Status_airconditioners}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">status_obstruction_light</th>
+                            <td>{{models.status_obstruction_light}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">main_supply_volt</th>
+                            <td>{{models.main_supply_volt}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">main_supply_frequency</th>
+                            <td>{{models.main_supply_frequency}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">verify_equipment_on_UPS</th>
+                            <td>{{models.verify_equipment_on_UPS}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">status_near_monitor</th>
+                            <td>{{models.status_near_monitor}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">status_critical_area</th>
+                            <td>{{models.status_critical_area}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">remote_status_indication</th>
+                            <td>{{models.remote_status_indication}}</td>
+                          </tr>
+
+                        </tbody>
+                      </table>
+                      {%elif model2 == 'Glid_Path'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">General_cleanliness_room</th>
+                            <td>{{models.General_cleanliness_room}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Status_airconditioners</th>
+                            <td>{{models.Status_airconditioners}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">status_obstruction_light:</th>
+                            <td>{{models.status_obstruction_light}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">main_supply_volt</th>
+                            <td>{{models.main_supply_volt}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">main_supply_frequency</th>
+                            <td>{{models.main_supply_frequency}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">verify_equipment_on_UPS</th>
+                            <td>{{models.verify_equipment_on_UPS}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">status_near_monitor</th>
+                            <td>{{models.status_near_monitor}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">status_critical_area</th>
+                            <td>{{models.status_critical_area}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">remote_status_indication</th>
+                            <td>{{models.remote_status_indication}}</td>
+                          </tr>
+                          <TR>
+                              <TD>#system status indication '' normal staus = ok ''</TD>
+                          </TR>
+                          <tr>
+                            <th scope="row">param</th>
+                            <td>{{models.param}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Disagr</th>
+                            <td>{{models.Disagr}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">batt</th>
+                            <td>{{models.batt}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">maint</th>
+                            <td>{{models.maint}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">standby</th>
+                            <td>{{models.standby}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">course</th>
+                            <td>{{models.course}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">clearnance</th>
+                            <td>{{models.clearnance}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">txtoair</th>
+                            <td>{{models.txtoair}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">main</th>
+                            <td>{{models.main}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">smps</th>
+                            <td>{{models.smps}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      {%else%}
+                      <div>
+                <p>
+                  VERIFIED BY MANAGER &emsp;
+                  <span>{{models.verified_by_Manager}}</span>
+                </p>
+           </div>
+           {%endif%}
+        </ul>
+    </div>
+  </div>
+{%else%}
+<h1>
+  <div style = "background-color: black;">
+    {% if messages %}
+    <p>
+        {%for message in messages%}
+        <p class="lead">{{message}}</p>
+        {%endfor%}
+    </p>
+    {%endif%}
+</div>
+</h1>
+{%endif%}
+</div>
+
+{%endblock home%}
+
+<!--
+    NDB
+    room_temp = models.IntegerField() # degree celcius
+    AC_main_volt =models.IntegerField() # volt
+    UPS_out_volt =models.IntegerField() # volt
+    cleanlines = models.CharField(max_length = 255)
+    # equipment checks
+    ''' same for two type of transmitter '''
+    reflected_power  = models.FloatField() # percentage
+    Forword_Power = models.FloatField() # percentage FWD power
+    modulation = models.FloatField()
+    PA_volt = models.IntegerField() #volt
+    PA_current = models.IntegerField() #volt
+    # Local control panel
+    System_staus_LED   = models.BooleanField()
+    primary_tx_led = models.BooleanField()
+    tx_power_on_led = models.BooleanField()
+-->
+<!--
+    GLID_PATH
+    General_cleanliness_room = models.BooleanField()
+    Status_airconditioners = models.IntegerField()
+    status_obstruction_light = models.IntegerField()
+    main_supply_volt = models.IntegerField()
+    main_supply_frequency = models.FloatField()
+    verify_equipment_on_UPS = models.BooleanField()
+    status_near_monitor = models.BooleanField()
+    status_critical_area = models.BooleanField()
+    remote_status_indication = models.BooleanField()
+    #system status indication '' normal staus = ok ''
+    param = models.BooleanField()
+    Disagr = models.BooleanField()
+    batt = models.BooleanField()
+    maint = models.BooleanField()
+    standby = models.BooleanField()
+    course = models.BooleanField()
+    clearnance = models.BooleanField()
+    txtoair = models.BooleanField()
+    main = models.BooleanField()
+    smps = models.IntegerField()
+                      -->
+<!--
+    COMSOFT
+    General_cleanliness_room = models.CharField(max_length = 255) #satisfactory
+    Status_airconditioners = models.IntegerField() #room temp in degree cel
+    status_obstruction_light = models.IntegerField() #percent
+    main_supply_volt = models.FloatField() #volt
+    main_supply_frequency = models.IntegerField() # percentage
+    verify_equipment_on_UPS = models.CharField(max_length = 255)
+    status_near_monitor = models.BooleanField()
+    status_critical_area = models.BooleanField()
+    remote_status_indication = models.BooleanField()
+-->
+<!--
+    VCS_System
+    Ac_volt_UPS1 = models.CharField(max_length = 255)
+    Condition_UPS1 = models.CharField(max_length = 255)
+    RAD1PSU= models.CharField(max_length = 255)
+    TEL1_PSU = models.CharField(max_length = 255)
+    TEL2_PSU = models.CharField(max_length = 255)
+    TEL3_PSU = models.CharField(max_length = 255)
+    TEL4_PSU = models.CharField(max_length = 255)
+    PSU_FuseLED = models.CharField(max_length = 255)
+    system_A = models.CharField(max_length = 255)
+    Overall_perform = models.CharField(max_length = 255)
+-->
+<!--
+    DVTR
+    room_temp = models.IntegerField()
+    AC_main_volt =models.IntegerField()
+    UPS_out_volt =models.IntegerField()
+    cleanlines = models.BooleanField()
+     # main DVTR , attributes will also check on standby DVTR
+    status_UPS = models.BooleanField()
+    recording_all_channels = models.CharField(max_length = 255)
+    media_staus = models.BooleanField()
+    status_indication = models.BooleanField()
+    status_cooling_fans = models.BooleanField()
+    Free_space_disk = models.BooleanField()
+-->
+<!--
+    UPS
+    Input_voltage = models.IntegerField()
+    Input_frequency = models.IntegerField()
+    Output_voltage = models.IntegerField()
+    output_frequency = models.IntegerField()
+    output_load = models.IntegerField()
+    Battery_bank_volt = models.IntegerField()
+    Battery_current = models.IntegerField()
+    working = models.CharField(max_length=4)
+    slug = models.SlugField(blank=True)
+-->

@@ -1,0 +1,322 @@
+/**
+ * You can change the color and size of the empty space
+ * just before the footer (brown part) in your HTML file
+ * by overwriting the following property variable 
+ * in your HTML file's own CSS file
+ */
+:root {
+  --footer-emptyspace1-color: #ffffff;
+  --footer-emptyspace1-size: 30px;
+  --footer-emptyspace2-color: #1DA1F3;
+  --footer-emptyspace2-size: 50px;
+}
+
+/**************** FOOTER ****************/
+.empty-area-60 {
+  padding: calc(var(--footer-emptyspace1-size) / 2) 0px;
+  margin: 0px;
+  outline: 0px;
+  border: 0px;
+  background-color: var(--footer-emptyspace1-color);
+}
+
+.empty-area-120 {
+  padding: calc(var(--footer-emptyspace2-size) / 2) 0px;
+  margin: 0px;
+  outline: 0px;
+  border: 0px;
+  background-color: var(--footer-emptyspace2-color);
+}
+
+#footer-main .gs-row:last-child {
+  margin-bottom: 0;
+}
+
+/* FOOTER MAIN start */
+#footer-main {
+  padding-top: 20px;
+  padding-bottom: 10%;
+  position: relative;
+  background-color:rgb(41, 44, 46);
+  display: block;
+  color: #DED7D3;
+  font-family: 'Nunito', sans-serif;
+}
+
+.footer-main-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-main-info .gs-row {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 30px 0px;
+}
+
+.footer-main-info .gs-row .gs-col {
+  display: block;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#footer-main a {
+  color: #EEEBE9;
+}
+
+#footer-main a:hover {
+  color: #EEEBE9;
+}
+
+/* row 1 */
+.footer-logo {
+  height:100px;
+}
+
+.footer-main-info .gs-row .footer-main-logo {
+  flex-direction: column;
+  align-items: flex-end;
+  flex: 3;
+}
+
+.footer-main-info .gs-row .footer-main-logo img {
+  padding-right: 16%;
+}
+
+.footer-main-info .gs-row .footer-main-gs-info {
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 7;
+}
+
+.footer-main-info .gs-row .footer-main-gs-info h3 {
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.footer-main-info .gs-row .footer-main-gs-info p {
+  font-size: 1.2rem;
+}
+
+
+#footer-main .footer-coc {
+  margin-bottom: 30px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: block;
+}
+#footer-main .footer-coc a {
+  color: #756e6a;
+}
+#footer-main .footer-coc a:hover {
+  color: #ffffff;
+}
+/* row 1 end */
+
+/* row 2 */
+.footer-main-info .gs-row .footer-main-contact {
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+#footer-main .footer-main-info .footer-main-contact-container {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr; */
+  grid-template-columns: repeat(auto-fit, minmax(40%, 1fr));
+  /* grid-template-rows: 1fr; */
+  justify-items: normal;
+  gap: 30px;
+}
+
+.grid-item-title {
+  text-transform: uppercase;
+  letter-spacing: 0.5ch;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  padding: 10px 10px 10px 10px;
+  color: #BEAFA7;
+}
+
+.grid-item-content {
+  padding: 25px 25px 25px 25px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.5rem;
+  background: #756e6a; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(45deg, #756e6a, #756e6a); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(45deg, #756e6a, #756e6a); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(45deg, #756e6a, #756e6a); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(45deg,#756e6a, #756e6a ); /* Standard syntax */
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.grid-item-content-text {
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.item-big .grid-item-content {
+  padding: 25px 40px 25px 40px;
+}
+
+.grid-item-icon {
+  position: absolute;
+  bottom: -5px;
+  right: 5px;
+  width: 70px;
+  opacity: 0.3;
+}
+
+.contact-item {
+  width: 100%;
+}
+
+.grid-child {
+  max-width: 480px;
+  overflow: hidden;
+  transition: 0.2s ease;
+  border-radius: 8px;
+}
+
+.grid-child:hover {
+  transform: translateY(-3px);
+}
+/* row 2 end */
+
+/* row 3 */
+.footer-main-info .gs-row .footer-main-social {
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+}
+
+#footer-main .footer-main-social-container {
+  margin-top: 64px;
+}
+/* row 3 end */
+
+footer.page-footer {
+  margin: 0px;
+  padding: 0px;
+  background: rgb(66, 77, 99);
+  background: linear-gradient(0deg, rgba(66, 77, 99,1) 0%, rgba(66, 77, 99,1) 100%);
+}
+/* FOOTER MAIN end */
+
+/* FOOTER COPYRIGHT start */
+#footer-copyright {
+  padding-top: 5px;
+  /*padding-bottom: 5%;*/
+ /* color: #f5f5f5;*/
+/*  background: #6C7A89;*/
+  position: relative;
+  font-family: monospace, sans-serif;
+  text-align: center;
+   height: 50px;
+  background-color: #29292d;
+
+}
+
+.footer-copyright-info {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+  line-height: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.footer-copyright-item {
+  flex: 1;
+}
+
+.drag-target {
+  width: 25px;
+}
+
+.fa-heart {
+  color: red;
+  font-size: 20px;
+}
+/* FOOTER COPYRIGHT end */
+
+@media only screen and (max-width: 700px) {
+  #footer-main .footer-main-gs-container {
+      flex-direction: column;
+  }
+
+  #footer-main .footer-main-logo img {
+      padding-right: 0px;
+      margin-bottom: 30px;
+  }
+
+  #footer-main .footer-main-gs-info p, #footer-main .footer-main-gs-info h3 {
+      width: 100%;
+      text-align: center;
+  }
+
+  #footer-main .footer-main-info .footer-main-contact-container {
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr 1fr;
+      justify-items: stretch;
+      gap: 30px;
+  }
+
+  #footer-copyright .footer-copyright-info {
+      font-size: 1.1rem;
+      padding: 2px;
+  }
+}
+
+
+
+
+
+
+
+/* SOCIAL BUTTONS */
+.gs-social-button {
+  border: 5px solid #756e6a;
+  color: #BEAFA7;
+  padding: 16px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 12px;
+  background-color: rgba(255,255,255,0.00);
+  margin-left: 8px;
+  margin-right: 8px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.gs-social-button:hover {
+  background-color: rgba(0,0,0,0.15);
+  color: white;
+}
+
+.gs-social-button:focus {
+  background-color: rgba(0,0,0,0.15);
+  color: white;
+}
+
+.gs-social-icons-container {
+  text-align: center;
+}
+/* SOCIAL BUTTONS end */
+/**************** FOOTER end ****************/

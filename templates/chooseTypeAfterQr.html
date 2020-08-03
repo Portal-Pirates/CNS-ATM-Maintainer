@@ -1,0 +1,132 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--CSS FILES-->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/newEntry.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/common/footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/common/common.css' %}">
+   <!--CSS FILES ENDS-->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"><!-- BOOTSTRAP 4 CDN ---->
+      <!-- FONTS -->
+  <!-- google font family and fontawesome 4 and 5 -->
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-ekOryaXPbeCpWQNxMwSWVvQ0+1VrStoPJq54shlYhR8HzQgig1v5fas6YgOqLoKz" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans|Nunito:300,400,700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  <!-- FONTS ENDS---->
+  <style type="text/css">
+
+
+    .extra-div  h2{
+  font-size: 0.9rem;
+  margin: 20px 0 15px 0;
+  font-weight: bold;
+  line-height: 1.1;
+  word-spacing: 4px;
+
+}
+    .header-extradiv{
+   width: 100%; 
+   height: auto;
+   margin: 10px 0;
+   text-align: center;
+
+
+
+}
+
+.extra-div{
+   background: #fff;
+   border:medium;
+   padding: 50px !important;
+   border-radius: 3px;
+   transition: 0.3s;
+     
+}
+
+
+.extra-div:hover{
+ box-shadow: 0 0 20px 0 rgba(0,0,0,0.3);
+ transform: translateY(-20px);
+} 
+
+
+
+
+@media (min-width: 992px) {
+  .extra-div > div {
+    display: table-cell;
+    float: none;
+    vertical-align: middle;
+  }
+}
+  </style>
+</head>
+
+  <body>
+    {% include 'GenericHeader.html' %}
+    
+    <!-- <div>
+        <button><a href="/NewEntry/Daily">Daily Report</a></button>
+        <button><a href="/NewEntry/Weekly">Weekly Report</a></button>
+        <button><a href="/NewEntry/Monthly">Monthly Report</a></button>
+        <button><a href="/NewEntry/Yearly">Yearly Report</a></button>
+    </div> -->
+    <div class="mt-5 mb-2">
+    <h1 style="height: 100%; width: 100%; text-align: center;">Please Select Type Of Report</h1>
+   </div>
+  <section class="header-extradiv">
+      
+    <div class="container">
+        
+    <div class="row h-100">
+        <div class="extra-div col-sm-12 my-auto card card-block w-5">
+            <a href="/NewEntry/add/{{eq_id}}/Daily/{{st_name}}"><i class="fa fa-calendar fa-4x"></i></a>
+
+            <h2>NEW DAILY REPORT</h2>
+            <P> click here to add daily report.</P>
+
+        </div>
+  
+       <div class="extra-div col-sm-12 my-auto card card-block w-5">
+        <a href="/NewEntry/add/{{eq_id}}/weekly/{{st_name}}"><i class="fa fa-database  fa-4x"></i></a>
+
+        <h2>NEW WEEKLY REPORT</h2>
+        <P> click here to add new weekly report.</P>
+
+        </div>
+
+        <div class="extra-div col-sm-12 my-auto card card-block w-5">
+              <a href="/NewEntry/add/{{eq_id}}/monthly/{{st_name}}"><i class=" fa fa-server  fa-4x"></i></a>
+  
+              <h2>NEW MONTHLY REPORT</h2>
+              <P> click here to add new monthly reports.</P>
+  
+       </div>
+
+       <div class="extra-div col-sm-12 my-auto card card-block w-5">
+        <a href="/NewEntry/add/{{eq_id}}/yearly/{{st_name}}"><i class=" far fa-plus-square fa-4x"></i></a>
+
+        <h2>NEW YEARLY REPORTS</h2>
+        <P> click here to add new yearly reports.</P>
+
+        </div>
+
+     </div>
+   </div>  
+  </section>
+    {% include 'footer.html' %}
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

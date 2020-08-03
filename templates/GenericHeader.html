@@ -1,0 +1,49 @@
+{% load static %}
+<header class="head">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+		<div class="container">
+   <a class="navbar-brand" href="/"><img src="{% static '1.ico' %}">
+   </a> <!--add logo-->
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/" style="color: white; font-weight: 10%;">HOME<span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: white; font-weight: 10%;">CONTACT</a>
+      </li>
+      {% if user.is_authenticated %}
+     
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'logout' %}" style="color: white; font-weight: 10%;">LOGOUT</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'profileEdit' %}" style="color: white; font-weight: 10%;">PROFILE</a>
+      </li>
+      {% if user.is_staff %}
+      <li class="nav-item">
+        <a class="nav-link" href="/admin" style="color: white; font-weight: 10%;">ADMIN VIEW</a>
+      </li>
+      {% endif %}
+      {% else %}
+       <li class="nav-item">
+        <a class="nav-link" href="{% url 'login' %}" style="color: white; font-weight: 10%;">LOGIN</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="{% url 'register' %}" style="color: white; font-weight: 10%;">REGISTER</a>
+      </li>
+      {% endif %}
+     </ul>
+    
+   
+  </div>
+		</div>
+	</nav>
+</header>

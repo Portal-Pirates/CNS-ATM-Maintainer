@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block home %}
+<div>
+    {%if models%}
+<div style = "background-color: black; color: whitesmoke;" class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h5> Equipment Name: &emsp; <span>{{models.equipment_name}}</span></h5>
+        <ul>
+            <li>
+               <h6> Station: &emsp; <span>{{models.Airport_Location}}</span> </h6>
+            </li>
+            <li>
+                <p>Last Updated on: &emsp; <span>{{models.last_updated}}</span></p>
+                <p>Modal Number: &emsp; <span>{{models.modal_number}}</span></p>
+                <p>Station Name: &emsp; <span>{{models.station_name}}</span></p>
+                <p>Equipment Category: &emsp; <span>{{model2}}</span></p>
+                {if model3}
+                <p>Equipment Id: &emsp; <span>{{model3}}</span></p>
+                <a href="/NewEntry/select_type/{{model3}}/sixmonthly/{{models.station_name}}"><button class="btn btn-primary">Click Here, For new Entry</button></a>
+                {%endif%}
+              </li>
+            {%if model2 == 'DVOR'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Physical_condition_antenna </th>
+                            <td>{{models.Physical_condition_antenna }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">ground_calibration_done_on</th>
+                            <td>{{models.ground_calibration_done_on}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Error_spread :</th>
+                            <td>{{models.Error_spread }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Verify_counter_poise</th>
+                            <td>{{models.Verify_counter_poise}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Alarm_co_time</th>
+                            <td>{{models.Alarm_co_time}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      {%else%}
+                      <div>
+                      <h1>We have not found any data for your QR..!!!!</h1>
+                <p>
+                  VERIFIED BY MANAGER &emsp;
+                  <span>{{models.verified_by_Manager}}</span>
+                </p>
+           </div>
+           {%endif%}
+        </ul>
+    </div>
+  </div>
+{%else%}
+<h1>
+  <div style = "background-color: black;">
+    {% if messages %}
+    <p>
+        {%for message in messages%}
+        <p class="lead">{{message}}</p>
+        {%endfor%}
+    </p>
+    {%endif%}
+</div>
+</h1>
+{%endif%}
+</div>
+
+{%endblock home%}

@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block home %}
+
+<div style="background-color:rgb(0, 0, 0);" class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <center>
+            <div>
+                {% if messages %}
+                <p>
+                    {%for message in messages%}
+                    <p class="lead">{{message}}</p>
+                    {%endfor%}
+                </p>
+                {% else %}
+                <p class="lead">
+                    <p>Below is the found data</p>
+                </p>
+                {%endif%}
+            </div>
+            <table class="table">
+                <thead class="thead-dark">
+                  <tr>
+                    <th scope="col">Date of Report</th>
+                    <th scope="col">More Info</th>
+                  </tr>
+                </thead>
+                {%for i in model%}
+                <tbody class="light">
+                  <tr>
+                    <td style="color: white;">{{i.created}}</td>
+                    <td> <a class="btn btn-primary btn-lg" href="{%url 'detailsweekly' i.created%}" role="button">More Info</a></td>
+                  </tr>
+                </tbody>
+                {%endfor%}
+            </table>
+        </center>
+    </div>
+  </div>
+
+
+
+{%endblock home%}

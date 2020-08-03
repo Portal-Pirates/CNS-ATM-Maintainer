@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title> QR Generation </title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"><!-- BOOTSTRAP 4 CDN ---->
+  
+  
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-ekOryaXPbeCpWQNxMwSWVvQ0+1VrStoPJq54shlYhR8HzQgig1v5fas6YgOqLoKz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans|Nunito:300,400,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+     <!--CSS FILES ENDS--> 
+     <link rel="stylesheet" type="text/css" href="{% static 'css/newEntry.css' %}">
+  
+     <link rel="stylesheet" type="text/css" href="{% static '/css/common/footer.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static '/css/common/common.css' %}">
+     
+
+</head>
+<body>
+  {% include 'GenericHeader.html' %}
+<center>
+  <p class="lead">
+    <ul>
+      <li>
+        <p>
+          <a class="btn btn-primary btn-lg" href="{%url 'daily'%}" role="button">Daily report</a>
+        </p>
+      </li>
+      <li>
+       <p>
+        <a class="btn btn-primary btn-lg" href="{%url 'weekly'%}" role="button">Weekly Report</a>
+       </p>
+      </li>
+      <li>
+        <p>
+        <a class="btn btn-primary btn-lg" href="{%url 'monthly'%}" role="button">Monthly Report</a>
+        </p>
+      </li>
+      <li>
+        <p>
+        <a class="btn btn-primary btn-lg" href="{%url 'yearly'%}" role="button">Yearly Report</a>
+        </p>
+      </li>
+    </ul>
+  </p>
+</center>
+{% include 'footer.html' %}
+{% include 'scripts.html' %}
+
+  
+</body>

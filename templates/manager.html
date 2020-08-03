@@ -1,0 +1,87 @@
+
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title> QR Generation </title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"><!-- BOOTSTRAP 4 CDN ---->
+  
+  
+      <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.12.0/css/all.css" integrity="sha384-ekOryaXPbeCpWQNxMwSWVvQ0+1VrStoPJq54shlYhR8HzQgig1v5fas6YgOqLoKz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans|Nunito:300,400,700&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+     <!--CSS FILES ENDS--> 
+     <link rel="stylesheet" type="text/css" href="{% static 'css/newEntry.css' %}">
+  
+     <link rel="stylesheet" type="text/css" href="{% static '/css/common/footer.css' %}">
+     <link rel="stylesheet" type="text/css" href="{% static '/css/common/common.css' %}">
+     
+
+</head>
+<body>
+  {% include 'GenericHeader.html' %}
+
+
+{%if models%}
+<div class="jubotron">
+    <h1>Manager Name :{{models.name}}</h1>
+    <h2>Loation: {{models.working_location}}</h2>
+    <div>
+        <a href="/admin">Admin Panel</a>
+<hr>
+        <a href="{%url 'search'%}">Search Detail of Equipment</a>
+        <hr>
+        <a href="{%url 'qrredirect'%}">Scan QR</a>
+    </div>
+    <div>
+        {%if replace%}
+        <h1>Replacement Needed to following Equipment</h1>
+        {%for i in replace%}
+        <ul>
+            <li>
+                <ul>
+                    <li>Equipment Name is: {{i.equipment_name}}</li>
+                    <li>Equipment Model Number: {{i.serial_number}}</li>
+                    <li>Equipment Serial Number: {{i.modal_number}} </li>
+                </ul>
+            </li>
+        </ul>
+        {%endfor%}
+        {%endif%}
+    </div>
+    <div>
+        {%if maintainence%}
+        <h1>Maintainence Needed to following Equipments</h1>
+        {%for j in maintainence%}
+        <ul>
+            <li>
+                <ul>
+                    <li>Equipment Name is: {{j.equipment_name}}</li>
+                    <li>Equipment Model Number: {{j.serial_number}}</li>
+                    <li>Equipment Serial Number: {{j.modal_number}} </li>
+                </ul>
+            </li>
+        </ul>
+        {%endfor%}
+        {%endif%}
+    </div>
+    {%else%}
+    <h1>
+        {%if messages%}
+        <h2>{{messages}}</h2>
+        {%endif%}
+    </h1>
+    {%endif%}
+</div>
+{% include 'footer.html' %}
+{% include 'scripts.html' %}
+</body>
+</html>

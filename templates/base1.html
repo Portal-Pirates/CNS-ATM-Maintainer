@@ -1,0 +1,17 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+
+    {% include 'head.html' %}
+    {% block NewEntry_head %}
+    {% endblock NewEntry_head %}
+<body>
+    {% include 'nav.html' %}
+    {% block home %}
+    {% endblock home %}
+    {% include 'footer.html' %}
+    {% include 'scripts.html' %}
+</body>
+</html>

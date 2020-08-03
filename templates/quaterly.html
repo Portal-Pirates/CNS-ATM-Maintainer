@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block home %}
+<div>
+    {%if models%}
+<div style = "background-color: black; color: whitesmoke;" class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h5> Equipment Name: &emsp; <span>{{models.eq_name}}</span></h5>
+        <ul>
+            <li>
+               <h6> Station: &emsp; <span>{{models.station}}</span> </h6>
+            </li>
+            <li>
+                <p>Last Updated on: &emsp; <span>{{models.last_updated}}</span></p>
+                <p>Modal Number: &emsp; <span>{{models.modal_number}}</span></p>
+                <p>Station Name: &emsp; <span>{{models.station_name}}</span></p>
+                <p>Equipment Category: &emsp; <span>{{model2}}</span></p>
+                {%if model3%}
+                <p>Equipment Id: &emsp; <span>{{model3}}</span></p>
+                <a href="/NewEntry/select_type/{{model3}}/quaterly/{{models.station_name}}"><button class="btn btn-primary">Click Here, For new Entry</button></a>
+                {%endif%}
+              </li>
+             {%if model2 == 'NDB'%}
+             <div>
+              <table class="table table-dark">
+                  <thead>
+                    <tr>
+                      <th scope="col">ACTIVITY/COMPONENT</th>
+                      <th scope="col">VALUE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">check_carrier_freq</th>
+                      <td>{{models.check_carrier_freq}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">check_modulation_frq:</th>
+                      <td>{{models.check_modulation_frq }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">check_monitor_alarm</th>
+                      <td>{{models.check_monitor_alarm}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+             
+                      {%elif model2 == 'Localizer'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Suprious_modul</th>
+                            <td>{{models.Suprious_modul}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Coverage_dist:</th>
+                            <td>{{models.Coverage_dist}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Carrier_modulation:</th>
+                            <td>{{models.Carrier_modulation}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">carrier_modul_harmonic</th>
+                            <td>{{models.carrier_modul_harmonic}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Carrier_module_hor_contetn</th>
+                            <td>{{models.Carrier_module_hor_contetn}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">sun_modul_depths</th>
+                            <td>{{models.sun_modul_depths}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">course_alignment </th>
+                            <td>{{models.course_alignment }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">identification</th>
+                            <td>{{models.identification}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">identification_repetition_rate</th>
+                            <td>{{models.identification_repetition_rate}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      {%elif model2 == 'Glid_Path'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                            
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">path_angle_monitor</th>
+                            <td>{{models.path_angle_monitor}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">coverage:</th>
+                            <td>{{models.coverage}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">change_in_displacement</th>
+                            <td>{{models.change_in_displacement}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">totoal_time_out_of_tolerance</th>
+                            <td>{{models.totoal_time_out_of_tolerance}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">carrier_modulation</th>
+                            <td>{{models.carrier_modulation}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      {%else%}
+                      <div>
+                      <h1>We have not found any data for your QR..!!!!</h1>
+                <p>
+                  VERIFIED BY MANAGER &emsp;
+                  <span>{{models.verified_by_Manager}}</span>
+                </p>
+           </div>
+           {%endif%}
+        </ul>
+    </div>
+  </div>
+{%else%}
+<h1>
+  <div style = "background-color: black;">
+    {% if messages %}
+    <p>
+        {%for message in messages%}
+        <p class="lead">{{message}}</p>
+        {%endfor%}
+    </p>
+    {%endif%}
+</div>
+</h1>
+{%endif%}
+</div>
+
+{%endblock home%}

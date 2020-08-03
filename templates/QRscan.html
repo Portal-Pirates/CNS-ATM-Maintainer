@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title >QRscan afterReport</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="newEntry.css">
+    
+
+      <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+
+  </head>
+
+<header class="head">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark ">
+<div class="container">
+   <a class="navbar-brand" href="/"><img src="1.ico">
+   </a> <!--add logo-->
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="/" style="color: white; font-weight: 10%;">HOME<span class="sr-only">(current)</span></a>
+      </li>
+  
+       <li class="nav-item">
+        <a class="nav-link" href="#" style="color: white; font-weight: 10%;">LOGIN</a>
+      </li>
+       <li class="nav-item">
+        <a class="nav-link" href="#" style="color: white; font-weight: 10%;">REGISTER</a>
+      </li>
+     </ul>
+    
+   
+  </div>
+</div>
+</nav>
+
+</header>
+
+
+
+  <body>
+    <div class="testbox">
+      <form action="/">
+        <h1 style="text-align:center;"><strong style="font-size: 30px; padding: 5px;">PREVIOUS ENTRY</strong></h1>
+        <h4>DEVICE DETAILS<span>*</span></h4>
+        <div class="name">
+          <input type="text" name="name" id="ID" placeholder="ID" />
+          <input type="text" name="name" id="DEVICE NAME"  placeholder="DEVICE NAME" />
+        </div>
+        <h4>LOCATION DETAILS<span>*</span></h4>
+        <div class="name">
+          <input type="text" name="name" placeholder="STATION NAME">
+          <input type="text" name="name" placeholder="REGION NAME" />
+        </div>
+        
+        <h4>EQUIPMENT TYPE<span>*</span></h4>
+        <select>
+          <option class="disabled" value="EquipmentType" disabled selected>*Please Select*</option>
+          <option value="1">Communication</option>
+          <option value="2">Networking</option>
+          <option value="3">Survelliance</option>
+        </select>
+        <h4>MAINTENANCE DATE<span>*</span></h4>
+        <div class="day-maintenance">
+          <input type="date" name="daymaintenance" required/>
+          <i class="fas fa-calendar-alt"></i>
+        </div>
+        <h4>MAINTENANCE TIME<span>*</span></h4>
+ <div class="time-maintenance">
+          <input type="time" name="timemaintenance" required/>
+          <i class="fas fa-clock"></i>
+        </div>
+        
+        <h4 style="text-align: center " ><strong style="font-size: 25px; padding: 5px;">REPORT</strong></h4>
+        <table border="1">
+          <tr>
+            <th class="first-col"  style="text-align:  center;"></th>
+
+            <th  style="text-align:  center;">EXCELLENT</th>
+            <th  style="text-align:  center;"> GOOD</th>
+            <th  style="text-align:  center;">DECENT</th>
+            <th  style="text-align:  center;">POOR</th>
+          </tr>
+          <tr>
+            <td class="first-col" style="text-align:  center;">        PARAMETER CHECK       </td>
+             <td><input type="radio" value="none" name="Parameter" /></td>
+            <td><input type="radio" value="none" name="Parameter" /></td>
+            <td><input type="radio" value="none" name="Parameter" /></td>
+            <td><input type="radio" value="none" name="Parameter" /></td>
+          </tr>
+          <tr>
+            <td class="first-col" style="text-align:  center;">        SERVICE QUALITY    </td>
+            <td><input type="radio" value="none" name="Service" /></td>
+            <td><input type="radio" value="none" name="Service" /></td>
+            <td><input type="radio" value="none" name="Service" /></td>
+            <td><input type="radio" value="none" name="Service" /></td>
+          </tr>
+          <tr>
+            <td class="first-col"  style="text-align:  center;">    SPEED OF DEVICE    </td>
+            <td><input type="radio" value="none" name="Speed" /></td>
+            <td><input type="radio" value="none" name="Speed" /></td>
+            <td><input type="radio" value="none" name="Speed" /></td>
+            <td><input type="radio" value="none" name="Speed" /></td>
+          </tr>
+          <tr>
+            <td class="first-col"  style="text-align:  center;">  STATUS  </td>
+            <td><input type="radio" value="none" name="STATUS" /></td>
+            <td><input type="radio" value="none" name="STATUS" /></td>
+            <td><input type="radio" value="none" name="STATUS" /></td>
+            <td><input type="radio" value="none" name="STATUS" /></td>
+          </tr>
+          <tr>
+            <td class="first-col"  style="text-align:  center;">  OVERALL SERVICE  </td>
+            <td><input type="radio" value="none" name="Experience" /></td>
+            <td><input type="radio" value="none" name="Experience" /></td>
+            <td><input type="radio" value="none" name="Experience" /></td>
+            <td><input type="radio" value="none" name="Experience" /></td>
+          </tr>
+        </table>
+        <h4>ANY REMARKS?</h4>
+        <textarea rows="5"></textarea>
+        <div class="btn-block">
+          <button type="submit" href="/">Send Report</button>
+        </div>
+      </form>
+    </div>
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  </body>
+</html>

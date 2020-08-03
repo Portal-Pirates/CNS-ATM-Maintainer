@@ -1,0 +1,430 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block home %}
+<div>
+    {%if models%}
+<div style = "background-color: black; color: whitesmoke;" class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h5> Equipment Name: &emsp; <span>{{models.equipment_name}}</span></h5>
+        <ul>
+            <li>
+               <h6> Station: &emsp; <span>{{models.Airport_Location}}</span> </h6>
+            </li>
+            <li>
+                <p>Last Updated on: &emsp; <span>{{models.last_updated}}</span></p>
+                <p>Modal Number: &emsp; <span>{{models.modal_number}}</span></p>
+                <p>Station Name: &emsp; <span>{{models.station_name}}</span></p>
+                <p>Equipment Category: &emsp; <span>{{model2}}</span></p>
+                {%if model3%}
+                <p>Equipment id: &emsp; <span>{{model3}}</span></p>
+                <a href="/NewEntry/select_type/{{model3}}/weekly/{{models.station_name}}"><button class="btn btn-primary">Click Here, For new Entry</button></a>
+                {%endif%}
+            </li>
+             {%if model2 == 'NDB'%}
+             <div>
+              <table class="table table-dark">
+                  <thead>
+                    <tr>
+                      <th scope="col">ACTIVITY/COMPONENT</th>
+                      <th scope="col">VALUE</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">main power supply terminal</th>
+                      <td>{{models.main_pow_supp_terminal}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Check Battery Terminal</th>
+                      <td>{{models.check_battery_terminal }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Condition Of Battery</th>
+                      <td>{{models.condition_of_Battery}}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Condtition Of UPS</th>
+                      <td>{{models.condition_of_UPS }}</td>
+                    </tr>
+                    <tr>
+                      <th scope="row">UPs output load</th>
+                      <td>{{models.UPs_out_load }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+                  {%elif model2 == 'UPS'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Power supply terminal:</th>
+                            <td>{{models.Power_supply_terminal}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">check battery terminal:</th>
+                            <td>{{models.check_battery_terminal}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Battery condition:</th>
+                            <td>{{models.Battery_condition}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">UPS condition</th>
+                            <td>{{models.UPS_condition }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">UPS load percent</th>
+                            <td>{{models.UPS_load_percent}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Neutral load </th>
+                            <td>{{models.Neutral_load }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Earthing codition:</th>
+                            <td>{{models.Earthing_codition}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                      {%elif model2 == 'DVOR'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+
+                        <tbody>
+                          <tr>
+                            <th scope="row">Carrier pow</th>
+                            <td>{{models.Carrier_pow}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">AM 30hz:</th>
+                            <td>{{models.AM_30hz}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Am 1020hz:</th>
+                            <td>{{models.Am_1020hz}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">USB level</th>
+                            <td>{{models.USB_level}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">USB RF Phase</th>
+                            <td>{{models.USB_RF_Phase}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">LSB level</th>
+                            <td>{{models.LSB_level}}</td>
+                          </tr>
+                          <TR>
+                              <TD># Near field antenna</TD>
+                          </TR>
+                          <tr>
+                            <th scope="row">Azinmuth</th>
+                            <td>{{models.Azinmuth}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">RF level</th>
+                            <td>{{models.RF_level}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">FM index</th>
+                            <td>{{models.FM_index}}</td>
+                          </tr>
+                          <TR>
+                              <TD># Internal integral </TD>
+                          </TR>
+                          <tr>
+                            <th scope="row">Carrier frequency </th>
+                            <td>{{models.Carrier_frequency }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">USB frequency</th>
+                            <td>{{models.USB_frequency}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">LSB frequency</th>
+                            <td>{{models.LSB_frequency}}</td>
+                          </tr>
+                          <TR>
+                              <TD>#Alarm limit </TD>
+                          </TR>
+                          <tr>
+                            <th scope="row">Azimuth Ul near</th>
+                            <td>{{models.Azimuth_Ul_near}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Azimuth LL nar</th>
+                            <td>{{models.Azimuth_LL_nar}}</td>
+                          </tr>
+                          <TR>
+                              <TD>
+                                #battery data
+                              </TD>
+                          </TR>
+                          <tr>
+                            <th scope="row">battery volt</th>
+                            <td>{{models.battery_volt}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">battery half volt </th>
+                            <td>{{models.battery_half_volt }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">battery current</th>
+                            <td>{{models.battery_current}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      {%elif model2 == 'Localizer'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <TR>
+                                <TD>
+                                    #parameter
+                                </TD>
+                            </TR>
+                          <tr>
+                            <th scope="row">course alignment</th>
+                            <td>{{models.course_alignment}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">course shift:</th>
+                            <td>{{models.Earth_resis_antenna}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">change in display sensitivity:</th>
+                            <td>{{models.change_in_displ_sensitivity}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Reduction Pow</th>
+                            <td>{{models.Reduction_pow}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">physical inspection </th>
+                            <td>{{models.physical_inspection}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">check allcables conn </th>
+                            <td>{{models.check_allcables_conn}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">check allnuts bolt</th>
+                            <td>{{models.check_allnuts_bolt}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Tx parameters DC pow </th>
+                            <td>{{models.Tx_parameters_DC_pow}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">MonitorSystemOperation </th>
+                            <td>{{models.MonitorSystemOperation }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">All function remotecontrol</th>
+                            <td>{{models.All_function_remotecontrol}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Grading ofcritical area </th>
+                            <td>{{models.Grading_ofcritical_area}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Environment vegetaion </th>
+                            <td>{{models.Environment_vegetaion}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">status RClines</th>
+                            <td>{{models.status_RClines }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">auto changeover value </th>
+                            <td>{{models.auto_changeover_value }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">PA27Leval </th>
+                            <td>{{models.PA27Leval }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Auto Shutdown </th>
+                            <td>{{models.Auto_Shutdown }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">PA27Level</th>
+                            <td>{{models.PA27Level }}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Auto changeOver ok</th>
+                            <td>{{models.Auto_changeOver_ok}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">Auto shutdown from tx</th>
+                            <td>{{models.Auto_shutdown_from_tx}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      {%elif model2 == 'Glid_Path'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">System time synch</th>
+                            <td>{{models.System_time_synch}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">time of observation UTC</th>
+                            <td>{{models.time_of_observation_UTC}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">ILS datetime UTC:</th>
+                            <td>{{models.ILS_datetime_UTC}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">ups out volt</th>
+                            <td>{{models.ups_out_volt}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">ups out freq</th>
+                            <td>{{models.ups_out_freq}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">ups battery volt</th>
+                            <td>{{models.ups_battery_volt}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">battery volt</th>
+                            <td>{{models.battery_volt}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">opearation on battery</th>
+                            <td>{{models.opearation_on_battery}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">RMS 5volt</th>
+                            <td>{{models.RMS_5volt}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">PS1</th>
+                            <td>{{models.PS1}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">PS2</th>
+                            <td>{{models.PS2}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">CLR150</th>
+                            <td>{{models.CLR150}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">CLR90</th>
+                            <td>{{models.CLR90}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">COU150</th>
+                            <td>{{models.COU150}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">COU90</th>
+                            <td>{{models.COU90}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      {%elif model2 == 'VCS_System'%}
+                  <div>
+                    <table class="table table-dark">
+                        <thead>
+                          <tr>
+                            <th scope="col">ACTIVITY/COMPONENT</th>
+                            <th scope="col">VALUE</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">DMC01D5</th>
+                            <td>{{models.DMC01D5}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">D5</th>
+                            <td>{{models.D5}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">D4</th>
+                            <td>{{models.D4}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">D3</th>
+                            <td>{{models.D3}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">PDE_4601</th>
+                            <td>{{models.PDE_4601}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">D2</th>
+                            <td>{{models.D2}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">D1PDE4662</th>
+                            <td>{{models.D1PDE4662}}</td>
+                          </tr>
+                          <tr>
+                            <th scope="row">MPC_01</th>
+                            <td>{{models.MPC_01}}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      {%else%}
+                      <div>
+                      <h1>We have not found any data for your QR..!!!!</h1>
+                <p>
+                  VERIFIED BY MANAGER &emsp;
+                  <span>{{models.verified_by_Manager}}</span>
+                </p>
+           </div>
+           {%endif%}
+        </ul>
+    </div>
+  </div>
+{%else%}
+<center>
+  <h1>
+    <div style = "background-color: black;">
+      {% if messages %}
+      <p>
+          {%for message in messages%}
+          <p class="lead">{{message}}</p>
+          {%endfor%}
+      </p>
+      {%endif%}
+  </div>
+  </h1>
+</center>
+{%endif%}
+</div>
+
+{%endblock home%}

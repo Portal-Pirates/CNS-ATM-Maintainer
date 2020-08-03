@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% include 'GenericHeader.html' %}
+{% load static %}
+
+{% block home %}
+<div style = "background-color: black; color: white;">
+  <center>
+    <h1>
+      Welcome to Fault Table Entry
+     </h1>
+  </center>
+</div>
+<center>
+  <form method = "POST">
+    {%csrf_token%}
+    <div class="form-group col-md-6">
+      <label for="eq_name">Equipment Name</label>
+      <input type="text" name="equipment_name" id="eq_name">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="DateInput">Date Added</label>
+      <input type="date" name="date_added" id="DateInput">
+    </div>
+    <div class="form-group col-md-4">
+      <label for="DateInput01">Date Removed</label>
+      <input type="date" name="date_removed" id="DateInput01">
+    </div>
+               
+    <div class="form-group col-md-6">
+      <label for="Remarks">Remarks</label>
+          <select id="report_type" name="remarks" class="form-control">
+            <option value="Maintainable_and_Replacable" selected>Maintainable and Replacable</option>
+            <option value="Maintainable" >Maintainable</option>
+            <option value="Replacable">Replacable</option>
+          </select>
+    <input class="btn btn-primary" type="submit" name="submit">
+  </form> 
+</center>
+{%endblock%}
+
+
+
