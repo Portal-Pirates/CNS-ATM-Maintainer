@@ -3,7 +3,7 @@
 
 ## Project Live Here: https://portal-pirates.herokuapp.com/  (Images may gone due to free hosting)
 
-## Project features:
+## 🎨 Project Features:
 
 # Home Page:
 
@@ -45,13 +45,16 @@
 `and many more Features...`
 </br>
 
-# Roles:
+## 💬 Contributing Roles:
 
-- 🌱 @itsmayank0      - Leader, DB Designing, Deployment and Backend development
-- 🌱 @JayaChaurasia   - Backend Development 
-- 🌱 @Ayushimishraa   - Frontend Development
-- 🌱 @Shubham11012001 - Backend Development
-- 🌱 @DheerajRaikwar  - Backend Development, Designing 
+* 🌱 [**`@itsmayank0`**](https://github.com/itsmayank0) : **Leader, DB Designing, Deployment and Backend Developer.**
+* 🌱 [**`@JayaChaurasia`**](https://github.com/JayaChaurasia) : **Backend Developer.**
+* 🌱 [**`@Ayushimishraa`**](https://github.com/Ayushimishraa) : **Frontend Developer.**
+* 🌱 [**`@Shubham11012001`**](https://github.com/Shubham11012001) : **Backend Developer.**
+* 🌱 [**`@DheerajRaikwar`**](https://github.com/DheerajRaikwar) : **Backend Developer and Designing.**
+
+</br>
+## 🔧 Installation Setup:
 
 Steps(All steps are design in such a way that you have git install and you are doing all commands in git bash):
 
