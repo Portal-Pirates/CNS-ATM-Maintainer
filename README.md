@@ -7,39 +7,40 @@
 
 # Home Page:
 
-![alt text](https://github.com/itsmayank0/CNS-ATM-Maintainer/blob/master/home.png?raw=true)
+![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/home.png?raw=true)
 
 # QR-code Generation:
 
-![alt text](https://github.com/itsmayank0/CNS-ATM-Maintainer/blob/master/Qrcode.png?raw=true)
+
+![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/Qrcode.png?raw=true)
 
 # Scanning Of Qr code:
 
-![alt text](https://github.com/itsmayank0/CNS-ATM-Maintainer/blob/master/QrScanning.png?raw=true)
+![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/QrScanning.png?raw=true)
 
 # Results after Scanning:
 
-![alt text](https://github.com/itsmayank0/CNS-ATM-Maintainer/blob/master/ResultAfterQrScan.png?raw=true)
+![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/ResultAfterQrScan.png?raw=true)
 
 # New Entry of Maintainace Report:
 
-![alt text](https://github.com/itsmayank0/CNS-ATM-Maintainer/blob/master/NewEntry.png?raw=true)
+![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/NewEntry.png?raw=true)
 
 # Searching Of Previous maintainance Reports:
 
-![alt text](https://github.com/itsmayank0/CNS-ATM-Maintainer/blob/master/Searching.png?raw=true)
+![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/Searching.png?raw=true)
 
 # Custom Admin Ordering:
 
-![alt text](https://github.com/itsmayank0/CNS-ATM-Maintainer/blob/master/admin2.png?raw=true)
+![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/admin2.png?raw=true)
 
 # Custom Admin Feeatures:
 
-![alt text](https://github.com/itsmayank0/CNS-ATM-Maintainer/blob/master/Admin.png?raw=true)
+![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/Admin.png?raw=true)
 
 # Registration View Email Otp:
 
-![alt text](https://github.com/itsmayank0/CNS-ATM-Maintainer/blob/master/SignUp.png?raw=true)
+![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/SignUp.png?raw=true)
 
 and many more Features...
 
