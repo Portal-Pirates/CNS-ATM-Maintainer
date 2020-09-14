@@ -1,6 +1,6 @@
-# Getting started [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
+## Project Live Here: https://portal-pirates.herokuapp.com/  
 
-# Project Live Here: https://portal-pirates.herokuapp.com/  (Images may gone due to free hosting)
+(Images may gone due to free hosting)
 
 # 🎨 Project Features:
 
