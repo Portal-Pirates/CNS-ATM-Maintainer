@@ -1,7 +1,7 @@
 [![ForTheBadge built-with-swag](http://ForTheBadge.com/images/badges/built-with-swag.svg)](https://GitHub.com/Naereen/) 
 ## Getting started [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)  [![GitHub contributors](https://img.shields.io/github/contributors/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/contributors/)
 
-## Project Live Here: https://portal-pirates.herokuapp.com/  (Images may not come properly due to free hosting)
+## Project Live Here: https://portal-pirates.herokuapp.com/  (Images may gone due to free hosting)
 
 ## Project features:
 
