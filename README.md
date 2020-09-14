@@ -1,47 +1,57 @@
+</br>
 **Project Live Here: https://portal-pirates.herokuapp.com/**  
-
+</br>
 # 🎨 Project Features:
 
 ## Home Page:
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/home.png?raw=true)
+</br>
 
 ## QR-code Generation:
 
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/Qrcode.png?raw=true)
+</br>
 
 ## Scanning Of Qr code:
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/QrScanning.png?raw=true)
+</br>
 
 ## Results after Scanning:
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/ResultAfterQrScan.png?raw=true)
+</br>
 
 ## New Entry of Maintainace Report:
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/NewEntry.png?raw=true)
+</br>
 
 ## Searching Of Previous maintainance Reports:
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/Searching.png?raw=true)
+</br>
 
 ## Custom Admin Ordering:
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/admin2.png?raw=true)
+</br>
 
 ## Custom Admin Feeatures:
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/Admin.png?raw=true)
+</br>
 
 ## Registration View Email Otp:
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/SignUp.png?raw=true)
+</br>
 
 `and many more Features...`
 </br>
-
+</br>
 # 💬 Contributing Roles:
 
 * 🌱 [**`@itsmayank0`**](https://github.com/itsmayank0) : **Leader, DB Designing, Deployment and Backend Developer.**
