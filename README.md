@@ -5,7 +5,6 @@
   
 **Project Live Here: https://portal-pirates.herokuapp.com/**  
 
-</br>
 
 # 🎨 Project Features:
 
