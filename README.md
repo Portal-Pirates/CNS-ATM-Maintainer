@@ -5,7 +5,7 @@
  
 **Project Live Here: https://portal-pirates.herokuapp.com/**  
 
-**Note: Website speed may be slower beacuse they are hosted on Free Tier...**
+**Note: Website speed may be slower beacuse it is hosted on Free Tier Service...**
 </br>
 
 # 🎨 Project Features:
