@@ -43,6 +43,15 @@
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/SignUp.png?raw=true)
 
 `and many more Features...`
+</br>
+
+# Roles:
+
+- 🌱 @itsmayank0      - Leader, DB Designing, Deployment and Backend development
+- 🌱 @JayaChaurasia   - Backend Development 
+- 🌱 @Ayushimishraa   - Frontend Development
+- 🌱 @Shubham11012001 - Backend Development
+- 🌱 @DheerajRaikwar  - Backend Development, Designing 
 
 Steps(All steps are design in such a way that you have git install and you are doing all commands in git bash):
 
