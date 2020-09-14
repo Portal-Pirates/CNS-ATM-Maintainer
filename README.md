@@ -1,51 +1,50 @@
-[![ForTheBadge built-with-swag](http://ForTheBadge.com/images/badges/built-with-swag.svg)](https://GitHub.com/Naereen/) 
-## Getting started [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)  [![GitHub contributors](https://img.shields.io/github/contributors/Naereen/StrapDown.js.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/contributors/)
+# Getting started [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/Naereen/StrapDown.js/graphs/commit-activity)
 
-## Project Live Here: https://portal-pirates.herokuapp.com/  (Images may gone due to free hosting)
+# Project Live Here: https://portal-pirates.herokuapp.com/  (Images may gone due to free hosting)
 
-## 🎨 Project Features:
+# 🎨 Project Features:
 
-# Home Page:
+## Home Page:
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/home.png?raw=true)
 
-# QR-code Generation:
+## QR-code Generation:
 
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/Qrcode.png?raw=true)
 
-# Scanning Of Qr code:
+## Scanning Of Qr code:
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/QrScanning.png?raw=true)
 
-# Results after Scanning:
+## Results after Scanning:
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/ResultAfterQrScan.png?raw=true)
 
-# New Entry of Maintainace Report:
+## New Entry of Maintainace Report:
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/NewEntry.png?raw=true)
 
-# Searching Of Previous maintainance Reports:
+## Searching Of Previous maintainance Reports:
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/Searching.png?raw=true)
 
-# Custom Admin Ordering:
+## Custom Admin Ordering:
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/admin2.png?raw=true)
 
-# Custom Admin Feeatures:
+## Custom Admin Feeatures:
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/Admin.png?raw=true)
 
-# Registration View Email Otp:
+## Registration View Email Otp:
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/SignUp.png?raw=true)
 
 `and many more Features...`
 </br>
 
-## 💬 Contributing Roles:
+# 💬 Contributing Roles:
 
 * 🌱 [**`@itsmayank0`**](https://github.com/itsmayank0) : **Leader, DB Designing, Deployment and Backend Developer.**
 * 🌱 [**`@JayaChaurasia`**](https://github.com/JayaChaurasia) : **Backend Developer.**
@@ -54,7 +53,8 @@
 * 🌱 [**`@DheerajRaikwar`**](https://github.com/DheerajRaikwar) : **Backend Developer and Designing.**
 
 </br>
-## 🔧 Installation Setup:
+
+# 🔧 Installation Setup:
 
 Steps(All steps are design in such a way that you have git install and you are doing all commands in git bash):
 
