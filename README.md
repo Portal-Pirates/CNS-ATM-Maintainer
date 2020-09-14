@@ -42,7 +42,7 @@
 
 ![alt text](https://github.com/Portal-Pirates/CNS-ATM-Maintainer/blob/master/SignUp.png?raw=true)
 
-and many more Features...
+`and many more Features...`
 
 Steps(All steps are design in such a way that you have git install and you are doing all commands in git bash):
 
