@@ -1,6 +1,4 @@
-## Project Live Here: https://portal-pirates.herokuapp.com/  
-
-(Images may gone due to free hosting)
+**Project Live Here: https://portal-pirates.herokuapp.com/**  
 
 # 🎨 Project Features:
 
