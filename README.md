@@ -6,6 +6,8 @@
 **Project Live Here: https://portal-pirates.herokuapp.com/**  
 </br>
 
+**Note: Website may load slower beacuse they are hosted on free tier hosting...**
+
 # 🎨 Project Features:
 
 ## Home Page:
